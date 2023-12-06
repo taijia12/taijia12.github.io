@@ -184,7 +184,119 @@
     <div class="description">
         <div class="content" v-pre>
             
-            
+            <p>私网地址范围：</p>
+<p>A：10.0.0.0-10.255.255.255</p>
+<p>B：172.16.0.0 -172.31.255.255</p>
+<p>C：192.168.0.0-192.168.255.255</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701739877510-3797159c-3048-48ec-b725-b8ea85f82173.png" alt="img"></p>
+<p>路由器分为动态路由和静态路由</p>
+<p>ip地址分为静态IP和动态IP</p>
+<p>dhcp用来分配IP地址</p>
+<p>动态IP由路由器自动分配</p>
+<p>静态IP手动设置</p>
+<p>OSI（Open Systems Interconnection）七层模型是一个将计算机网络通信过程分为七个不同层次的框架。每一层都提供特定的功能，并通过接口与相邻的层进行通信。这些层从底层到顶层依次是：</p>
+<ol>
+<li>物理层（Physical Layer）：负责网络通信的物理介质传输，例如电缆、光纤、无线电波等。它处理比特流的传输。</li>
+<li>数据链路层（Data Link Layer）：提供可靠的点对点数据传输，通过帧进行数据封装和解封装，进行错误检测和纠正。</li>
+<li>网络层（Network Layer）：负责在网络中寻址和路由，将数据包从源主机发送到目标主机。它使用IP地址进行寻址和路由决策。</li>
+<li>传输层（Transport Layer）：提供可靠的端到端通信服务，确保数据的可靠传输。常见的协议有TCP（传输控制协议）和UDP（用户数据报协议）。</li>
+<li>会话层（Session Layer）：建立、管理和终止会话连接，同时提供会话层服务，例如会话恢复和同步。</li>
+<li>表示层（Presentation Layer）：处理数据的表示形式，负责数据的压缩、加密和解密，以及数据格式的转换。</li>
+<li>应用层（Application Layer）：提供网络应用服务，例如电子邮件、文件传输协议（FTP）、域名系统（DNS）等。</li>
+</ol>
+<p>OSI七层模型中的每一层都与许多协议相关联。以下是每个层次对应的一些常见协议示例：</p>
+<ol>
+<li>物理层：</li>
+</ol>
+<ul>
+<li><ul>
+<li>IEEE 802.3（以太网）</li>
+<li>IEEE 802.11（Wi-Fi）</li>
+<li>RS-232（串口通信）</li>
+<li>SONET（同步光纤网络）</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>数据链路层：</li>
+</ol>
+<ul>
+<li><ul>
+<li>Ethernet（以太网）</li>
+<li>PPP（点对点协议）</li>
+<li>HDLC（高级数据链路控制）</li>
+<li>MAC（介质访问控制）</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>网络层：</li>
+</ol>
+<ul>
+<li><ul>
+<li>IP（Internet Protocol）</li>
+<li>ICMP（Internet Control Message Protocol）</li>
+<li>ARP（地址解析协议）</li>
+<li>OSPF（开放最短路径优先）</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>传输层：</li>
+</ol>
+<ul>
+<li><ul>
+<li>TCP（传输控制协议）</li>
+<li>UDP（用户数据报协议）</li>
+<li>SCTP（流控制传输协议）</li>
+<li>RTP（实时传输协议）</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>会话层：</li>
+</ol>
+<ul>
+<li><ul>
+<li>NetBIOS（网络基本输入&#x2F;输出系统）</li>
+<li>SSL&#x2F;TLS（安全套接层&#x2F;传输层安全）</li>
+<li>SOCKS（代理协议）</li>
+<li>PPTP（点对点隧道协议）</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>表示层：</li>
+</ol>
+<ul>
+<li><ul>
+<li>ASCII（美国标准信息交换代码）</li>
+<li>JPEG（联合图像专家组）</li>
+<li>MPEG（动态图像压缩标准）</li>
+<li>TLS（传输层安全）</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>应用层：</li>
+</ol>
+<ul>
+<li><ul>
+<li>HTTP（超文本传输协议）</li>
+<li>FTP（文件传输协议）</li>
+<li>DNS（域名系统）</li>
+<li>SMTP（简单邮件传输协议）</li>
+</ul>
+</li>
+<li></li>
+<li></li>
+<li><p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701746884938-a78853f5-2fdd-4555-a5e5-a131390958e1.png" alt="image.png"></p>
+</li>
+</ul>
+<p>pc1想要ping pc2,需要在路由表建一条规则  1.192.168.3.0—&gt;路由二</p>
+<p>四象限：源ip，源MAC，目的ip，目的MAC</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701758969472-d7d78519-8b03-45fc-9975-91bb151e32f3.png" alt="image.png"></p>
+
             
         </div>
     </div>
@@ -194,36 +306,6 @@
         
     </div>
     <a href="/2023/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/04/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-        <h2 class="post-title">网络基础</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/4
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/04/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
