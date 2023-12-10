@@ -30,10 +30,15 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="#注释：ctrl+&#x2F;  选中多行进行注释 #基本数据类型：整数，int小数，float字符串：str(***)    表示方式：    单行，’’和””    多行，’’’ ‘’’和””” “””    操作： +  左右两端必须是字符串，表示字符串连接操作 *  一个字符串只能乘以一个数字，表示字符串重复的次数 布尔(bool):条件判断     布尔值主要有两个：     True">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210144006208.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210155536666.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210171314586.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210173041060.png">
 <meta property="article:published_time" content="2023-12-03T06:58:04.000Z">
-<meta property="article:modified_time" content="2023-12-06T13:53:06.782Z">
+<meta property="article:modified_time" content="2023-12-10T09:34:11.054Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210144006208.png">
     
         <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
     
@@ -206,6 +211,69 @@
 <p>range(m,n):从m数到n，不包含n</p>
 <p>range(m,n,s):从m数到n，不包含n，每次间隔s</p>
 <p>字符串详解：</p>
+<ol>
+<li>字符串格式化问题</li>
+</ol>
+<p>%s 字符串占位符</p>
+<p>%d 整数占位</p>
+<p>%f 小数占位</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210144006208.png" alt="image-20231210144006208"></p>
+<ol start="2">
+<li><p>字符串索引和切片</p>
+<p>可以采用索引的方式来提取某一个字符(文字)</p>
+<p>s&#x3D;”让我们荡起双桨”</p>
+<p>print(s[0])    #程序都是从零开始数数 </p>
+<p>print(s[3])  </p>
+<p>print(s[-1])  #-表示倒数</p>
+</li>
+</ol>
+<p>切片 ——从一个字符串中提取一部分内容</p>
+<p>语法: s[start;end] 从start到end进行切片。但是取不到end [start，end)</p>
+<p>如果start是开头可以省略是s[:5]  如果end是是结尾 ，可以省略s[5:]</p>
+<p>即[ : ]如果左右两端有空白表示开头或者结尾</p>
+<p>s&#x3D;”让我们荡起双桨”</p>
+<p>print(s[1:3]) #提取第1个到第2个字符，不包括第3个</p>
+<p>print([:4]) #从开头提取到第3个</p>
+<p>print([3:])  #从第3个提取到结尾</p>
+<p>进阶切片——s[start : end:step]  step为负数表示从右往左，每step个元素出来一个元素</p>
+<ol start="3">
+<li><p>字符串的常规操作</p>
+<p>str.capitalize()   将字符串第一个字母变成大写，其余字母变成小写</p>
+<p>str.title()    所以英文单词首字母大写，其余字母小写</p>
+<p>str.swapcase()   将字符串中大小写字母互换，大写变小写，小写变大写</p>
+<p>str.lower()    全部变小写</p>
+<p>str.upper()     全部变大写</p>
+<p>忽略大小写进行判断</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210155536666.png" alt="image-20231210155536666"></p>
+</li>
+<li><p>字符串替换与切割</p>
+<p>替换：str.replace(old, new, count)    把str中的 old 替换成 new,如果 count 指定，则替换不超过 count次.。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">s = &quot;我的小伙伴张三&quot;</span><br><span class="line">s.replace(&quot;张三&quot;,&quot;马云&quot;)</span><br><span class="line">&#x27;我的小伙伴马云&#x27;</span><br><span class="line"></span><br><span class="line">s = &quot;I love python&quot;</span><br><span class="line">#默认字符串中的全部&quot;o&quot; 全部替换为&quot;w&quot;</span><br><span class="line">s.replace(&quot;o&quot;,&quot;w&quot;)</span><br><span class="line">&#x27;I lwve pythwn&#x27;</span><br><span class="line"></span><br><span class="line">#只替换一个&quot;o&quot;</span><br><span class="line">s.replace(&quot;o&quot;,&quot;w&quot;,1)</span><br><span class="line">&#x27;I lwve python&#x27;</span><br><span class="line"></span><br><span class="line">#子字符串可以是多个字符。</span><br><span class="line">s.replace(&quot;python&quot;,&quot;java&quot;)</span><br><span class="line">&#x27;I love java&#x27;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>切割： str.split()    拆分字符串。通过指定分隔符sep对字符串进行分割，并返回分割后的字符串列表。</p>
+<pre><code>语法： str.split(sep=None, maxsplit=-1) [n]  
+
+    sep —— 分隔符，默认为空格,但不能为空即(&quot;)。
+    maxsplit —— 最大分割参数，默认参数为-1。
+    [n] —— 返回列表中下标为n的元素。列表索引的用法。
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#默认空格分割</span><br><span class="line">str1 = &quot;I love python&quot;</span><br><span class="line">str1.split()</span><br><span class="line">[&#x27;I&#x27;, &#x27;love&#x27;, &#x27;python&#x27;]</span><br><span class="line">#取第三位</span><br><span class="line">str1.split()[2]</span><br><span class="line">&#x27;python&#x27;</span><br><span class="line"></span><br><span class="line">#以&quot;.&quot;为分隔符,maxsplit默认为-1</span><br><span class="line">str2 = &#x27;列夫·尼古拉耶维奇·托尔斯泰&#x27;</span><br><span class="line">str2.split(&#x27;·&#x27;)</span><br><span class="line">[&#x27;列夫&#x27;, &#x27;尼古拉耶维奇&#x27;, &#x27;托尔斯泰&#x27;]</span><br><span class="line">#以&quot;.&quot;为分隔符,只分割一次。</span><br><span class="line">str2.split(&#x27;·&#x27;,1)</span><br><span class="line"> [&#x27;列夫&#x27;, &#x27;尼古拉耶维奇·托尔斯泰&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p>strip()   该函数的作用是去除字符串开头和结尾处指定的字符，不会去除字符串中间对应的字符</p>
+<p>语法：str.strip(chars)  </p>
+<p>参数：chars – 要去除的字符  默认为空格或换行符。去除空格，\n \t \r字符</p>
+<ol start="5">
+<li><p>字符串查找和判断</p>
+<p>查找，输出要查找的字符串的位置</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210171314586.png" alt="image-20231210171314586"></p>
+</li>
+</ol>
+<p>判断</p>
+<p>in  ，not in  判断字符串存不存在</p>
+<p>startswith(“指定字符”)  判断字符串是否以指定字符或字符串开头。</p>
+<p>isdigit()   检测字符串是否只由数字组成.字符串中至少有一个字符且所有字符都是数字则返回 True,否则返回 False。</p>
+<p>字符串总结</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210173041060.png" alt="image-20231210173041060"></p>
 
             
         </div>
@@ -385,10 +453,10 @@
             
                 <div>
                     <span class="icon-brush"></span>
-                    8.6k
+                    9.5k
                     &nbsp;|&nbsp;
                     <span class="icon-coffee"></span>
-                    00:32
+                    00:36
                 </div>
             
             
