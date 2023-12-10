@@ -164,7 +164,193 @@
     </div>
     
     <div class="content" v-pre>
-        
+        <p>HTML:</p>
+<p>基础标签：</p>
+<p>p：段落标记</p>
+<p>h1~h6：标题字，与word的标题字相同</p>
+<p>br：换行标记（独目标记）</p>
+<p>hr：横线（独目标记）</p>
+<p>​        color：横线颜色</p>
+<p>​        width：横线宽度（可以px和%）</p>
+<p>pre：预留格式</p>
+<p>del：删除字</p>
+<p>ins：插入字（有下划线）</p>
+<p>b：粗体字</p>
+<p>i：斜体字</p>
+<p>sup：上标</p>
+<p>sub：下标</p>
+<p>font：字体标签</p>
+<p>​        color：字体颜色</p>
+<p>​        size：字体大小（1~7)</p>
+<p>table：表格</p>
+<p>tr：行</p>
+<p>td：列</p>
+<p>th：列（比td加粗居中）</p>
+<p>img标签:</p>
+<ul>
+<li>src：图片的路径 </li>
+<li>只设置width，height会等比例缩放</li>
+<li>只设置height，不起作用</li>
+<li>title：鼠标悬停时显示的信息</li>
+<li>alt：设置图片加载失败时显示的提示信息</li>
+</ul>
+<p>href：超链接</p>
+<p>表单：</p>
+<p>action：写提交的URL地址</p>
+<p>method：默认get；还有post</p>
+<p>   radio：单选控件</p>
+<p>checkbox：多选控件</p>
+<p>submit：提交控件</p>
+<p>reset：重置控件</p>
+<p>button：普通控件</p>
+<p>text：文本控件</p>
+<p>password：密码控  </p>
+<p> file：文件控件，上传文件专用</p>
+<p>hidden：隐藏域</p>
+<p><strong>css：</strong></p>
+<p>基本语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123;	属性名:属性值;    /*注释*/&#125;</span><br></pre></td></tr></table></figure>
+
+<p> ① 字体样式属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>font-family</td>
+<td>字体类型</td>
+</tr>
+<tr>
+<td>font-size</td>
+<td>字体大小</td>
+</tr>
+<tr>
+<td>font-weight</td>
+<td>字体粗细</td>
+</tr>
+<tr>
+<td>font-style</td>
+<td>字体风格</td>
+</tr>
+<tr>
+<td>color</td>
+<td>字体颜色</td>
+</tr>
+</tbody></table>
+<h4 id="图片对齐"><a href="#图片对齐" class="headerlink" title="图片对齐"></a>图片对齐</h4><p>① text-align:定义图片的水平对齐方式</p>
+<ul>
+<li><p>语法： text-align：取值</p>
+</li>
+<li><p>取值：left (左对齐)  center(居中对齐)  right(右对齐)</p>
+</li>
+<li><p>场景：文本水平对齐和图片水平对齐</p>
+</li>
+</ul>
+<p>  背景图片样式属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>background-image</td>
+<td>定义背景图片地址</td>
+</tr>
+<tr>
+<td>background-repeat</td>
+<td>定义背景图片重复</td>
+</tr>
+<tr>
+<td>background-position</td>
+<td>定义背景图片位置</td>
+</tr>
+<tr>
+<td>background-attachment</td>
+<td>定义背景图片固定</td>
+</tr>
+</tbody></table>
+<p>浮动布局 </p>
+<p>① 正常文档流</p>
+<pre><code>将页面从上到下分为一行一行，其中块元素独占一行，相邻行内元素在每一行中按照从左到右排列直到该行排满
+就是默认情况下页面元素的布局情况
+</code></pre>
+<p>② 脱离文档流</p>
+<pre><code>脱离正常文档流
+如果要改变正常文档流，可以使用两种方式： 浮动和定位
+</code></pre>
+<p> ③ 浮动</p>
+<pre><code>通过设置float属性让元素向左浮动或者向右浮动，以便让周围元素或文本围绕这个元素
+语法：float: 取值
+取值：left 元素向左浮动   right 元素向右浮动
+如果让两个或者多个块元素并排在同一行，这个时候可以考虑浮动，将块元素脱离正常文档流来实现
+</code></pre>
+<p>④ 清除浮动</p>
+<pre><code>  clear：取值
+</code></pre>
+<p>属性值	说明<br>left	清除左浮动<br>right	清除右浮动<br>both	同时清除左浮动和右浮动</p>
+<p>定位布局<br>13.1 定位布局简介</p>
+<p>四种方式： 固定定位（fixed）  相对定位（relative） 绝对定位（absolute） 静态定位（static）</p>
+<p>通过position 属性来实现的 </p>
+<p>① fixed</p>
+<pre><code>固定定位：固定定位指的是固定的元素不会随着滚动条拖动而改变位置
+语法：
+
+position:fixed;
+
+top:像素值；
+
+bottom:像素值；
+
+left：像素值；
+
+right: 像素值；
+
+这四个属性是设置元素相对浏览器的位置
+这四个值得参考对象是浏览器得四条边
+</code></pre>
+<p>② relative </p>
+<pre><code>相对定位：该元素的位置是相对于它的原始位置计算而来的
+语法
+
+position: relative;
+
+top:像素值；
+
+bottom:像素值；
+
+left：像素值；
+
+right: 像素值；
+
+这四个值得参考对象是该元素得原始位置
+</code></pre>
+<p>③ 绝对定位</p>
+<pre><code>绝对定位：精确得把元素定位到任意你想要得位置
+一个元素变成绝对定位之后，这个元素就脱离文档流了，此时这个元素浮于其他元素上面，已经完全独立起来了
+
+position: absolute;
+
+top:像素值；
+
+bottom:像素值；
+
+left：像素值；
+
+right: 像素值；
+
+这四个值得参考对象是浏览器的四条边
+默认情况下，固定定位和绝对定位的位置是相对于浏览器而言的，相对定位的位置是相对于原始位置而言的
+</code></pre>
+<p>④ 静态定位</p>
+<pre><code>默认情况下，元素没有指定position属性时，这个元素就是静态定位的
+如果想要使元素从其他定位变成静态定位，就需要使用position:static 来实现 
+</code></pre>
+
     </div>
     
     
