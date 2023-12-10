@@ -326,6 +326,10 @@
 <p>pc1想要ping pc2,需要在路由表建一条规则  1.192.168.3.0—&gt;路由二</p>
 <p>四象限：源ip，源MAC，目的ip，目的MAC</p>
 <p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701758969472-d7d78519-8b03-45fc-9975-91bb151e32f3.png" alt="image.png"></p>
+<p>域名解析流程：</p>
+<p><img src="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80.assets/image-20231207093329006.png" alt="image-20231207093329006"></p>
+<p>常见协议端口号：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. HTTP: 80</span><br><span class="line">2. HTTPS: 443</span><br><span class="line">3. FTP: 21 (控制连接), 20 (数据连接)</span><br><span class="line">4. SSH: 22</span><br><span class="line">5. MySQL: 3306</span><br><span class="line">6. DNS：53</span><br></pre></td></tr></table></figure>
 
             
         </div>
@@ -357,11 +361,31 @@
         <div class="content" v-pre>
             
             <p>#注释：<br>ctrl+&#x2F;  选中多行进行注释</p>
-<p>#基本数据类型：<br>整数，int<br>小数，float<br>字符串：str(***)<br>    表示方式：<br>    单行，’’和””<br>    多行，’’’ ‘’’和””” “””<br>    操作：<br>    +  左右两端必须是字符串，表示字符串连接操作<br>    *  一个字符串只能乘以一个数字，表示字符串重复的次数<br>布尔(bool):条件判断<br>    布尔值主要有两个：<br>    True 真    False 假</p>
+<p>#基本数据类型：<br>整数，int<br>小数，float<br>字符串：str(***)<br>    表示方式：<br>    单行，’’和””<br>    多行，’’’ ‘’’和””” “””<br>    操作：</p>
+<pre><code>+  左右两端必须是字符串，表示字符串连接操作
+*  一个字符串只能乘以一个数字，表示字符串重复的次数
+布尔(bool):条件判断
+    布尔值主要有两个：
+    True 真    False 假
+
+在python中，所有非零的数都是True，零是False
+
+在python中，所有的非空字符串都是True，空字符串是False
+
+综上，在python的基本数据类型中，表示空的东西都是False，不空的东西都是True
+</code></pre>
 <p>#简单交互<br>变量&#x3D;input(“提示语”)<br>print(type(变量)) 可以查看变量类型<br>字符串类型转换： 想把a类型转换成b类型，就用b类型把a类型套起来  例：str&#x3D;&gt;int    int(str)</p>
-<p>#if条件判断语法规则：<br>    1. if 条件：<br>            代码<br>        如果条件成立，执行代码<br>        不成立就不执行<br>    2. if 条件：<br>            代码1<br>        else：<br>            代码2<br>        如果条件成立，执行代码1，否则，执行代码2<br>    3.if语句可以嵌套<br>        if 条件：<br>            if 条件:<br>                xx<br>            else:<br>                ss<br>        else:<br>            代码2<br>    4.  if 条件：<br>            代码1<br>        elif 条件2：<br>            代码2<br>        elif 条件3：<br>            代码3<br>            …<br>        esle:<br>            xxx</p>
-<p>#while循环语句<br>    while 条件:<br>        代码<br>    条件成立，执行代码，继续判断条件，执行代码，直到条件不成立   
-       </p>
+<p>#if条件判断语法规则：<br>    1. if 条件：<br>            代码<br>        如果条件成立，执行代码<br>        不成立就不执行<br>        2. if 条件：<br>                代码1<br>            else：<br>                代码2<br>            如果条件成立，执行代码1，否则，执行代码2<br>            3.if语句可以嵌套<br>            if 条件：<br>                if 条件:<br>                xx<br>                else:<br>                ss<br>            else:<br>                代码2<br>            4.  if 条件：<br>                    代码1<br>                elif 条件2：<br>                    代码2<br>                elif 条件3：<br>                    代码3<br>                    …<br>                esle:<br>                    xxx</p>
+<p>#while循环语句<br>    while 条件:<br>        代码<br>    条件成立，执行代码，继续判断条件，执行代码，直到条件不成立   </p>
+<p>#for循环语句（遍历）</p>
+<p>​	for 变量 in 可迭代的东西：</p>
+<p>​				代码</p>
+<p>把可迭代的东西中的每一项内容拿出来，挨个的赋值给变量，每一次赋值都要执行一次循环体(代码)</p>
+<p>for循环计数，必须借助range</p>
+<p>range(n): 从0数到n，不包含n</p>
+<p>range(m,n):从m数到n，不包含n</p>
+<p>range(m,n,s):从m数到n，不包含n，每次间隔s</p>
+<p>字符串详解：</p>
 
             
         </div>
@@ -608,6 +632,30 @@
 <li>-R：递归处理，将指定目录下的所有文件及子目录一并处理。</li>
 <li>-al: 查看目录下的所有信息(包括隐藏内容)，同时显示每个文件的详细信息</li>
 </ul>
+<p>文件权限修改：</p>
+<p>chmod ［who］ ［+ | - | &#x3D;］ ［mode] 文件名</p>
+<p>who参数如下：</p>
+<pre><code>u 表示“用户（user）”，即文件或目录的所有者；
+g 表示“同组（group）用户”，即与文件属主有相同组ID的所有用户；
+o 表示“其他（others）用户”；
+a 表示“所有（all）用户”，它是系统默认值。
+</code></pre>
+<p>操作符如下：</p>
+<pre><code>+：添加某个权限；
+-：取消某个权限；
+=：赋予给定权限并取消其他所有权限。
+</code></pre>
+<p>mode参数如下：</p>
+<pre><code>r 可读；/4
+w 可写；/2
+x 可执行。/1
+</code></pre>
+<p>数字设定法具体命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod ［mode］ 文件名</span><br></pre></td></tr></table></figure>
+
+<p><code>mode</code>为具体的数字。(r&#x2F;w&#x2F;x组合)</p>
+<p>tar　-cvf　生成的tar包名　要打包的文件&#x2F;目录列表</p>
+<p>tar　-xvf　解压包名 -C 解压到指定目录</p>
 <p>vi 编辑文件   i插入 Esc退出插入  :wq! 保存退出   :q! 不保存退出</p>
 <p>cat -n +文件名 给文件加行数</p>
 <p>cat </p>
