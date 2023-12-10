@@ -1,561 +1,302 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>Hexo</title>
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="preconnect" href="https://fonts.loli.net" />
-<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
-<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
-<script> const mixins = {}; </script>
+    <!DOCTYPE html>
+    <html lang="en"
+            
+          
+    >
+    <head>
+    <meta charset="utf-8">
+    
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    
 
+    
+    <title>
+        
+        Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CUbuntu%20Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+    
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/v4-font-face.min.css">
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-<link
-    rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
-/>
-<script src="/js/lib/highlight.js"></script>
+    
+<link rel="stylesheet" href="/css/loader.css">
 
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+    
+<link rel="stylesheet" href="/css/style.css">
 
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
-<script src="/js/lib/preview.js"></script>
+    
+    
+    
+    
+    
+<script src="https://unpkg.com/pace-js@1.2.4/pace.min.js"></script>
 
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/wowjs@1.1.3/css/libs/animate.css">
 
+        
+<script src="https://unpkg.com/wowjs@1.1.3/dist/wow.min.js"></script>
 
-
-
-<script src="/js/lib/home.js"></script>
-
-<link rel="stylesheet" href="/css/main.css" />
-
+        <script>
+          new WOW({
+            offset: 0,
+            mobile: true,
+            live: false
+          }).init();
+        </script>
+    
 <meta name="generator" content="Hexo 7.0.0"></head>
-<body>
-    <div id="layout">
-        <transition name="fade">
-            <div id="loading" v-show="loading">
-                <div id="loading-circle">
-                    <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/loading.gif" />
-                </div>
-            </div>
-        </transition>
-        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
-    <nav id="desktop-menu">
-        <a class="title" href="/">
-            <span>HEXO</span>
-        </a>
-        
-        <a href="/">
-            <i class="fa-solid fa-house fa-fw"></i>
-            <span>&ensp;Home</span>
-        </a>
-        
-        <a href="/about">
-            <i class="fa-solid fa-id-card fa-fw"></i>
-            <span>&ensp;About</span>
-        </a>
-        
-        <a href="/archives">
-            <i class="fa-solid fa-box-archive fa-fw"></i>
-            <span>&ensp;Archives</span>
-        </a>
-        
-        <a href="/categories">
-            <i class="fa-solid fa-bookmark fa-fw"></i>
-            <span>&ensp;Categories</span>
-        </a>
-        
-        <a href="/tags">
-            <i class="fa-solid fa-tags fa-fw"></i>
-            <span>&ensp;Tags</span>
-        </a>
-        
-    </nav>
-    <nav id="mobile-menu">
-        <div class="title" @click="showMenuItems = !showMenuItems">
-            <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;HEXO</span>
-        </div>
-        <transition name="slide">
-            <div class="items" v-show="showMenuItems">
+
+    <body>
+    
+<div id='loader'>
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="loading-taichi">
+      <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+      <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+      <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+      <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+    </svg>
+    </div>
+    <div class="loading-word">少女祈祷中...</div>
+  </div>
+</div>
+</div>
+
+<script>
+  const endLoading = function() {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load', endLoading);
+  document.getElementById('loader').addEventListener('click', endLoading);
+</script>
+
+
+    <div id="container">
+        <div id="wrap">
+            <header id="header">
+    
+        <img data-src="/images/banner.jpg" data-sizes="auto" alt="" class="lazyload">
+    
+    <div id="header-outer" class="outer">
+        <div id="header-title" class="inner">
+            <div id="logo-wrap">
                 
-                <a href="/">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-house fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
-                    </div>
-                </a>
-                
-                <a href="/about">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-id-card fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
-                    </div>
-                </a>
-                
-                <a href="/archives">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-box-archive fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
-                    </div>
-                </a>
-                
-                <a href="/categories">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
-                    </div>
-                </a>
-                
-                <a href="/tags">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
-                    </div>
-                </a>
+                    
+                    
+                        <a href="/" id="logo"><h1>Hexo</h1></a>
+                    
                 
             </div>
-        </transition>
-    </nav>
-</div>
-<transition name="fade">
-    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
-</transition>
-
-        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Hexo</h1>
-                <h3></h3>
-                <h5></h5>
+            
+                
+                
+            
+        </div>
+        <div id="header-inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/">Home</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/archives">Archives</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/about">About</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/friend">Friend</a>
+                    </span>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                    <a id="nav-rss-link" class="nav-icon" href="/atom.xml"
+                       title="RSS Feed"></a>
+                
+                
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
             </div>
-        </span>
-    </div>
-</div>
-<div id="home-posts-wrap" true ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/12/06/web%E5%89%8D%E7%AB%AF/">
-        <h2 class="post-title">web前端</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/6
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>HTML:</p>
-<p>基础标签：</p>
-<p>p：段落标记</p>
-<p>h1~h6：标题字，与word的标题字相同</p>
-<p>br：换行标记（独目标记）</p>
-<p>hr：横线（独目标记）</p>
-<p>​        color：横线颜色</p>
-<p>​        width：横线宽度（可以px和%）</p>
-<p>pre：预留格式</p>
-<p>del：删除字</p>
-<p>ins：插入字（有下划线）</p>
-<p>b：粗体字</p>
-<p>i：斜体字</p>
-<p>sup：上标</p>
-<p>sub：下标</p>
-<p>font：字体标签</p>
-<p>​        color：字体颜色</p>
-<p>​        size：字体大小（1~7)</p>
-<p>table：表格</p>
-<p>tr：行</p>
-<p>td：列</p>
-<p>th：列（比td加粗居中）</p>
-<p>img标签:</p>
-<ul>
-<li>src：图片的路径 </li>
-<li>只设置width，height会等比例缩放</li>
-<li>只设置height，不起作用</li>
-<li>title：鼠标悬停时显示的信息</li>
-<li>alt：设置图片加载失败时显示的提示信息</li>
-</ul>
-<p>href：超链接</p>
-<p>表单：</p>
-<p>action：写提交的URL地址</p>
-<p>method：默认get；还有post</p>
-<p>   radio：单选控件</p>
-<p>checkbox：多选控件</p>
-<p>submit：提交控件</p>
-<p>reset：重置控件</p>
-<p>button：普通控件</p>
-<p>text：文本控件</p>
-<p>password：密码控  </p>
-<p> file：文件控件，上传文件专用</p>
-<p>hidden：隐藏域</p>
-<p><strong>css：</strong></p>
-<p>基本语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123;	属性名:属性值;    /*注释*/&#125;</span><br></pre></td></tr></table></figure>
-
-<p> ① 字体样式属性</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>font-family</td>
-<td>字体类型</td>
-</tr>
-<tr>
-<td>font-size</td>
-<td>字体大小</td>
-</tr>
-<tr>
-<td>font-weight</td>
-<td>字体粗细</td>
-</tr>
-<tr>
-<td>font-style</td>
-<td>字体风格</td>
-</tr>
-<tr>
-<td>color</td>
-<td>字体颜色</td>
-</tr>
-</tbody></table>
-<h4 id="图片对齐"><a href="#图片对齐" class="headerlink" title="图片对齐"></a>图片对齐</h4><p>① text-align:定义图片的水平对齐方式</p>
-<ul>
-<li><p>语法： text-align：取值</p>
-</li>
-<li><p>取值：left (左对齐)  center(居中对齐)  right(右对齐)</p>
-</li>
-<li><p>场景：文本水平对齐和图片水平对齐</p>
-</li>
-</ul>
-<p>  背景图片样式属性</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>background-image</td>
-<td>定义背景图片地址</td>
-</tr>
-<tr>
-<td>background-repeat</td>
-<td>定义背景图片重复</td>
-</tr>
-<tr>
-<td>background-position</td>
-<td>定义背景图片位置</td>
-</tr>
-<tr>
-<td>background-attachment</td>
-<td>定义背景图片固定</td>
-</tr>
-</tbody></table>
-<p>浮动布局 </p>
-<p>① 正常文档流</p>
-<pre><code>将页面从上到下分为一行一行，其中块元素独占一行，相邻行内元素在每一行中按照从左到右排列直到该行排满
-就是默认情况下页面元素的布局情况
-</code></pre>
-<p>② 脱离文档流</p>
-<pre><code>脱离正常文档流
-如果要改变正常文档流，可以使用两种方式： 浮动和定位
-</code></pre>
-<p> ③ 浮动</p>
-<pre><code>通过设置float属性让元素向左浮动或者向右浮动，以便让周围元素或文本围绕这个元素
-语法：float: 取值
-取值：left 元素向左浮动   right 元素向右浮动
-如果让两个或者多个块元素并排在同一行，这个时候可以考虑浮动，将块元素脱离正常文档流来实现
-</code></pre>
-<p>④ 清除浮动</p>
-<pre><code>  clear：取值
-</code></pre>
-<p>属性值	说明<br>left	清除左浮动<br>right	清除右浮动<br>both	同时清除左浮动和右浮动</p>
-<p>定位布局<br>13.1 定位布局简介</p>
-<p>四种方式： 固定定位（fixed）  相对定位（relative） 绝对定位（absolute） 静态定位（static）</p>
-<p>通过position 属性来实现的 </p>
-<p>① fixed</p>
-<pre><code>固定定位：固定定位指的是固定的元素不会随着滚动条拖动而改变位置
-语法：
-
-position:fixed;
-
-top:像素值；
-
-bottom:像素值；
-
-left：像素值；
-
-right: 像素值；
-
-这四个属性是设置元素相对浏览器的位置
-这四个值得参考对象是浏览器得四条边
-</code></pre>
-<p>② relative </p>
-<pre><code>相对定位：该元素的位置是相对于它的原始位置计算而来的
-语法
-
-position: relative;
-
-top:像素值；
-
-bottom:像素值；
-
-left：像素值；
-
-right: 像素值；
-
-这四个值得参考对象是该元素得原始位置
-</code></pre>
-<p>③ 绝对定位</p>
-<pre><code>绝对定位：精确得把元素定位到任意你想要得位置
-一个元素变成绝对定位之后，这个元素就脱离文档流了，此时这个元素浮于其他元素上面，已经完全独立起来了
-
-position: absolute;
-
-top:像素值；
-
-bottom:像素值；
-
-left：像素值；
-
-right: 像素值；
-
-这四个值得参考对象是浏览器的四条边
-默认情况下，固定定位和绝对定位的位置是相对于浏览器而言的，相对定位的位置是相对于原始位置而言的
-</code></pre>
-<p>④ 静态定位</p>
-<pre><code>默认情况下，元素没有指定position属性时，这个元素就是静态定位的
-如果想要使元素从其他定位变成静态定位，就需要使用position:static 来实现 
-</code></pre>
-
-            
         </div>
     </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/06/web%E5%89%8D%E7%AB%AF/" class="go-post">阅读全文</a>
-</div>
+</header>
 
-<div class="post">
-    <a href="/2023/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-        <h2 class="post-title">计算机网络基础</h2>
-    </a>
-    <div class="category-and-date">
+            <div id="content" class="outer">
+                <section id="main">
+    
         
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/5
-        </span>
+    <div class="post-wrap-left wow fadeInUp">
+        
+            <a class="post-link" href="/2023/12/06/web%E5%89%8D%E7%AB%AF/"></a>
         
         
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
+        <div class="post-cover-left">
             
-            <p>私网地址范围：</p>
-<p>A：10.0.0.0-10.255.255.255</p>
-<p>B：172.16.0.0 -172.31.255.255</p>
-<p>C：192.168.0.0-192.168.255.255</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701739877510-3797159c-3048-48ec-b725-b8ea85f82173.png" alt="img"></p>
-<p>路由器分为动态路由和静态路由</p>
-<p>ip地址分为静态IP和动态IP</p>
-<p>dhcp用来分配IP地址</p>
-<p>动态IP由路由器自动分配</p>
-<p>静态IP手动设置</p>
-<p>OSI（Open Systems Interconnection）七层模型是一个将计算机网络通信过程分为七个不同层次的框架。每一层都提供特定的功能，并通过接口与相邻的层进行通信。这些层从底层到顶层依次是：</p>
-<ol>
-<li>物理层（Physical Layer）：负责网络通信的物理介质传输，例如电缆、光纤、无线电波等。它处理比特流的传输。</li>
-<li>数据链路层（Data Link Layer）：提供可靠的点对点数据传输，通过帧进行数据封装和解封装，进行错误检测和纠正。</li>
-<li>网络层（Network Layer）：负责在网络中寻址和路由，将数据包从源主机发送到目标主机。它使用IP地址进行寻址和路由决策。</li>
-<li>传输层（Transport Layer）：提供可靠的端到端通信服务，确保数据的可靠传输。常见的协议有TCP（传输控制协议）和UDP（用户数据报协议）。</li>
-<li>会话层（Session Layer）：建立、管理和终止会话连接，同时提供会话层服务，例如会话恢复和同步。</li>
-<li>表示层（Presentation Layer）：处理数据的表示形式，负责数据的压缩、加密和解密，以及数据格式的转换。</li>
-<li>应用层（Application Layer）：提供网络应用服务，例如电子邮件、文件传输协议（FTP）、域名系统（DNS）等。</li>
-</ol>
-<p>OSI七层模型中的每一层都与许多协议相关联。以下是每个层次对应的一些常见协议示例：</p>
-<ol>
-<li>物理层：</li>
-</ol>
-<ul>
-<li><ul>
-<li>IEEE 802.3（以太网）</li>
-<li>IEEE 802.11（Wi-Fi）</li>
-<li>RS-232（串口通信）</li>
-<li>SONET（同步光纤网络）</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>数据链路层：</li>
-</ol>
-<ul>
-<li><ul>
-<li>Ethernet（以太网）</li>
-<li>PPP（点对点协议）</li>
-<li>HDLC（高级数据链路控制）</li>
-<li>MAC（介质访问控制）</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>网络层：</li>
-</ol>
-<ul>
-<li><ul>
-<li>IP（Internet Protocol）</li>
-<li>ICMP（Internet Control Message Protocol）</li>
-<li>ARP（地址解析协议）</li>
-<li>OSPF（开放最短路径优先）</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>传输层：</li>
-</ol>
-<ul>
-<li><ul>
-<li>TCP（传输控制协议）</li>
-<li>UDP（用户数据报协议）</li>
-<li>SCTP（流控制传输协议）</li>
-<li>RTP（实时传输协议）</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>会话层：</li>
-</ol>
-<ul>
-<li><ul>
-<li>NetBIOS（网络基本输入&#x2F;输出系统）</li>
-<li>SSL&#x2F;TLS（安全套接层&#x2F;传输层安全）</li>
-<li>SOCKS（代理协议）</li>
-<li>PPTP（点对点隧道协议）</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>表示层：</li>
-</ol>
-<ul>
-<li><ul>
-<li>ASCII（美国标准信息交换代码）</li>
-<li>JPEG（联合图像专家组）</li>
-<li>MPEG（动态图像压缩标准）</li>
-<li>TLS（传输层安全）</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>应用层：</li>
-</ol>
-<ul>
-<li><ul>
-<li>HTTP（超文本传输协议）</li>
-<li>FTP（文件传输协议）</li>
-<li>DNS（域名系统）</li>
-<li>SMTP（简单邮件传输协议）</li>
-</ul>
-</li>
-<li></li>
-<li></li>
-<li><p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701746884938-a78853f5-2fdd-4555-a5e5-a131390958e1.png" alt="image.png"></p>
-</li>
-</ul>
-<p>pc1想要ping pc2,需要在路由表建一条规则  1.192.168.3.0—&gt;路由二</p>
-<p>四象限：源ip，源MAC，目的ip，目的MAC</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701758969472-d7d78519-8b03-45fc-9975-91bb151e32f3.png" alt="image.png"></p>
-<p>域名解析流程：</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231207093329006.png" alt="image-20231207093329006"></p>
-<p>常见协议端口号：</p>
-<ol>
-<li>HTTP: 80</li>
-<li>HTTPS: 443</li>
-<li>FTP: 21 (控制连接), 20 (数据连接)</li>
-<li>SSH: 22</li>
-<li>MySQL: 3306</li>
-<li>DNS：53</li>
-</ol>
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="web前端" class="lazyload">
+                
+            
 
-            
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-12-06</a>
+                
+                    <a><span class="icon-pencil"></span>1.1k words</a>
+                
+                
+                    <a><span class="icon-clock"></span>3 mins</a>
+                
+            </div>
+            <h2 class="post-title">web前端</h2>
+            <article class="post-article">
+                
+                    HTML:
+基础标签：
+p：段落标记
+h1~h6：标题字，与word的标题字相同
+br：换行标记（独目标记）
+hr：横线（独目标记）
+​        color：横线颜色
+​        width：横线宽度（可以px和%）
+pre：预留格式
+del：删除字
+ins：插入字（有下划线）
+b：粗体字
+i：斜体字
+sup：上标
+sub：下标
+font：字体标签
+​        color：字体颜色
+​        size：字体大小（1~7)
+table：表格
+tr：行
+td：列
+th：列（比td加粗居中）
+img标签:
+
+src：图片的路径 
+只设置width，height会等比例缩放
+
+                
+            </article>
         </div>
     </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="go-post">阅读全文</a>
-</div>
 
-<div class="post">
-    <a href="/2023/12/03/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        <h2 class="post-title">python学习笔记</h2>
-    </a>
-    <div class="category-and-date">
+
+    
         
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/3
-        </span>
+    <div class="post-wrap-right wow fadeInUp">
         
+            <a class="post-link" href="/2023/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"></a>
         
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
+        <div class="post-cover-right">
             
-            <p>#注释：<br>ctrl+&#x2F;  选中多行进行注释</p>
-<p>#基本数据类型：<br>整数，int<br>小数，float<br>字符串：str(***)<br>    表示方式：<br>    单行，’’和””<br>    多行，’’’ ‘’’和””” “””<br>    操作：</p>
-<pre><code>+  左右两端必须是字符串，表示字符串连接操作
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="计算机网络基础" class="lazyload">
+                
+            
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-12-05</a>
+                
+                    <a><span class="icon-pencil"></span>763 words</a>
+                
+                
+                    <a><span class="icon-clock"></span>2 mins</a>
+                
+            </div>
+            <h2 class="post-title">计算机网络基础</h2>
+            <article class="post-article">
+                
+                    私网地址范围：
+A：10.0.0.0-10.255.255.255
+B：172.16.0.0 -172.31.255.255
+C：192.168.0.0-192.168.255.255
+
+路由器分为动态路由和静态路由
+ip地址分为静态IP和动态IP
+dhcp用来分配IP地址
+动态IP由路由器自动分配
+静态IP手动设置
+OSI（Open Systems Interconnection）七层模型是一个将计算机网络通信过程分为七个不同层次的框架。每一层都提供特定的功能，并通过接口与相邻的层进行通信。这些层从底层到顶层依次是：
+
+物理层（Physical Layer）：负责网络通信的物理介质传输，例如
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-left wow fadeInUp">
+        
+            <a class="post-link" href="/2023/12/03/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"></a>
+        
+        
+        <div class="post-cover-left">
+            
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="python学习笔记" class="lazyload">
+                
+            
+
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-12-03</a>
+                
+                    <a><span class="icon-pencil"></span>476 words</a>
+                
+                
+                    <a><span class="icon-clock"></span>1 min</a>
+                
+            </div>
+            <h2 class="post-title">python学习笔记</h2>
+            <article class="post-article">
+                
+                    #注释：ctrl+&amp;#x2F;  选中多行进行注释
+#基本数据类型：整数，int小数，float字符串：str(***)    表示方式：    单行，’’和””    多行，’’’ ‘’’和””” “””    操作：
++  左右两端必须是字符串，表示字符串连接操作
 *  一个字符串只能乘以一个数字，表示字符串重复的次数
 布尔(bool):条件判断
     布尔值主要有两个：
@@ -565,1701 +306,611 @@ right: 像素值；
 
 在python中，所有的非空字符串都是True，空字符串是False
 
-综上，在python的基本数据类型中，表示空的东西都是False，不空的东西都是True
-</code></pre>
-<p>#简单交互<br>变量&#x3D;input(“提示语”)<br>print(type(变量)) 可以查看变量类型<br>字符串类型转换： 想把a类型转换成b类型，就用b类型把a类型套起来  例：str&#x3D;&gt;int    int(str)</p>
-<p>#if条件判断语法规则：<br>    1. if 条件：<br>            代码<br>        如果条件成立，执行代码<br>        不成立就不执行<br>        2. if 条件：<br>                代码1<br>            else：<br>                代码2<br>            如果条件成立，执行代码1，否则，执行代码2<br>            3.if语句可以嵌套<br>            if 条件：<br>                if 条件:<br>                xx<br>                else:<br>                ss<br>            else:<br>                代码2<br>            4.  if 条件：<br>                    代码1<br>                elif 条件2：<br>                    代码2<br>                elif 条件3：<br>                    代码3<br>                    …<br>                esle:<br>                    xxx</p>
-<p>#while循环语句<br>    while 条件:<br>        代码<br>    条件成立，执行代码，继续判断条件，执行代码，直到条件不成立   </p>
-<p>#for循环语句（遍历）</p>
-<p>​	for 变量 in 可迭代的东西：</p>
-<p>​				代码</p>
-<p>把可迭代的东西中的每一项内容拿出来，挨个的赋值给变量，每一次赋值都要执行一次循环体(代码)</p>
-<p>for循环计数，必须借助range</p>
-<p>range(n): 从0数到n，不包含n</p>
-<p>range(m,n):从m数到n，不包含n</p>
-<p>range(m,n,s):从m数到n，不包含n，每次间隔s</p>
-<p>字符串详解：</p>
-
-            
+综上，在python的基本数据类型中，
+                
+            </article>
         </div>
     </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/03/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-        <h2 class="post-title">博客搭建</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/3
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>参考：<a target="_blank" rel="noopener" href="https://sunwu57.github.io/2023/03/26/%E5%88%A9%E7%94%A8github%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/">https://sunwu57.github.io/2023/03/26/%E5%88%A9%E7%94%A8github%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/</a></p>
-<h2 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h2><p>1.需要挂代理</p>
-<p>2.安装node.js:</p>
-<p><a target="_blank" rel="noopener" href="https://nodejs.org/en]">https://nodejs.org/en</a></p>
-<p>3.安装Git</p>
-<p><a target="_blank" rel="noopener" href="https://git-scm.com/downloads]">https://git-scm.com/downloads</a></p>
-<p>4.注册一个github账号</p>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ol>
-<li>在本地找个目录放博客源文件，路径不要有中文</li>
-<li>在选定的目录中，右键Git Bash Here</li>
-<li>使用npm命令安装Hexo，输入：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<p>搭建好的效果:</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/202303232317116.png" alt="img"></p>
-<ol start="4">
-<li>cd进入这个目录<br>为了检测我们的网站雏形，分别按顺序输入以下三条命令：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new test_my_site </span><br><span class="line">hexo g </span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>之后就可以访问127.0.0.1:4000访问blog了(本地访问)</p>
-<ol start="5">
-<li>配置ssh</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh #检查本机已存在的ssh密钥</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>如果提示：No such file or directory 说明你是第一次使用git。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C “邮件地址”</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/202303232317280.png" alt="img"></p>
-<ul>
-<li>key填写C:\Users\Administrator.ssh\id_rsa.pub中的内容</li>
-<li>尝试ssh连接,测试是否成功</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com # 注意邮箱地址不用改</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>如果提示Are you sure you want to continue connecting (yes&#x2F;no)?，输入yes，然后会看到下面这个，就算成功：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi liuxianan! You’ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在选中的位置(blog目录下)打开cmd(以管理员身份)</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git –save</span><br></pre></td></tr></table></figure>
 
 
-
-<ul>
-<li>在上一个Git Bash Here还需要继续配置</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config –global user.name “luozhixiaowo”// 你的github用户名，非昵称git config –global user.email “xxx@qq.com“// 填写你的github注册邮箱</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>准备上传代码</li>
-</ol>
-<ul>
-<li>在github上新建一个存储库，命名为github的用户名.github.io</li>
-<li>编辑_config.yml文件，在最后改成这样</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br></pre></td></tr></table></figure>
-
-<p>  <code>type: git repository: git@github.com:taijia12/taijia12.github.io.git </code></p>
-<p>  <code>branch: main</code></p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/202303232317329.png" alt="img"></p>
-<ul>
-<li>注意保持格式，缩进不对，会导致一会儿，上传不成功</li>
-<li>最后上传</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d每次上传成功之后，需要等待1-3分钟，用来刷新页面</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/202303271424650.png" alt="img"></p>
-<p>在创建的存储库的设置中-pages-如图设置</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/202303271424773.png" alt="img"></p>
-<ol start="7">
-<li>hexo命令介绍</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701570099045-92e5a05c-e543-44c0-9fb8-9f6643edac7d.png" alt="img"></p>
-<ol start="8">
-<li>hexo目录结构</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701570125263-5abf1b7d-34eb-4bfa-8b88-3a78381f7e78.png" alt="img"></p>
-<ol start="9">
-<li>选择一个自己喜欢的主题，不知道有什么好用的主题可以直接，B站搜HEXO主题</li>
-</ol>
-<h1 id="图床搭建"><a href="#图床搭建" class="headerlink" title="图床搭建:"></a>图床搭建:</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作:"></a>准备工作:</h2><p>1.安装typora</p>
-<p>2.安装PIcgo<a target="_blank" rel="noopener" href="https://molunerfinn.com/PicGo/">安装地址</a></p>
-<h2 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程:"></a>搭建流程:</h2><ol>
-<li>typora-偏好设置</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/202303211401092.png" alt="img"></p>
-<ol start="3">
-<li>PicGo设置gitgub</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701571428328-9a93aa88-85ba-4408-b286-f4086ce55737.png" alt="img"></p>
-<ol start="4">
-<li>GitHub设置</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701571505517-d2a957a4-b77f-41b3-8bfe-10c1b6772bf5.png" alt="img"></p>
-<p>图床配置名 随意</p>
-<p>仓库名  博客id&#x2F;图床仓库名</p>
-<p>分支名 main</p>
-<p>token 在GitHub里,进设置新建一个token然后复制</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701571713133-e1f68268-1c5e-4156-9428-4ad01f6c2ffc.png" alt="img"></p>
-<p>存储路径  image&#x2F;</p>
-<ol start="5">
-<li>在typora里验证图片上传</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401610.png" alt="img"></p>
-<p>显示验证成功即可.</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/01/linux%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/">
-        <h2 class="post-title">linux命令详解</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/1
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>pwd 显示当前所在目录</p>
-<p>cd 进入用户主目录；</p>
-<p>cd ~ 进入用户主目录；</p>
-<p>cd - 返回进入此目录之前所在的目录；</p>
-<p>cd .. 返回上级目录(若当前目录为”&#x2F;“，则执行完后还在”&#x2F;“；”..”为上级目录的意思)；</p>
-<p>cd ..&#x2F;.. 返回上两级目录；</p>
-<p>cd !$ 把上个命令的参数作为cd参数使用</p>
-<p>ls 查看当前目录下的文件，不能查看隐藏文件，默认为ls .</p>
-<p>ls ..查看上一级目录下的文件</p>
-<p>ls -a 查看所有文件，包括隐藏文件</p>
-<p>ls -al 显示文件属性</p>
-<p>ls &#x2F;bin 查看bin目录下所有文件</p>
-<p>ls &#x2F;bin|grep mv 查找bin目录下所有包含mv的文件</p>
-<p>ls &#x2F;bin|more 查看 ，q停止查看</p>
-<p>touch filename 创建文件</p>
-<p>touch file1 file2 创建多个文件，将不同的文件名用空格分隔</p>
-<p>touch+新文件+原文件 原文件创建时间覆盖新文件创建时间（新文件和原文件创建时间一样）</p>
-<p>rm 删除</p>
-<p>rm -f 强制删除</p>
-<p>rm-r 递归删除</p>
-<p>rm -rf 强制递归删除目录,将指定目录下的所有文件与子目录一并处理</p>
-<p>rm -i 删除已有文件或目录之前先询问用户</p>
-<p>mkdir [命令选项] dirname 创建文件夹</p>
-<p>rmdir [命令选项] dirname 删除文件夹·</p>
-<p>cp [命令选项] 源文件 目的文件    将一个或多个源文件或者目录复制到指定的目录中</p>
-<pre><code>-f：强行复制文件或目录，不论目标文件或目录是否已存在；
--i：覆盖既有文件之前先询问用户；
--p：保留源文件或目录的属性；
--R/r：递归处理，将指定目录下的所有文件与子目录一并处理。
-</code></pre>
-<p>mv [命令选项] 源文件 目标文件         对文件或目录重新命名，或者将文件从一个目录移到另一个目录中</p>
-<pre><code>-f：强行复制文件或目录，不论目标文件或目录是否已存在； 
--i：覆盖既有文件之前先询问用户；
--p：保留源文件或目录的属性；
--R/r：递归处理，将指定目录下的所有文件与子目录一并处理&#39;。
-</code></pre>
-<p>mv newfile newdir&#x2F;newfileCpy   将<code>newfile</code>剪切到<code>newdir</code>目录下，并重新命名为<code>newfileCpy</code></p>
-<p>usermod [命令参数] 参数</p>
-<pre><code>-c&lt;备注&gt;：修改用户帐号的备注文字；
--d&lt;登入目录&gt;：修改用户登入时的目录；
--e&lt;有效期限&gt;：修改帐号的有效期限；
--f&lt;缓冲天数&gt;：修改在密码过期后多少天即关闭该帐号；
--g&lt;群组&gt;：修改用户所属的群组；
--G&lt;群组&gt;；修改用户所属的附加群组；
--l&lt;帐号名称&gt;：修改用户帐号名称；
--L：锁定用户密码，使密码无效；
--s：修改用户登入后所使用的shell；
--u：修改用户ID；
--U:解除密码锁定。
-</code></pre>
-<p>查看文件内容：</p>
-<p>cat 参数 文件名</p>
-<pre><code>-n 或 --number：由1开始对所有输出的行数编号；
--b 或 --number-nonblank：和-n相似，只不过对于空白行不编号。
-</code></pre>
-<p>head 参数 文件名</p>
-<p><code>-n number</code>：显示文件的<strong>前</strong><code>number</code>行内容；</p>
-<p>tail 参数 文件名</p>
-<p><code>-n number</code>：显示文件的<strong>最后</strong><code>number</code>行内容；</p>
-<p>ls 参数 目录</p>
-<ul>
-<li>-a：显示所有档案及目录（<code>ls</code>内定将档案名或目录名称为“.”的视为影藏，不会列出）；</li>
-<li>-A：显示除影藏文件“.”和“..”以外的所有文件列表；</li>
-<li>-l：列出内容的详细信息；</li>
-<li>-r：以文件名反序排列并输出目录内容列表；</li>
-<li>-s：显示文件和目录的大小，以区块为单位；</li>
-<li>-i：显示文件索引节点号（<code>inode</code>）。一个索引节点代表一个文件；</li>
-<li>-R：递归处理，将指定目录下的所有文件及子目录一并处理。</li>
-<li>-al: 查看目录下的所有信息(包括隐藏内容)，同时显示每个文件的详细信息</li>
-</ul>
-<p>文件权限修改：</p>
-<p>chmod ［who］ ［+ | - | &#x3D;］ ［mode] 文件名</p>
-<p>who参数如下：</p>
-<pre><code>u 表示“用户（user）”，即文件或目录的所有者；
-g 表示“同组（group）用户”，即与文件属主有相同组ID的所有用户；
-o 表示“其他（others）用户”；
-a 表示“所有（all）用户”，它是系统默认值。
-</code></pre>
-<p>操作符如下：</p>
-<pre><code>+：添加某个权限；
--：取消某个权限；
-=：赋予给定权限并取消其他所有权限。
-</code></pre>
-<p>mode参数如下：</p>
-<pre><code>r 可读；/4
-w 可写；/2
-x 可执行。/1
-</code></pre>
-<p>数字设定法具体命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod ［mode］ 文件名</span><br></pre></td></tr></table></figure>
-
-<p><code>mode</code>为具体的数字。(r&#x2F;w&#x2F;x组合)</p>
-<p>tar　-cvf　生成的tar包名　要打包的文件&#x2F;目录列表</p>
-<p>tar　-xvf　解压包名 -C 解压到指定目录</p>
-<p>vi 编辑文件   i插入 Esc退出插入  :wq! 保存退出   :q! 不保存退出</p>
-<p>cat -n +文件名 给文件加行数</p>
-<p>cat </p>
-<p>find &#x2F; -name ls 在根目录下搜名字为ls的文件</p>
-<p>​          -iname    区分大小写</p>
-<p>​                      *<em>ls*搜含关键字ls的文件（*表示n个通配符）</em></p>
-<p>​                       *<em>ls 以ls结尾</em></p>
-<p>​                       <em>ls* 以ls开头</em></p>
-<p>find &#x2F; -size +204800 搜大于204800kb的文件</p>
-<p>可以同时加多个限制</p>
-<p>例如 find &#x2F; -name ls -size +100 -type d</p>
-<p>&gt;&gt; 追加</p>
-<p>useradd admin 创建用户admin</p>
-<p>password admin 设置密码</p>
-<p>cd 切换路径</p>
-<p>cd &#x2F; 切换根目录</p>
-<p>touch 创建文件，空格加文件名创建</p>
-<p>d 目录文件</p>
-<p>-普通文件</p>
-<p>l 链接</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701396309737-219d1d2f-421f-4a47-8a77-1322bcc67b5b.png" alt="img">           </p>
-<p>​                                                                                              月      日        年</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701396836949-22fe7b32-c82c-409f-ab42-f0bfa1fe2ea7.png" alt="img"></p>
-<p>三个一组为权限</p>
-<p>r:4&#x2F;w:2&#x2F;x:1 读&#x2F;写&#x2F;执行</p>
-<p>mkdir test 创建目录</p>
-<p>mkdir -p 创建文件夹，递归创建</p>
-<p>cd 进home目录</p>
-<p>目录详解看这</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/587321097">https://zhuanlan.zhihu.com/p/587321097</a></p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701398167478-93d055fa-96d3-4972-92bd-6a25e51b5a03.jpeg" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701397995407-f65f53c6-ad2e-4078-bc45-a5f71c3fa8dc.png" alt="img"></p>
-<p>bin 包含应用程序的可执行文件（常用的二进制命令所在的目录，例如ls，cp，mkdir…）</p>
-<p>boot Linux内核与系统引导程序（不建议对它操作）</p>
-<p>dev目录 存储声卡，磁盘，光驱</p>
-<p>etc yum ，rpm方式安装应用程序的默认配置文件路径</p>
-<p>home包含用户的数据</p>
-<p>usr包含用户安装的第三方应用 （有两个重要的子目录）</p>
-<p>usr&#x2F;local 编译方式安装程序的默认目录</p>
-<p>usr&#x2F;src 程序源码目录</p>
-<p>var 系统与软件服务运行日志</p>
-<p>lib 启动系统与运行命令所需的共享库文件与内核模块</p>
-<p>proc 系统运行时，进程信息与内核信息存放辞目录</p>
-<p>root Linux 超级用户目录，类似于Windows的administrator</p>
-<p>sbin 系统管理命令存放目录，是超级用户root可执行命令的存放地</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701398635582-261b0d9a-bf15-4749-b67b-f3e3e5b31a85.png" alt="img"></p>
-<p>whoami 当前登录用户名</p>
-<p>pwd 当前目录</p>
-<p>第三步改成vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config  打开，然后:set nu 显示行号</p>
-<p>第六步不用执行</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701411960325-ba49b950-2823-426e-91dd-121727ef04f3.png" alt="img"></p>
-<p>ip add 查看IP地址</p>
-<p>然后在主机上cmd</p>
-<p>ssh root@linux上的ip</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/01/linux%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/01/markdown%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">
-        <h2 class="post-title">marckdown使用说明</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/1
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><blockquote>
-<p>语法：# (一级标题)  ## (二级标题)  ### (三级标题) ……</p>
-</blockquote>
-<blockquote>
-<p>代码：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;# 这是一级标题</span><br><span class="line">&gt;## 这是二级标题</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:  </p>
-<h1 id="这是一级标题"><a href="#这是一级标题" class="headerlink" title="这是一级标题"></a>这是一级标题</h1><h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2></blockquote>
-<blockquote>
-<p>快捷键:</p>
-<ul>
-<li>Ctrl+数字1~6可以快速将选中的文本调成对应级别的标题</li>
-<li>Ctrl+0可以快速将选中的文本调成普通文本</li>
-<li>Ctrl+加号&#x2F;减号对标题级别进行加减</li>
-</ul>
-</blockquote>
-<h2 id="二、段落"><a href="#二、段落" class="headerlink" title="二、段落"></a>二、段落</h2><h3 id="1、换行"><a href="#1、换行" class="headerlink" title="1、换行"></a>1、换行</h3><blockquote>
-<p>代码:  </p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;这是一个段落</span><br><span class="line">&gt;这是一个段落</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果: </p>
-<p>这是一个段落<br>这是一个段落</p>
-</blockquote>
-<h3 id="2、分割线"><a href="#2、分割线" class="headerlink" title="2、分割线"></a>2、分割线</h3><blockquote>
-<p>语法:  —或者***+回车</p>
-</blockquote>
-<blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;---或者***</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:</p>
-<hr>
-</blockquote>
-<h2 id="三、文字显示"><a href="#三、文字显示" class="headerlink" title="三、文字显示"></a>三、文字显示</h2><h3 id="1、字体"><a href="#1、字体" class="headerlink" title="1、字体"></a>1、字体</h3><blockquote>
-<p>语法:</p>
-<ul>
-<li>粗体:  用一对双星号包裹</li>
-<li>删除线:  用一对双飘号包裹</li>
-<li>下划线:  用一对u标签包裹</li>
-<li>斜体:  用一对单星号包裹</li>
-<li>高亮:  用一对双等号包裹</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;**这是粗体**</span><br><span class="line">&gt;~~这是删除线~~</span><br><span class="line">&gt;&lt;u&gt;这是下划线&lt;/u&gt;</span><br><span class="line">&gt;*这是斜体*</span><br><span class="line">&gt;==这是高亮==</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br><strong>这是粗体</strong><br><del>这是删除线</del><br><u>这是下划线</u><br><em>这是斜体</em><br>&#x3D;&#x3D;这是高亮&#x3D;&#x3D;</p>
-</blockquote>
-<blockquote>
-<p>快捷键:</p>
-<ul>
-<li>加粗:  Ctrl+B</li>
-<li>删除线:  Shift+Alt+5</li>
-<li>下划线:  Ctrl+U</li>
-<li>斜体:  Ctrl+I</li>
-</ul>
-</blockquote>
-<h3 id="2、上下标"><a href="#2、上下标" class="headerlink" title="2、上下标"></a>2、上下标</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;x^2^</span><br><span class="line">&gt;H~2~O</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>x^2^<br>H<del>2</del>O</p>
-</blockquote>
-<h2 id="四、列表"><a href="#四、列表" class="headerlink" title="四、列表"></a>四、列表</h2><h3 id="1、无序列表"><a href="#1、无序列表" class="headerlink" title="1、无序列表"></a>1、无序列表</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;*/-/+ +空格</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>1.只有同一级别:</p>
-<ul>
-<li>苹果</li>
-<li>香蕉</li>
-<li>橘子</li>
-</ul>
-<p>2.子集类:</p>
-<ul>
-<li>一级分类<ul>
-<li>二级分类 <ul>
-<li>三级分类</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>快捷键:  Ctrl+Shift+]</p>
-</blockquote>
-<h3 id="2、有序列表"><a href="#2、有序列表" class="headerlink" title="2、有序列表"></a>2、有序列表</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;数字+.+空格</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:</p>
-<ol>
-<li>第一个标题</li>
-<li>第二个标题</li>
-<li>第三个标题</li>
-</ol>
-<ul>
-<li>子内容1</li>
-<li>子内容2</li>
-</ul>
-<ol start="4">
-<li>第四个标题</li>
-</ol>
-</blockquote>
-<blockquote>
-<p>快捷键:  Ctrl+Shift+[</p>
-</blockquote>
-<h3 id="3、任务列表"><a href="#3、任务列表" class="headerlink" title="3、任务列表"></a>3、任务列表</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;- [ ] 吃早餐</span><br><span class="line">&gt;- [x] 背单词</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:</p>
-<ul>
-<li><input disabled="" type="checkbox"> 吃早餐</li>
-<li><input checked="" disabled="" type="checkbox"> 背单词</li>
-</ul>
-</blockquote>
-<h2 id="五、区块显示"><a href="#五、区块显示" class="headerlink" title="五、区块显示"></a>五、区块显示</h2><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;+回车</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:</p>
-<blockquote>
-<p>这是最外层区块</p>
-<blockquote>
-<p>这是内层区块</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>这是最内层区块</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="六、代码显示"><a href="#六、代码显示" class="headerlink" title="六、代码显示"></a>六、代码显示</h2><h3 id="1、行内代码"><a href="#1、行内代码" class="headerlink" title="1、行内代码"></a>1、行内代码</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;`int a=0;`（说明：`位于Esc下面）</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br><code>int a=0;</code></p>
-</blockquote>
-<blockquote>
-<p>快捷键:  Ctrl+Shift+&#96;</p>
-</blockquote>
-<h3 id="2、代码块"><a href="#2、代码块" class="headerlink" title="2、代码块"></a>2、代码块</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;```js/java/c#/text</span><br><span class="line">&gt;内容</span><br><span class="line">&gt;```</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>快捷键:  Ctrl+Shift+K</p>
-</blockquote>
-<h2 id="七、链接"><a href="#七、链接" class="headerlink" title="七、链接"></a>七、链接</h2><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;www.baidu.com</span><br><span class="line">&gt;[百度一下](https://www.baidu.com)</span><br><span class="line">&gt;[百度一下](https://www.baidu.com &quot;https://www.baidu.com&quot;)</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br><a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a><br><a target="_blank" rel="noopener" href="https://www.baidu.com/">百度一下</a><br><a target="_blank" rel="noopener" href="https://www.baidu.com/" title="https://www.baidu.com">百度一下</a></p>
-</blockquote>
-<blockquote>
-<p>快捷键:  Ctrl+K</p>
-</blockquote>
-<h2 id="八、脚注"><a href="#八、脚注" class="headerlink" title="八、脚注"></a>八、脚注</h2><blockquote>
-<p>说明:  对文本进行解释说明。</p>
-</blockquote>
-<blockquote>
-<p>代码: </p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;[^文本]</span><br><span class="line">&gt;[^文本]:解释说明</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>这是一个技术<a href="%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E9%9D%9E%E5%B8%B8%E5%A5%BD%E7%94%A8%E7%9A%84%E6%A1%86%E6%9E%B6%E3%80%82">^①</a></p>
-</blockquote>
-<h2 id="九、图片插入"><a href="#九、图片插入" class="headerlink" title="九、图片插入"></a>九、图片插入</h2><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;![不显示的文字](图片路径 &quot;图片标题&quot;)</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>![This is a picture](C:\Users\asus\Pictures\Saved Pictures\Snipaste_2020-09-03_13-19-11.png “漫步图”)</p>
-<p>(注：效果路径为C:\Users\asus\Pictures\Saved Pictures\Snipaste_2020-09-03_13-19-11.png。在其他电脑上可能不显示。)</p>
-</blockquote>
-<blockquote>
-<p>快捷键:  Ctrl+Shift+I</p>
-</blockquote>
-<h2 id="十、表格"><a href="#十、表格" class="headerlink" title="十、表格"></a>十、表格</h2><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;|  1   |  2   |  3   |</span><br><span class="line">&gt;| :--- | :--: | ---: |</span><br><span class="line">&gt;|  4   |  5   |  6   |</span><br><span class="line">&gt;|  7   |  8   |  9   |</span><br><span class="line">&gt;|  10  |  11  |  12  |</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:</p>
-<table>
-<thead>
-<tr>
-<th>1</th>
-<th align="center">2</th>
-<th align="right">3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>4</td>
-<td align="center">5</td>
-<td align="right">6</td>
-</tr>
-<tr>
-<td>7</td>
-<td align="center">8</td>
-<td align="right">9</td>
-</tr>
-<tr>
-<td>10</td>
-<td align="center">11</td>
-<td align="right">12</td>
-</tr>
-</tbody></table>
-</blockquote>
-<blockquote>
-<p>快捷键:  Ctrl+T</p>
-</blockquote>
-<h2 id="十一、流程图"><a href="#十一、流程图" class="headerlink" title="十一、流程图"></a>十一、流程图</h2><h3 id="1、横向流程图"><a href="#1、横向流程图" class="headerlink" title="1、横向流程图"></a>1、横向流程图</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">graph LR</span><br><span class="line">A[方形]==&gt;B(圆角)</span><br><span class="line">B==&gt;C&#123;条件a&#125;</span><br><span class="line">C--&gt;|a=1|D[结果1]</span><br><span class="line">C--&gt;|a=2|E[结果2]</span><br><span class="line">F[横向流程图]</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;graph LR</span><br><span class="line">&gt;A[方形]==&gt;B(圆角)</span><br><span class="line">&gt;B==&gt;C&#123;条件a&#125;</span><br><span class="line">&gt;C--&gt;|a=1|D[结果1]</span><br><span class="line">&gt;C--&gt;|a=2|E[结果2]</span><br><span class="line">&gt;F[横向流程图]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h3 id="2、竖向流程图"><a href="#2、竖向流程图" class="headerlink" title="2、竖向流程图"></a>2、竖向流程图</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">&gt;graph TD</span><br><span class="line">&gt;A[方形]==&gt;B(圆角)</span><br><span class="line">&gt;B==&gt;C&#123;条件a&#125;</span><br><span class="line">&gt;C--&gt;|a=1|D[结果1]</span><br><span class="line">&gt;C--&gt;|a=2|E[结果2]</span><br><span class="line">&gt;F[竖向流程图]</span><br><span class="line">&gt;```</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;graph TD</span><br><span class="line">&gt;A[方形]==&gt;B(圆角)</span><br><span class="line">&gt;B==&gt;C&#123;条件a&#125;</span><br><span class="line">&gt;C--&gt;|a=1|D[结果1]</span><br><span class="line">&gt;C--&gt;|a=2|E[结果2]</span><br><span class="line">&gt;F[竖向流程图]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="十二、表情符号"><a href="#十二、表情符号" class="headerlink" title="十二、表情符号"></a>十二、表情符号</h2><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;:happy:、:cry:、:man:</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>:happy:、 :cry:、 :man:</p>
-</blockquote>
-<h2 id="十三、数学公式的输入"><a href="#十三、数学公式的输入" class="headerlink" title="十三、数学公式的输入"></a>十三、数学公式的输入</h2><h3 id="1、公式的插入"><a href="#1、公式的插入" class="headerlink" title="1、公式的插入"></a>1、公式的插入</h3><h4 id="①行中公式"><a href="#①行中公式" class="headerlink" title="①行中公式"></a>①行中公式</h4><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;$公式$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$公式$</p>
-</blockquote>
-<h4 id="②独立公式"><a href="#②独立公式" class="headerlink" title="②独立公式"></a>②独立公式</h4><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;$$</span><br><span class="line">&gt;公式</span><br><span class="line">&gt;$$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$$<br>公式<br>$$</p>
-</blockquote>
-<h3 id="2、上下标-1"><a href="#2、上下标-1" class="headerlink" title="2、上下标"></a>2、上下标</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;$x^&#123;y^z&#125;=(1+e^x)^&#123;-2xy^w&#125;$</span><br><span class="line">&gt;$\sideset&#123;^1_2&#125;&#123;^3_4&#125;&#123;\underset&#123;6&#125;\bigotimes&#125;$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$x^{y^z}&#x3D;(1+e^x)^{-2xy^w}$<br>$\sideset{^1_2}{^3_4}{\underset{6}\bigotimes}$</p>
-</blockquote>
-<h3 id="3、括号和分隔符"><a href="#3、括号和分隔符" class="headerlink" title="3、括号和分隔符"></a>3、括号和分隔符</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;$\langle\quad\rangle\quad\lceil\quad\rceil\quad\lfloor\quad\rfloor\quad\lbrace\quad\rbrace\quad\lVert\quad\rVert$</span><br><span class="line">&gt;$f(x,y,z)=3y^2z\left(3+\dfrac&#123;7x+5&#125;&#123;1+y^2&#125;\right)$</span><br><span class="line">&gt;$\left.\dfrac&#123;\mathrm&#123;d&#125;u&#125;&#123;\mathrm&#123;d&#125;x&#125;\right|_&#123;x=0&#125;$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$\langle\quad\rangle\quad\lceil\quad\rceil\quad\lfloor\quad\rfloor\quad\lbrace\quad\rbrace\quad\lVert\quad\rVert$<br>$f(x,y,z)&#x3D;3y^2z\left(3+\dfrac{7x+5}{1+y^2}\right)$<br>$\left.\dfrac{\mathrm{d}u}{\mathrm{d}x}\right|_{x&#x3D;0}$</p>
-</blockquote>
-<h3 id="4、分数"><a href="#4、分数" class="headerlink" title="4、分数"></a>4、分数</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;$\frac&#123;a&#125;&#123;b&#125;\quad\dfrac&#123;a&#125;&#123;b&#125;\quad &#123;a\over b&#125;$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$\frac{a}{b}\quad\dfrac{a}{b}\quad {a\over b}$</p>
-</blockquote>
-<h3 id="5、开方"><a href="#5、开方" class="headerlink" title="5、开方"></a>5、开方</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;$\sqrt[根指数,省略时为2]&#123;被开方数&#125;$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$\sqrt{2}\quad\sqrt[3]{2}$</p>
-</blockquote>
-<h3 id="6、省略号"><a href="#6、省略号" class="headerlink" title="6、省略号"></a>6、省略号</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;$\cdots\quad\ldots\quad\vdots\quad\ddots$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$\cdots\quad\ldots\quad\vdots\quad\ddots$</p>
-</blockquote>
-<h3 id="7、矢量和均值"><a href="#7、矢量和均值" class="headerlink" title="7、矢量和均值"></a>7、矢量和均值</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;$\overrightarrow&#123;E(\vec&#123;r&#125;)&#125;\quad\overleftarrow&#123;E(\vec&#123;r&#125;)&#125;\quad\overleftrightarrow&#123;E(\vec&#123;r&#125;)&#125;\quad\underrightarrow&#123;E(\vec&#123;r&#125;)&#125;\quad\underleftarrow&#123;E(\vec&#123;r&#125;)&#125;\quad\underleftrightarrow&#123;E(\vec&#123;r&#125;)&#125;\quad\overline&#123;v&#125;=\bar&#123;v&#125;\quad\underline&#123;v&#125;$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$\overrightarrow{E(\vec{r})}\quad\overleftarrow{E(\vec{r})}\quad\overleftrightarrow{E(\vec{r})}\quad\underrightarrow{E(\vec{r})}\quad\underleftarrow{E(\vec{r})}\quad\underleftrightarrow{E(\vec{r})}\quad\overline{v}&#x3D;\bar{v}\quad\underline{v}$</p>
-</blockquote>
-<h3 id="8、积分"><a href="#8、积分" class="headerlink" title="8、积分"></a>8、积分</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;$$</span><br><span class="line">&gt;\iint\limits_D\left(\dfrac&#123;\partial Q&#125;&#123;\partial x&#125;-\dfrac&#123;\partial P&#125;&#123;\partial y&#125;\right)&#123;\rm d&#125;x&#123;\rm d&#125;y=\oint\limits_LP&#123;\rm d&#125;x+Q&#123;\rm d&#125;y</span><br><span class="line">&gt;$$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$$<br>\iint\limits_D\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right){\rm d}x{\rm d}y&#x3D;\oint\limits_LP{\rm d}x+Q{\rm d}y<br>$$</p>
-</blockquote>
-<h3 id="9、极限"><a href="#9、极限" class="headerlink" title="9、极限"></a>9、极限</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;$\lim\limits_&#123;n\to\infin&#125;(1+\dfrac&#123;1&#125;&#123;n&#125;)^n=e$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$\lim\limits_{n\to\infin}(1+\dfrac{1}{n})^n&#x3D;e$</p>
-</blockquote>
-<h3 id="10、累加、累乘及交集、并集"><a href="#10、累加、累乘及交集、并集" class="headerlink" title="10、累加、累乘及交集、并集"></a>10、累加、累乘及交集、并集</h3><blockquote>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;$\sum\limits_&#123;i=1&#125;^n\dfrac&#123;1&#125;&#123;n^2&#125;\quad and\quad\prod\limits_&#123;i=1&#125;^n\dfrac&#123;1&#125;&#123;n^2&#125;\quad and\quad\bigcup\limits_&#123;i=1&#125;^n\dfrac&#123;1&#125;&#123;n^2&#125;\quad and\quad\bigcap\limits_&#123;i=1&#125;^n\dfrac&#123;1&#125;&#123;n^2&#125;$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$\sum\limits_{i&#x3D;1}^n\dfrac{1}{n^2}\quad and\quad\prod\limits_{i&#x3D;1}^n\dfrac{1}{n^2}\quad and\quad\bigcup\limits_{i&#x3D;1}^n\dfrac{1}{n^2}\quad and\quad\bigcap\limits_{i&#x3D;1}^n\dfrac{1}{n^2}$</p>
-</blockquote>
-<h3 id="11、希腊字母"><a href="#11、希腊字母" class="headerlink" title="11、希腊字母"></a>11、希腊字母</h3><table>
-<thead>
-<tr>
-<th>语法</th>
-<th>字母</th>
-<th>语法</th>
-<th>字母</th>
-<th>语法</th>
-<th>字母</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\Alpha(\alpha)</td>
-<td>$\Alpha(\alpha)$</td>
-<td>\Beta(\beta)</td>
-<td>$\Beta(\beta)$</td>
-<td>\Gamma(\gamma)</td>
-<td>$\Gamma(\gamma)$</td>
-</tr>
-<tr>
-<td>\Epsilon(\epsilon)\varepsilon</td>
-<td>$\Epsilon(\epsilon)\varepsilon$</td>
-<td>\Zeta(\zeta)</td>
-<td>$\Zeta(\zeta)$</td>
-<td>\Eta(\eta)</td>
-<td>$\Eta(\eta)$</td>
-</tr>
-<tr>
-<td>\Iota(\iota)</td>
-<td>$\Iota(\iota)$</td>
-<td>\Kappa(\kappa)\varkappa</td>
-<td>$\Kappa(\kappa)\varkappa$</td>
-<td>\Lambda(\lambda)</td>
-<td>$\Lambda(\lambda)$</td>
-</tr>
-<tr>
-<td>\Nu(\nu)</td>
-<td>$\Nu(\nu)$</td>
-<td>\Xi(\xi)</td>
-<td>$\Xi(\xi)$</td>
-<td>\Omicron(\omicron)</td>
-<td>$\Omicron(\omicron)$</td>
-</tr>
-<tr>
-<td>\Rho(\rho)\varrho</td>
-<td>$\Rho(\rho)\varrho$</td>
-<td>\Sigma(\sigma)\varsigma</td>
-<td>$\Sigma(\sigma)\varsigma$</td>
-<td>\Tau(\tau)</td>
-<td>$\Tau(\tau)$</td>
-</tr>
-<tr>
-<td>\Phi(\phi)\varphi</td>
-<td>$\Phi(\phi)\varphi$</td>
-<td>\Chi(\chi)</td>
-<td>$\Chi(\chi)$</td>
-<td>\Psi(\psi)</td>
-<td>$\Psi(\psi)$</td>
-</tr>
-<tr>
-<td>\Delta(\delta)</td>
-<td>$\Delta(\delta)$</td>
-<td>\Theta(\theta)\vartheta</td>
-<td>$\Theta(\theta)\vartheta$</td>
-<td>\Mu(\mu)</td>
-<td>$\Mu(\mu)$</td>
-</tr>
-<tr>
-<td>\Pi(\pi)\varpi</td>
-<td>$\Pi(\pi)\varpi$</td>
-<td>\Omega(\omega)</td>
-<td>$\Omega(\omega)$</td>
-<td>\upsilon</td>
-<td>$\upsilon$</td>
-</tr>
-<tr>
-<td>\ell</td>
-<td>$\ell$</td>
-<td>\eth</td>
-<td>$\eth$</td>
-<td>\hbar</td>
-<td>$\hbar$</td>
-</tr>
-<tr>
-<td>\hslash</td>
-<td>$\hslash$</td>
-<td>\mho</td>
-<td>$\mho$</td>
-<td>\partial</td>
-<td>$\partial$</td>
-</tr>
-</tbody></table>
-<h3 id="12、特殊字符"><a href="#12、特殊字符" class="headerlink" title="12、特殊字符"></a>12、特殊字符</h3><h4 id="①说明"><a href="#①说明" class="headerlink" title="①说明"></a>①说明</h4><blockquote>
-<p>可以在字符前使用<code>\large</code>或<code>\small</code>以显示更大或更小的字符。${\LARGE A}{\Large A}{\large A}A{\small A}$</p>
-</blockquote>
-<h4 id="②关系运算符"><a href="#②关系运算符" class="headerlink" title="②关系运算符"></a>②关系运算符</h4><table>
-<thead>
-<tr>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\pm(\mp)</td>
-<td>$\pm(\mp)$</td>
-<td>\times</td>
-<td>$\times$</td>
-<td>\div</td>
-<td>$\div$</td>
-</tr>
-<tr>
-<td>\nmid</td>
-<td>$\nmid$</td>
-<td>\cdot</td>
-<td>$\cdot$</td>
-<td>\mid</td>
-<td>$\mid$</td>
-</tr>
-<tr>
-<td>\bigodot</td>
-<td>$\bigodot$</td>
-<td>\bigotimes</td>
-<td>$\bigotimes$</td>
-<td>\bigoplus</td>
-<td>$\bigoplus$</td>
-</tr>
-<tr>
-<td>\ge</td>
-<td>$\ge$</td>
-<td>\le</td>
-<td>$\le$</td>
-<td>\ll</td>
-<td>$\ll$</td>
-</tr>
-<tr>
-<td>\geqslant</td>
-<td>$\geqslant$</td>
-<td>\leqslant</td>
-<td>$\leqslant$</td>
-<td>\neq</td>
-<td>$\neq$</td>
-</tr>
-<tr>
-<td>\approx</td>
-<td>$\approx$</td>
-<td>\xlongequal{文本}</td>
-<td>$\xlongequal{文本}$</td>
-<td>\triangleq</td>
-<td>$\triangleq$</td>
-</tr>
-<tr>
-<td>\sim</td>
-<td>$\sim$</td>
-<td>\doteq</td>
-<td>$\doteq$</td>
-<td>\equiv</td>
-<td>$\equiv$</td>
-</tr>
-<tr>
-<td>\cong</td>
-<td>$\cong$</td>
-<td>\propto</td>
-<td>$\propto$</td>
-<td>\parallel(\</td>
-<td>)</td>
-</tr>
-<tr>
-<td>\prec</td>
-<td>$\prec$</td>
-<td>\pmod{2}</td>
-<td>$\pmod{2}$</td>
-<td>\bmod</td>
-<td>$\bmod{2}$</td>
-</tr>
-</tbody></table>
-<h4 id="③集合运算符"><a href="#③集合运算符" class="headerlink" title="③集合运算符"></a>③集合运算符</h4><table>
-<thead>
-<tr>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\emptyset</td>
-<td>$\emptyset$</td>
-<td>\varnothing</td>
-<td>$\varnothing$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\subset</td>
-<td>$\subset$</td>
-<td>\subseteq</td>
-<td>$\subseteq$</td>
-<td>\subsetneq</td>
-<td>$\subsetneq$</td>
-</tr>
-<tr>
-<td>\supset</td>
-<td>$\supset$</td>
-<td>\supseteq</td>
-<td>$\supseteq$</td>
-<td>\supsetneq</td>
-<td>$\supsetneq$</td>
-</tr>
-<tr>
-<td>\bigcap</td>
-<td>$\bigcap$</td>
-<td>\bigcup</td>
-<td>$\bigcup$</td>
-<td>\setminus</td>
-<td>$\setminus$</td>
-</tr>
-<tr>
-<td>\bigvee</td>
-<td>$\bigvee$</td>
-<td>\bigwedge</td>
-<td>$\bigwedge$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\in</td>
-<td>$\in$</td>
-<td>\notin</td>
-<td>$\notin$</td>
-<td>\ni</td>
-<td>$\ni$</td>
-</tr>
-</tbody></table>
-<h4 id="④三角运算符"><a href="#④三角运算符" class="headerlink" title="④三角运算符"></a>④三角运算符</h4><table>
-<thead>
-<tr>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\circ</td>
-<td>$\circ$</td>
-<td>\bot</td>
-<td>$\bot$</td>
-<td>\angle</td>
-<td>$\angle$</td>
-</tr>
-<tr>
-<td>\degree</td>
-<td>$\degree$</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h4 id="⑤微积分运算符"><a href="#⑤微积分运算符" class="headerlink" title="⑤微积分运算符"></a>⑤微积分运算符</h4><table>
-<thead>
-<tr>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\int</td>
-<td>$\int$</td>
-<td>\iint</td>
-<td>$\iint$</td>
-<td>\iiint</td>
-<td>$\iiint$</td>
-</tr>
-<tr>
-<td>\oint</td>
-<td>$\oint$</td>
-<td>\oiint</td>
-<td>$\oiint$</td>
-<td>\prime(‘)</td>
-<td>$\prime$</td>
-</tr>
-<tr>
-<td>\lim</td>
-<td>$\lim$</td>
-<td>\infin</td>
-<td>$\infin$</td>
-<td>\nabla</td>
-<td>$\nabla$</td>
-</tr>
-<tr>
-<td>\grad</td>
-<td>$\grad$</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h4 id="⑥逻辑运算符"><a href="#⑥逻辑运算符" class="headerlink" title="⑥逻辑运算符"></a>⑥逻辑运算符</h4><table>
-<thead>
-<tr>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\because</td>
-<td>$\because$</td>
-<td>\therefore</td>
-<td>$\therefore$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\forall</td>
-<td>$\forall$</td>
-<td>\exist</td>
-<td>$\exist$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\not&gt;</td>
-<td>$\not&gt;$</td>
-<td>\not&lt;</td>
-<td>$\not&lt;$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\land</td>
-<td>$\land$</td>
-<td>\lor</td>
-<td>$\lor$</td>
-<td>\lnot</td>
-<td>$\lnot$</td>
-</tr>
-<tr>
-<td>\top</td>
-<td>$\top$</td>
-<td>\vdash</td>
-<td>$\vdash$</td>
-<td>\vDash</td>
-<td>$\vDash$</td>
-</tr>
-</tbody></table>
-<h4 id="⑦带帽符号"><a href="#⑦带帽符号" class="headerlink" title="⑦带帽符号"></a>⑦带帽符号</h4><table>
-<thead>
-<tr>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\hat{xy}</td>
-<td>$\hat{xy}$</td>
-<td>\widehat{xyz}</td>
-<td>$\widehat{xyz}$</td>
-</tr>
-<tr>
-<td>\tilde{xy}</td>
-<td>$\tilde{xy}$</td>
-<td>\widetilde{xyz}</td>
-<td>$\widetilde{xyz}$</td>
-</tr>
-<tr>
-<td>\check{x}</td>
-<td>$\check{x}$</td>
-<td>\breve{y}</td>
-<td>$\breve{y}$</td>
-</tr>
-<tr>
-<td>\grave{x}</td>
-<td>$\grave{x}$</td>
-<td>\acute{y}</td>
-<td>$\acute{y}$</td>
-</tr>
-<tr>
-<td>\dot{x}</td>
-<td>$\dot{x}$</td>
-<td>\ddot{x}</td>
-<td>$\ddot{x}$</td>
-</tr>
-<tr>
-<td>\overparen{xy}</td>
-<td>$\overparen{xy}$</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h4 id="⑧选取符号"><a href="#⑧选取符号" class="headerlink" title="⑧选取符号"></a>⑧选取符号</h4><table>
-<thead>
-<tr>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\fbox{a+b+c+d}</td>
-<td>$\fbox{a+b+c+d}$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\overbrace{xx\cdots x}^{10个x}</td>
-<td>$\overbrace{xx\cdots x}^{10个x}$</td>
-<td>\underbrace{xx\cdots x}_{10个x}</td>
-<td>$\underbrace{xx\cdots x}_{10个x}$</td>
-</tr>
-</tbody></table>
-<h4 id="⑨箭头符号"><a href="#⑨箭头符号" class="headerlink" title="⑨箭头符号"></a>⑨箭头符号</h4><table>
-<thead>
-<tr>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\leftarrow</td>
-<td>$\leftarrow$</td>
-<td>\rightarrow</td>
-<td>$\rightarrow$</td>
-<td>\leftrightarrow</td>
-<td>$\leftrightarrow$</td>
-</tr>
-<tr>
-<td>\longleftarrow</td>
-<td>$\longleftarrow$</td>
-<td>\longrightarrow</td>
-<td>$\longrightarrow$</td>
-<td>\longleftrightarrow</td>
-<td>$\longleftrightarrow$</td>
-</tr>
-<tr>
-<td>\Leftarrow</td>
-<td>$\Leftarrow$</td>
-<td>\Rightarrow</td>
-<td>$\Rightarrow$</td>
-<td>\Leftrightarrow</td>
-<td>$\Leftrightarrow$</td>
-</tr>
-<tr>
-<td>\Longleftarrow</td>
-<td>$\Longleftarrow$</td>
-<td>\Longrightarrow</td>
-<td>$\Longrightarrow$</td>
-<td>\Longleftrightarrow</td>
-<td>$\Longleftrightarrow$</td>
-</tr>
-<tr>
-<td>\uparrow</td>
-<td>$\uparrow$</td>
-<td>\downarrow</td>
-<td>$\downarrow$</td>
-<td>\updownarrow</td>
-<td>$\updownarrow$</td>
-</tr>
-<tr>
-<td>\Uparrow</td>
-<td>$\Uparrow$</td>
-<td>\Downarrow</td>
-<td>$\Downarrow$</td>
-<td>\Updownarrow</td>
-<td>$\Updownarrow$</td>
-</tr>
-<tr>
-<td>\to</td>
-<td>$\to$</td>
-<td>\swarrow</td>
-<td>$\swarrow$</td>
-<td>\nearrow</td>
-<td>$\nearrow$</td>
-</tr>
-<tr>
-<td>\gets</td>
-<td>$\gets$</td>
-<td>\searrow</td>
-<td>$\searrow$</td>
-<td>\nwarrow</td>
-<td>$\nwarrow$</td>
-</tr>
-<tr>
-<td>\mapsto</td>
-<td>$\mapsto$</td>
-<td>\rightrightarrows</td>
-<td>$\rightrightarrows$</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h4 id="⑩空格"><a href="#⑩空格" class="headerlink" title="⑩空格"></a>⑩空格</h4><table>
-<thead>
-<tr>
-<th>输入</th>
-<th>效果</th>
-<th>输入</th>
-<th>效果</th>
-<th>输入</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\!</td>
-<td>$</td>
-<td>!</td>
-<td>$</td>
-<td>默认</td>
-<td>$</td>
-</tr>
-<tr>
-<td>,</td>
-<td>$</td>
-<td>,</td>
-<td>$</td>
-<td>;(\ )</td>
-<td>$</td>
-</tr>
-</tbody></table>
-<h3 id="13、字体"><a href="#13、字体" class="headerlink" title="13、字体"></a>13、字体</h3><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;\字体&#123;需要转换的字符&#125;&#125;$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>输入</th>
-<th>说明</th>
-<th>显示</th>
-<th>输入</th>
-<th>说明</th>
-<th>显示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\rm</td>
-<td>罗马体</td>
-<td>${\rm{Sample}}$</td>
-<td>\cal</td>
-<td>花体</td>
-<td>${\cal{Sample}}$</td>
-</tr>
-<tr>
-<td>\it</td>
-<td>意大利体</td>
-<td>${\it{Sample}}$</td>
-<td>\Bbb</td>
-<td>黑板粗体</td>
-<td>${\Bbb{Sample}}$</td>
-</tr>
-<tr>
-<td>\bf</td>
-<td>粗体</td>
-<td>${\bf{Sample}}$</td>
-<td>\mit</td>
-<td>数学斜体</td>
-<td>${\mit{Sample}}$</td>
-</tr>
-<tr>
-<td>\sf</td>
-<td>等线体</td>
-<td>${\sf{Sample}}$</td>
-<td>\scr</td>
-<td>手写体</td>
-<td>${\scr{Sample}}$</td>
-</tr>
-<tr>
-<td>\tt</td>
-<td>打字机体</td>
-<td>${\tt{Sample}}$</td>
-<td>\frak</td>
-<td>旧德式字体</td>
-<td>${\frak{Sample}}$</td>
-</tr>
-</tbody></table>
-<h3 id="14、大括号和行标"><a href="#14、大括号和行标" class="headerlink" title="14、大括号和行标"></a>14、大括号和行标</h3><blockquote>
-<p>说明:  使用<code>\left</code>和<code>\right</code>来创建自动匹配高度的<code>()</code>、<code>[]</code>、<code>&#123;&#125;</code>、<code>.</code>。在每个公式末尾使用<code>\tag&#123;行标&#125;</code>来实现行标。</p>
-</blockquote>
-<blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;$$</span><br><span class="line">&gt;f\left(</span><br><span class="line">&gt;\left[</span><br><span class="line">&gt;\dfrac&#123;1+\&#123;x,y\&#125;&#125;&#123;\left(\dfrac&#123;x&#125;&#123;y&#125;+\dfrac&#123;y&#125;&#123;x&#125;\right)(u+1)&#125;+a</span><br><span class="line">&gt;\right]</span><br><span class="line">&gt;^&#123;\dfrac&#123;3&#125;&#123;2&#125;&#125;</span><br><span class="line">&gt;\right)</span><br><span class="line">&gt;\tag&#123;行标&#125;</span><br><span class="line">&gt;$$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$$<br>f\left(\left[\dfrac{1+{x,y}}{\left(\dfrac{x}{y}+\dfrac{y}{x}\right)(u+1)}+a\right]^{\dfrac{3}{2}}\right)\tag{行标}<br>$$</p>
-</blockquote>
-<blockquote>
-<p>说明:如果你想将行内显示的分隔符也变大,也可以使用<code>\middle</code>命令</p>
-</blockquote>
-<blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;$$</span><br><span class="line">&gt;\left\langle q\middle\|\dfrac&#123;\dfrac&#123;x&#125;&#123;y&#125;&#125;&#123;\dfrac&#123;u&#125;&#123;v&#125;&#125;\middle|p\right\rangle</span><br><span class="line">&gt;$$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$$<br>\left\langle q\middle|\dfrac{\dfrac{x}{y}}{\dfrac{u}{v}}\middle|p\right\rangle<br>$$</p>
-</blockquote>
-<h3 id="15、其他命令"><a href="#15、其他命令" class="headerlink" title="15、其他命令"></a>15、其他命令</h3><h4 id="①注释文字"><a href="#①注释文字" class="headerlink" title="①注释文字"></a>①注释文字</h4><blockquote>
-<p>代码:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;$\text&#123;文字&#125;$</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>效果:<br>$$<br>f(n)&#x3D;\begin{cases}n&#x2F;2,&amp;\text{if $n$ is even}\3n+1,&amp;\text{if $n$ is odd}\end{cases}<br>$$</p>
-</blockquote>
-<h4 id="③文字颜色"><a href="#③文字颜色" class="headerlink" title="③文字颜色"></a>③文字颜色</h4><blockquote>
-<ul>
-<li>适用新旧浏览器<br>代码:<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\color&#123;颜色&#125;&#123;文字&#125;$</span><br></pre></td></tr></table></figure></li>
-</ul>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-<th>输入</th>
-<th>显示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>black</td>
-<td>$\color{black}{color}$</td>
-<td>grey</td>
-<td>$\color{grey}{color}$</td>
-<td>silver</td>
-<td>$\color{silver}{color}$</td>
-</tr>
-<tr>
-<td>white</td>
-<td>$\color{white}{color}$</td>
-<td>maroon</td>
-<td>$\color{maroon}{color}$</td>
-<td>red</td>
-<td>$\color{red}{color}$</td>
-</tr>
-<tr>
-<td>yellow</td>
-<td>$\color{yellow}{color}$</td>
-<td>lime</td>
-<td>$\color{lime}{color}$</td>
-<td>olive</td>
-<td>$\color{olive}{color}$</td>
-</tr>
-<tr>
-<td>green</td>
-<td>$\color{green}{color}$</td>
-<td>teal</td>
-<td>$\color{teal}{color}$</td>
-<td>auqa</td>
-<td>$\color{auqa}{color}$</td>
-</tr>
-<tr>
-<td>blue</td>
-<td>$\color{blue}{color}$</td>
-<td>navy</td>
-<td>$\color{navy}{color}$</td>
-<td>purple</td>
-<td>$\color{purple}{color}$</td>
-</tr>
-<tr>
-<td>fuchsia</td>
-<td>$\color{fuchsia}{color}$</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<blockquote>
-<ul>
-<li>适用新版浏览器<br>代码:<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;$\color&#123;#rgb&#125;&#123;文字&#125;$    (注:其中r、g、b可以输入0~9和a~f来分别表示红色、绿色和蓝色的纯度)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>输入</th>
-<th>输出</th>
-<th>输入</th>
-<th>输出</th>
-<th>输入</th>
-<th>输出</th>
-<th>输入</th>
-<th>输出</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>#000</td>
-<td>$\color</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/01/markdown%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/11/30/%E8%BF%9C%E6%8E%A7/">
-        <h2 class="post-title">远控</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/11/30
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>#远控</p>
-<p>注意：</p>
-<p>1.需要关闭防火墙，杀毒软件，关闭实时保护。</p>
-<h2 id="第一种远控软件"><a href="#第一种远控软件" class="headerlink" title="##第一种远控软件"></a>##第一种远控软件</h2><p>用到的远控软件：大灰狼</p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/zip/40675992/1701173856984-d69c07f2-d4a1-4a94-afa7-a86c9d59c8ac.zip">DHLv9.5.zip</a></p>
-<p>实验步骤：</p>
-<p>1.下载DHLv9.5.zip,解压</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701174201872-9cb152ea-f5b9-40a2-b702-e276f025b973.png" alt="img"></p>
-<p>2.打开应用程序-大灰狼远程管理软件，可能会弹出风险提示，直接无视风险，继续运行。</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701174368209-d99a0253-284f-45d5-9bec-fd9a51daa76a.png" alt="img"></p>
-<p>3.选择服务生成，ip改成本机ip，按照需要进行配置，勾选启用，点击生成服务。</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701174520968-b08709c5-1423-4cb6-90d2-b4f6ca6671f1.png" alt="img"></p>
-<p>4.生成出来的服务程序移动到需要被控制的系统上运行。</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701174663483-d352181c-2d7b-4a25-8cb5-ae0dc0d62548.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701174874548-70a1d923-ed5d-4430-aaba-a7129671ead7.png" alt="img"></p>
-<p>5.成功运行后会在远控软件上显示一个监听器，右键它就能控制对方系统</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701174991076-c98f4fcb-3f9f-4d93-ac15-75fb0918036b.png" alt="img"></p>
-<h2 id="第二种远控软件"><a href="#第二种远控软件" class="headerlink" title="##第二种远控软件"></a>##第二种远控软件</h2><p>用到的软件：</p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/rar/40675992/1701223346466-91d083b8-9122-4a07-b2be-761c24fc4b62.rar">Quasar最新内部成员汉化版远控工具.rar</a></p>
-<h2 id="安卓远控"><a href="#安卓远控" class="headerlink" title="安卓远控"></a>安卓远控</h2><p>用到的软件</p>
-<p>远控软件<a target="_blank" rel="noopener" href="http://192.168.2.6:5244/d/%E7%BD%91%E7%9B%98/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/%E8%BD%AF%E4%BB%B6%E5%A4%A7%E5%85%A8/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/%E8%BF%9C%E6%8E%A7/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/AhMyth_Win64.exe">http://192.168.2.6:5244/d/%E7%BD%91%E7%9B%98/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/%E8%BD%AF%E4%BB%B6%E5%A4%A7%E5%85%A8/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/%E8%BF%9C%E6%8E%A7/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/AhMyth_Win64.exe</a></p>
-<p>mumu模拟器6版本</p>
-<h2 id="实验步骤："><a href="#实验步骤：" class="headerlink" title="实验步骤："></a>实验步骤：</h2><ol>
-<li>打开AhMyth，在APK Builder页输入本机ip,点击build</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701688720544-611576a6-47af-40af-8e59-2f6439366975.png" alt="img"></p>
-<ol start="2">
-<li>在下面黑色框里显示如下，即成功</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701688836757-7f8cde23-0f15-4480-8b0d-04ee52b08b54.png" alt="img"></p>
-<ol start="3">
-<li>复制该路径，在此电脑打开即可在mumu模拟器上安装AhMyth</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701689147566-e4f343b4-9a70-47af-97dc-3e9fc6578bac.png" alt="img"></p>
-<ol start="4">
-<li>在mumu模拟器运行该程序就能在AhMyth上生成一个监听器</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701689329657-289fcd02-9f57-44bd-946b-638a33108d25.png" alt="img"></p>
-<ol start="5">
-<li>open the lab就能对mumu进行监听控制。</li>
-</ol>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/11/30/%E8%BF%9C%E6%8E%A7/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/11/30/%E9%92%93%E9%B1%BC/">
-        <h2 class="post-title">钓鱼</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/11/30
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>#钓鱼<br>环境：linux系统<br>实验步骤：</p>
-<ol>
-<li>Linux中右键打开终端，ctrl+shift+＋放大</li>
-<li>输入命令行，回车执行<br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-2.png" alt="Alt text"><br>按键i插入，Esc退出插入，改成有代理的IP地址和对应端口，ctrl+c终止   ：wq!强制保存退出<br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-3.png" alt="Alt text"></li>
-<li>走代理执行复制<a target="_blank" rel="noopener" href="https://github.com/makdosx/mip22">https://github.com/makdosx/mip22</a><br>![Alt text](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-4.png">https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-4.png</a><br>4.复制成功后进行如下操作<br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-5.png" alt="Alt text"><br>5.选择1，回车<br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-6.png" alt="Alt text"><br>6.选择任一钓鱼网站，回车<br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-7.png" alt="Alt text"><br>7.选择3，回车<br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-8.png" alt="Alt text"><br>8.得到网址http(s):<a target="_blank" rel="noopener" href="https://because-classified-stats-rent.trycloudflare.com/">https://because-classified-stats-rent.trycloudflare.com</a><br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-9.png" alt="Alt text"></li>
-</ol>
-<h1 id="钓鱼优化"><a href="#钓鱼优化" class="headerlink" title="钓鱼优化:"></a>钓鱼优化:</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作:"></a>准备工作:</h2><p>在虚拟机中</p>
-<p>1.安装phpstudy</p>
-<p>2.安装压缩软件</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤:"></a>步骤:</h2><ol>
-<li>创建一个index.html文件并在VScode中编写基本的框架代码,如下</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701574004366-879c104a-e17d-4c13-94ef-aeb60306c330.png" alt="img"></p>
-<ol>
-<li>在虚拟机中使用phpstudy,开启Apache2.4.39,并在网站选项中找到本地域名的根目录,将index.html和flash.js<a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/js/40675511/1701258102039-30b8d0a1-fc3f-4d1f-bfb9-9875a3f0397b.js">📎flash.js</a>拖入其中.将flash.js中最后一行的ip地址改成本机的ip地址</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701573914645-8145a9dd-54c3-43e6-8748-2d55ed89ee5b.png" alt="img"></p>
-<ol>
-<li>伪装钓鱼网站, 在flash官网中下载flash安装包,使用winRAR将flash安装包与恶搞软件结合在一起,具体流程图如下</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701574281668-aab3c8ea-1f36-45f7-be46-4f4593dc544f.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701574327112-4c71a2bc-cdd6-4d30-90a5-a6824007d541.png" alt="img"></p>
-<p>随后利用ResourceHacker软件将解压出来的程序图标替换成flash安装包的并且改名如图所示</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701259137623-e4c81b6e-e142-465d-9e7a-5e1564ed7945-170142114962819.png" alt="img"></p>
-<p> 将其放入网站根目录中,并且在flash.js中将末端程序名字改成本程序的名字</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701259215472-8f840d20-022d-4c3b-8e47-eacaec52121c-170142114962821.png" alt="img"></p>
-<p> 在输入本地ip地址访问此网页后,点击下载flash,会下载到这个合体应用程序,flash安装和恶搞程序会同时触发.  </p>
-<p>更换页面:</p>
-<p>在kali获取一个钓鱼网站,保存钓鱼网站页面,放入phpstudy根目录命名index.html替换之前的主页面.</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701580966367-9409d3dd-588d-4057-b19f-1426ee598c95.png" alt="img"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/11/30/%E9%92%93%E9%B1%BC/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/11/30/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">
-        <h2 class="post-title">永恒之黑</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/11/30
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>#永恒之黑<br>环境：需要在虚拟机上安装靶机-windowshei,安装python<br>永恒之黑攻击程序：</p>
-<p>##实验步骤:<br>1.在攻击文件地址栏输入cmd，回车</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image.png" alt="image"></p>
-<p>2.输入命令python CVE-2020-0796.py+靶机IP</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-1.png" alt="image-1"></p>
-<p>注意：第一次攻击会缺少模块需要下载<br>下载命令：pip3 install   xxxxx -i <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a> –trusted-host mirrors.aliyun.com<br>xxxxx是需要下载的模块<br>-i <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a> –trusted-host mirrors.aliyun.com为pip加速下载</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/11/30/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/11/30/%E7%A4%BE%E5%B7%A5%E5%BA%93/">
-        <h2 class="post-title">社工库</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/11/30
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>#社工库<br>社工庫机器人:<br>t.me&#x2F;aishegongkubot?start&#x3D;AISGK_HBEIR85X<br><a target="_blank" rel="noopener" href="https://t.me/DATA_007bot?start=8989324940">https://t.me/DATA_007bot?start=8989324940</a><br><a target="_blank" rel="noopener" href="https://t.me/pingansgk_bot?start=ee95c5680f">https://t.me/pingansgk_bot?start=ee95c5680f</a><br><a target="_blank" rel="noopener" href="https://t.me/JokerSGKbot?start=87OE61VQ">https://t.me/JokerSGKbot?start=87OE61VQ</a><br> <a target="_blank" rel="noopener" href="https://t.me/PyramidNetBot?start=pRg3K08">https://t.me/PyramidNetBot?start=pRg3K08</a><br><a target="_blank" rel="noopener" href="https://t.me/XingDun2Bot?start=4eoHoLE">https://t.me/XingDun2Bot?start=4eoHoLE</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/11/30/%E7%A4%BE%E5%B7%A5%E5%BA%93/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
     
-    <span class="current">1</span>
-    
-    
-    
-    
-</div>
+        
+    <div class="post-wrap-right wow fadeInUp">
+        
+            <a class="post-link" href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"></a>
+        
+        <div class="post-cover-right">
+            
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="博客搭建" class="lazyload">
+                
+            
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-12-03</a>
+                
+                    <a><span class="icon-pencil"></span>703 words</a>
+                
+                
+                    <a><span class="icon-clock"></span>2 mins</a>
+                
+            </div>
+            <h2 class="post-title">博客搭建</h2>
+            <article class="post-article">
+                
+                    参考：https://sunwu57.github.io/2023/03/26/%E5%88%A9%E7%94%A8github%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/
+准备工作：1.需要挂代理
+2.安装node.js:
+https://nodejs.org/en
+3.安装Git
+https://git-scm.com/downloads
+4.注册一个github账号
+操作步骤
+在本地找个目录放博客源文件，路径不要有中文
+在选定的目录中，右键Git Bash Here
+使用npm命令安装Hexo，输入：
 
+1234npm install -g hexo
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-left wow fadeInUp">
+        
+            <a class="post-link" href="/2023/12/01/linux%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/"></a>
+        
+        
+        <div class="post-cover-left">
+            
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="linux命令详解" class="lazyload">
+                
+            
+
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-12-01</a>
+                
+                    <a><span class="icon-pencil"></span>1.7k words</a>
+                
+                
+                    <a><span class="icon-clock"></span>6 mins</a>
+                
+            </div>
+            <h2 class="post-title">linux命令详解</h2>
+            <article class="post-article">
+                
+                    pwd 显示当前所在目录
+cd 进入用户主目录；
+cd ~ 进入用户主目录；
+cd - 返回进入此目录之前所在的目录；
+cd .. 返回上级目录(若当前目录为”&amp;#x2F;“，则执行完后还在”&amp;#x2F;“；”..”为上级目录的意思)；
+cd ..&amp;#x2F;.. 返回上两级目录；
+cd !$ 把上个命令的参数作为cd参数使用
+ls 查看当前目录下的文件，不能查看隐藏文件，默认为ls .
+ls ..查看上一级目录下的文件
+ls -a 查看所有文件，包括隐藏文件
+ls -al 显示文件属性
+ls &amp;#x2F;bin 查看bin目录下所有文件
+ls &amp;#x2F;bin|grep mv 查找bin目
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-right wow fadeInUp">
+        
+            <a class="post-link" href="/2023/12/01/markdown%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"></a>
+        
+        <div class="post-cover-right">
+            
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="marckdown使用说明" class="lazyload">
+                
+            
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-12-01</a>
+                
+                    <a><span class="icon-pencil"></span>2.8k words</a>
+                
+                
+                    <a><span class="icon-clock"></span>13 mins</a>
+                
+            </div>
+            <h2 class="post-title">marckdown使用说明</h2>
+            <article class="post-article">
+                
+                    一、标题
+语法：# (一级标题)  ## (二级标题)  ### (三级标题) ……
+
+
+代码：
+12&amp;gt;# 这是一级标题&amp;gt;## 这是二级标题
+
+
+效果:  
+这是一级标题这是二级标题
+
+快捷键:
+
+Ctrl+数字1~6可以快速将选中的文本调成对应级别的标题
+Ctrl+0可以快速将选中的文本调成普通文本
+Ctrl+加号&amp;#x2F;减号对标题级别进行加减
+
+
+二、段落1、换行
+代码:  
+12&amp;gt;这是一个段落&amp;gt;这是一个段落
+
+
+效果: 
+这是一个段落这是一个段落
+
+2、分割线
+语法:  —或者***+回车
+
+
+代码:
+1&amp;gt;---或者***
+
+
+效果:
+
+
+三、文字显示1
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-left wow fadeInUp">
+        
+            <a class="post-link" href="/2023/11/30/%E8%BF%9C%E6%8E%A7/"></a>
+        
+        
+        <div class="post-cover-left">
+            
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="远控" class="lazyload">
+                
+            
+
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-11-30</a>
+                
+                    <a><span class="icon-pencil"></span>381 words</a>
+                
+                
+                    <a><span class="icon-clock"></span>1 min</a>
+                
+            </div>
+            <h2 class="post-title">远控</h2>
+            <article class="post-article">
+                
+                    #远控
+注意：
+1.需要关闭防火墙，杀毒软件，关闭实时保护。
+##第一种远控软件用到的远控软件：大灰狼
+DHLv9.5.zip
+实验步骤：
+1.下载DHLv9.5.zip,解压
+
+2.打开应用程序-大灰狼远程管理软件，可能会弹出风险提示，直接无视风险，继续运行。
+
+3.选择服务生成，ip改成本机ip，按照需要进行配置，勾选启用，点击生成服务。
+
+4.生成出来的服务程序移动到需要被控制的系统上运行。
+
+
+5.成功运行后会在远控软件上显示一个监听器，右键它就能控制对方系统
+
+##第二种远控软件用到的软件：
+Quasar最新内部成员汉化版远控工具.rar
+安卓远控用到的软件
+远控软件http://1
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-right wow fadeInUp">
+        
+            <a class="post-link" href="/2023/11/30/%E9%92%93%E9%B1%BC/"></a>
+        
+        <div class="post-cover-right">
+            
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="钓鱼" class="lazyload">
+                
+            
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-11-30</a>
+                
+                    <a><span class="icon-pencil"></span>433 words</a>
+                
+                
+                    <a><span class="icon-clock"></span>1 min</a>
+                
+            </div>
+            <h2 class="post-title">钓鱼</h2>
+            <article class="post-article">
+                
+                    #钓鱼环境：linux系统实验步骤：
+
+Linux中右键打开终端，ctrl+shift+＋放大
+输入命令行，回车执行按键i插入，Esc退出插入，改成有代理的IP地址和对应端口，ctrl+c终止   ：wq!强制保存退出
+走代理执行复制https://github.com/makdosx/mip22![Alt text](https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-4.png4.复制成功后进行如下操作5.选择1，回车6.选择任一钓鱼网站，回车7.选择3，回车8.得到网址http(s):https://b
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-left wow fadeInUp">
+        
+            <a class="post-link" href="/2023/11/30/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/"></a>
+        
+        
+        <div class="post-cover-left">
+            
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="永恒之黑" class="lazyload">
+                
+            
+
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-11-30</a>
+                
+                    <a><span class="icon-pencil"></span>120 words</a>
+                
+                
+                    <a><span class="icon-clock"></span>1 min</a>
+                
+            </div>
+            <h2 class="post-title">永恒之黑</h2>
+            <article class="post-article">
+                
+                    #永恒之黑环境：需要在虚拟机上安装靶机-windowshei,安装python永恒之黑攻击程序：
+##实验步骤:1.在攻击文件地址栏输入cmd，回车
+
+2.输入命令python CVE-2020-0796.py+靶机IP
+
+注意：第一次攻击会缺少模块需要下载下载命令：pip3 install   xxxxx -i http://mirrors.aliyun.com/pypi/simple/ –trusted-host mirrors.aliyun.comxxxxx是需要下载的模块-i http://mirrors.aliyun.com/pypi/simple/ –trusted-host mi
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-right wow fadeInUp">
+        
+            <a class="post-link" href="/2023/11/30/%E7%A4%BE%E5%B7%A5%E5%BA%93/"></a>
+        
+        <div class="post-cover-right">
+            
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="社工库" class="lazyload">
+                
+            
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-11-30</a>
+                
+                    <a><span class="icon-pencil"></span>42 words</a>
+                
+                
+                    <a><span class="icon-clock"></span>1 min</a>
+                
+            </div>
+            <h2 class="post-title">社工库</h2>
+            <article class="post-article">
+                
+                    #社工库社工庫机器人:t.me&amp;#x2F;aishegongkubot?start&amp;#x3D;AISGK_HBEIR85Xhttps://t.me/DATA_007bot?start=8989324940https://t.me/pingansgk_bot?start=ee95c5680fhttps://t.me/JokerSGKbot?start=87OE61VQ https://t.me/PyramidNetBot?start=pRg3K08https://t.me/XingDun2Bot?start=4eoHoLE
+
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+
+
+
+</section>
+                
+                    <aside id="sidebar">
+    <div class="sidebar-wrap wow fadeInRight">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="John Doe" class="lazyload">
+            <div class="sidebar-author-name">John Doe</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>Posts</div>
+                <div class="sidebar-state-number">10</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>Categories</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>Tags</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Home</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Archives</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">About</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Friend</div>
+                </div>
+            
+        </div>
     </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">John Doe</div>
-        <div class="description">
-            <p>Description<br>…</p>
+        
 
+    
+        
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">Archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
         </div>
-        
-        
-        <div class="friend-links">
+    </div>
+
+
+    
+</aside>
+
+                
+            </div>
+            <footer id="footer" class="wow fadeInUp">
+    <div style="width: 100%; overflow: hidden"><div class="footer-line"></div></div>
+    <div class="outer">
+        <div id="footer-info" class="inner">
             
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://argvchs.github.io">Argvchs</a>
+            <div>
+                <span class="icon-copyright"></span>
+                2020-2023
+                <span class="footer-info-sep"></span>
+                John Doe
             </div>
             
+                <div>
+                    Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                    Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+                </div>
+            
+            
+                <div>
+                    <span class="icon-brush"></span>
+                    8.5k
+                    &nbsp;|&nbsp;
+                    <span class="icon-coffee"></span>
+                    00:31
+                </div>
+            
+            
+                <div>
+                    <span class="icon-eye"></span>
+                    <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+                    &nbsp;|&nbsp;
+                    <span class="icon-user"></span>
+                    <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+                </div>
+            
         </div>
-        
-    </div>
-</div>
-
-    </div>
-    
-</div>
-
-            <footer id="footer">
-    <div id="footer-wrap">
-        <div>
-            &copy;
-            2022 - 2023 Hexo
-            <span id="footer-icon">
-                <i class="fa-solid fa-font-awesome fa-fw"></i>
-            </span>
-            &commat;John Doe
-        </div>
-        <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
-        </div>
-        
     </div>
 </footer>
 
         </div>
-        
-        <transition name="fade">
-            <div id="preview" ref="preview" v-show="previewShow">
-                <img id="preview-content" ref="previewContent" />
+        <nav id="mobile-nav">
+    <div class="sidebar-wrap">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="John Doe" class="lazyload">
+            <div class="sidebar-author-name">John Doe</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>Posts</div>
+                <div class="sidebar-state-number">10</div>
             </div>
-        </transition>
-        
+            <div class="sidebar-state-category">
+                <div>Categories</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>Tags</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Home</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Archives</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">About</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Friend</div>
+                </div>
+            
+        </div>
     </div>
-    <script src="/js/main.js"></script>
+</nav>
+
+        
+<script src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
+
+
+<script src="https://unpkg.com/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://unpkg.com/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
     
-</body>
-</html>
+<script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/busuanzi@2.3.0/bsz.pure.mini.js"></script>
+
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="site-search">
+        <div class="algolia-popup popup">
+            <div class="algolia-search">
+                <span class="algolia-search-input-icon"></span>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+            </div>
+
+            <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+            </div>
+
+            <span class="popup-btn-close"></span>
+        </div>
+    </div>
+    </body>
+    </html>
+
