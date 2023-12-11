@@ -40,8 +40,16 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210200143573.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210200202819.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210200236210.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211192211029.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211192509362.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211194720592.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211194835952.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211210646719.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211210843716.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211210945504.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211214312957.png">
 <meta property="article:published_time" content="2023-12-03T06:58:04.000Z">
-<meta property="article:modified_time" content="2023-12-10T12:42:46.067Z">
+<meta property="article:modified_time" content="2023-12-11T13:51:48.122Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210144006208.png">
@@ -292,6 +300,54 @@
 <p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210200202819.png" alt="image-20231210200202819"></p>
 <p>查询</p>
 <p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231210200236210.png" alt="image-20231210200236210"></p>
+<p><strong>元组</strong></p>
+<p>tuple()</p>
+<p>特点：不可变的列表（不能增删改）。元组如果只有一个元素，需要在末尾加一个逗号</p>
+<p><strong>集合</strong></p>
+<p>set()</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211192211029.png" alt="image-20231211192211029"></p>
+<p>集合增加元素s.add(),集合里的元素是无序的</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211192509362.png" alt="image-20231211192509362"></p>
+<p>集合删除元素s.remove()</p>
+<p>想要修改，先删除再新增。</p>
+<p>查询必须用循环</p>
+<p>for i in s:</p>
+<p>​	print(i)</p>
+<p>交集，并集，差集</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211194720592.png" alt="image-20231211194720592"></p>
+<p>利用集合可以给列表去重——集合打印是不重复的</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211194835952.png" alt="image-20231211194835952"></p>
+<p><strong>字典</strong></p>
+<p>dict&#x3D;{key:value,key2:value}</p>
+<p>字典的可以必须是可哈希的数据类型</p>
+<p>字典的value可以是任何数据类型 </p>
+<p>字典的增删改查：</p>
+<p>增</p>
+<p>dic[key]&#x3D;value  如果字典中已经存在key，此时执行修改操作，新的value覆盖原来的value</p>
+<p>删除</p>
+<p>dic.pop(key)  根据key删除</p>
+<p>查询</p>
+<p>print(dic[key])   如果key不存在程序会报错，适合确定key时用</p>
+<p>print(dic.get(key))   如果key不存在，程序返回None</p>
+<p>字典循环</p>
+<ol>
+<li>for循环，可以直接拿到key</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211210646719.png" alt="image-20231211210646719"></p>
+<ol start="2">
+<li><p>希望把所有的key全都保存在一个列表里</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211210843716.png" alt="image-20231211210843716"></p>
+</li>
+<li><p>希望把所有的value放在一个列表里</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211210945504.png" alt="image-20231211210945504"></p>
+</li>
+<li><p>直接拿到字典中的key和value</p>
+<p><code>for key,value in dic.items():</code></p>
+<p>​	<code>print(key,value)</code></p>
+</li>
+</ol>
+<p>字典在循环删除时要注意，不能直接删除，要建一个存放即将要删除的key的列表，再循环列表，删除字典中的内容。</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231211214312957.png" alt="image-20231211214312957"></p>
 
             
         </div>
@@ -372,7 +428,7 @@
         <div class="sidebar-state">
             <div class="sidebar-state-article">
                 <div>Posts</div>
-                <div class="sidebar-state-number">11</div>
+                <div class="sidebar-state-number">12</div>
             </div>
             <div class="sidebar-state-category">
                 <div>Categories</div>
@@ -471,10 +527,10 @@
             
                 <div>
                     <span class="icon-brush"></span>
-                    9.5k
+                    10k
                     &nbsp;|&nbsp;
                     <span class="icon-coffee"></span>
-                    00:36
+                    00:38
                 </div>
             
             
@@ -501,7 +557,7 @@
         <div class="sidebar-state">
             <div class="sidebar-state-article">
                 <div>Posts</div>
-                <div class="sidebar-state-number">11</div>
+                <div class="sidebar-state-number">12</div>
             </div>
             <div class="sidebar-state-category">
                 <div>Categories</div>
