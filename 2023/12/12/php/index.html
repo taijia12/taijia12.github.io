@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231212202240255.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231212202753578.png">
 <meta property="article:published_time" content="2023-12-12T12:06:36.000Z">
-<meta property="article:modified_time" content="2023-12-12T12:30:12.897Z">
+<meta property="article:modified_time" content="2023-12-16T13:51:48.465Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231212201112373.png">
@@ -213,6 +213,55 @@
 <p>use mysql;<br>update user set Host&#x3D;’%’ where User&#x3D;’root’;<br>flush privileges;</p>
 <p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231212202753578.png" alt="image-20231212202753578"></p>
 <p>就能远程连接其他主机的数据库了</p>
+<p>php基础知识</p>
+<ol>
+<li><p>PHP 脚本以 <?php 开始，以 ?> 结束；</p>
+</li>
+<li><p>每条语句后边都要加分号;</p>
+</li>
+<li><p>PHP 文件的默认文件扩展名是 “.php”。</p>
+</li>
+<li><p>PHP 文件通常包含 HTML 标签和一些 PHP 脚本代码；<br>如果是纯php代码，可以不写结束标签 ?&gt; ，也不推荐写结束标签 ?&gt;；<br>后者除了php代码，还有html代码，必须要写结束标签 ?&gt;。</p>
+</li>
+<li><p>php代码的执行顺序: 从上往下,依次执行</p>
+</li>
+<li><p>单行注释: &#x2F;&#x2F;这里是注释内容<br>多行注释: &#x2F;<em>这里是注释内容</em>&#x2F;</p>
+</li>
+<li><p>单引号和双引号对比：</p>
+<ul>
+<li>双引号可以解释变量，单引号不可以解释变量。</li>
+<li>双引号可以使用 \ 解释转义字符；单引号不解释转义字符，必须加上 \ 才可以解释，除了\;<br>   转义字符: \r(回车)  \n(换行)   \t(制表) \(表示一个反斜线) 等。</li>
+<li>双引号中可以加单引号，单引号可以加双引号；双引号中不能加双引号，单引号中不能加单引号，如果要加，需要转义。</li>
+<li>尽量使用单引号就是用单引号，因为它的效率更高，双引号需要解释,在输出。</li>
+</ul>
+</li>
+<li><p>变量命名</p>
+<ul>
+<li>变量必须以$开始，由数字,字母,下划线的组合，但是不能以数字开始。</li>
+<li>变量名要起的有意义，达到见名知意(建议优先考虑英文)</li>
+<li>变量名遵循驼峰法或者下划线法(建议大家使用小驼峰)</li>
+<li>变量名区分大小写</li>
+</ul>
+</li>
+<li><p>常量定义：define(‘常量名’,常量值); </p>
+</li>
+<li><p>数据类型</p>
+<ul>
+<li>整型   浮点型   字符串类型   布尔型   数组   对象   资源   空(null)</li>
+</ul>
+</li>
+<li><p>输出方式</p>
+<ul>
+<li>echo   - 可以输出一个或多个字符串</li>
+<li>print   - 只能输出简单类型变量的值,如int,string</li>
+<li>print_r - 可以输出复杂类型变量的值,如数组,对象</li>
+<li>printf -函数用于格式化输出字符串，主要用于字符串中以%开头的格式字符串替换。</li>
+<li>sprintf -函数也用做字符串格式化。该函数与 printf 函数基本相同， 但它可以将转换后的结果保存到一个字符串变量中，而不是直接输出。(因为跟printf类似，下面就不做详细演示了)</li>
+<li>var_dump -打印变量的相关信息,包括表达式的类型与值,通过缩进显示其结构。</li>
+</ul>
+<p>提示：echo输出的速度比print快,echo是PHP语句,没有返回值,print和print_r是PHP函数,函数有返回值。<br>print返回值为1(int类型),print_r返回值为true(bool类型)。</p>
+</li>
+</ol>
 
             
         </div>
@@ -229,6 +278,23 @@
     
         
     <nav id="article-nav" class="wow fadeInUp">
+        
+            <div class="article-nav-link-wrap article-nav-link-left">
+                
+                    
+                    
+                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="图书管理系统实现"
+                             class="lazyload">
+                    
+                
+                <a href="/2023/12/16/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%AE%9E%E7%8E%B0/"></a>
+                <div class="article-nav-caption">Newer</div>
+                <h3 class="article-nav-title">
+                    
+                        图书管理系统实现
+                    
+                </h3>
+            </div>
         
         
             <div class="article-nav-link-wrap article-nav-link-right">
@@ -276,7 +342,7 @@
         <div class="sidebar-state">
             <div class="sidebar-state-article">
                 <div>Posts</div>
-                <div class="sidebar-state-number">13</div>
+                <div class="sidebar-state-number">14</div>
             </div>
             <div class="sidebar-state-category">
                 <div>Categories</div>
@@ -375,10 +441,10 @@
             
                 <div>
                     <span class="icon-brush"></span>
-                    10.1k
+                    11.7k
                     &nbsp;|&nbsp;
                     <span class="icon-coffee"></span>
-                    00:39
+                    00:44
                 </div>
             
             
@@ -405,7 +471,7 @@
         <div class="sidebar-state">
             <div class="sidebar-state-article">
                 <div>Posts</div>
-                <div class="sidebar-state-number">13</div>
+                <div class="sidebar-state-number">14</div>
             </div>
             <div class="sidebar-state-category">
                 <div>Categories</div>
