@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231212202240255.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231212202753578.png">
 <meta property="article:published_time" content="2023-12-12T12:06:36.000Z">
-<meta property="article:modified_time" content="2023-12-17T01:19:11.614Z">
+<meta property="article:modified_time" content="2023-12-17T02:53:57.457Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231212201112373.png">
@@ -213,7 +213,7 @@
 <p>use mysql;<br>update user set Host&#x3D;’%’ where User&#x3D;’root’;<br>flush privileges;</p>
 <p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-20231212202753578.png" alt="image-20231212202753578"></p>
 <p>就能远程连接其他主机的数据库了</p>
-<p>php基础知识</p>
+<p><strong>php基础知识</strong></p>
 <ol>
 <li><p>PHP 脚本以 <code>&lt;?php 开始，以 ?&gt;</code> 结束；</p>
 </li>
@@ -260,7 +260,43 @@
 <li>var_dump -打印变量的相关信息,包括表达式的类型与值,通过缩进显示其结构。</li>
 </ul>
 <p>提示：echo输出的速度比print快,echo是PHP语句,没有返回值,print和print_r是PHP函数,函数有返回值。<br>print返回值为1(int类型),print_r返回值为true(bool类型)。</p>
+<h3 id="用php计算鸡兔同笼问题"><a href="#用php计算鸡兔同笼问题" class="headerlink" title="用php计算鸡兔同笼问题"></a>用php计算鸡兔同笼问题</h3><p>假设在笼子里有头数为8的动物，总共有22只脚。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">for($a = 0;$a &lt;=8;$a++)</span><br><span class="line">&#123;</span><br><span class="line">    for($b = 0;$b &lt;=8;$b++)</span><br><span class="line">    &#123;</span><br><span class="line">    if($a+$b==8 &amp;&amp; $a*4 + $b*2 ==22)</span><br><span class="line">    &#123;</span><br><span class="line">        echo $a;</span><br><span class="line">        echo $b;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="用php计算组合问题"><a href="#用php计算组合问题" class="headerlink" title="用php计算组合问题"></a>用php计算组合问题</h3><p>n张5毛，y张1块，z张10块，t张50，x张100，问我手上一共有156钱，一共有多少种组合，满足我手上的钱</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">for($n = 0;$n&lt;=156/0.5;$n++)&#123;</span><br><span class="line">  for($y = 0;$y&lt;=156/1;$y++)&#123;</span><br><span class="line">    for($z = 0;$z&lt;=156/10;$z++)&#123;</span><br><span class="line">      for($t = 0;$t&lt;=156/50;$t++)&#123;</span><br><span class="line">        for($x = 0;$x&lt;=156/100;$x++)&#123;</span><br><span class="line">          if($n*0.5 + $y*1 + $z*10 + $t*50 + $x*100 == 156)&#123;</span><br><span class="line">            $zz++;&#125;&#125;&#125;&#125;&#125;</span><br><span class="line">&#125; echo $zz;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="”index-php“代码解释："><a href="#”index-php“代码解释：" class="headerlink" title="”index.php“代码解释："></a>”index.php“代码解释：</h4><ol>
+<li><pre><code>&lt;form method=&quot;post&quot; action=&quot;link.php&quot;&gt;
+</code></pre>
+<p>：这是表单的开始标签。</p>
+<ul>
+<li><strong><code>method=&quot;post&quot;</code> 表示表单数据将通过HTTP POST方法发送。这种方法通常用于提交敏感信息，因为数据不会显示在URL中。</strong></li>
+<li><code>action=&quot;link.php&quot;</code> 指定当表单提交时，数据将发送到同一服务器上的”link.php”文件进行处理。</li>
+</ul>
 </li>
+<li><p><code>&lt;input type=&quot;checkbox&quot; name=&quot;remember&quot; value=&quot;yes&quot;&gt;记住密码</code>：这是一个复选框，允许用户选择是否“记住密码”。如果选中，提交表单时，将发送“remember&#x3D;yes”。</p>
+</li>
+<li><p><code>&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;提交&quot;&gt;</code>：这是一个提交按钮。点击这个按钮会将表单数据发送到指定的action URL<strong>（本例中为”link.php”）</strong>。</p>
+</li>
+</ol>
+<p>link.php”文件代码解释：</p>
+<ol>
+<li><code>$u = trim($_POST[&#39;username&#39;]);</code> 和 <code>$p = trim($_POST[&#39;password&#39;]);</code>：这两行代码从<code>$_POST</code>数组中获取<code>username</code>和<code>password</code>字段的值。</li>
+<li><code>mysqli_connect(&quot;127.0.0.1&quot;, &quot;root&quot;, &quot;root&quot;, &quot;security&quot;)</code>：此函数尝试建立与MySQL数据库的新连接。</li>
+<li><code>mysqli_query($link,&quot;set names utf8&quot;);</code>：这行代码设置数据库连接的字符集为UTF-8。</li>
+<li><code>$sql = &quot;SELECT * FROM users WHERE username=? AND password=?&quot;;</code>：这是一个带有占位符的SQL查询语句。</li>
+<li><code>mysqli_stmt_execute($stmt);</code>：执行准备好的语句。</li>
+<li><code>echo &#39;Your login name is &#39; . $u . &quot;&lt;br /&gt;&quot;;</code> 和 <code>echo &#39;Your password is &#39; . $p;</code>：这两行代码输出了之前获取的用户名和密码。</li>
+</ol>
+<h4 id="具体函数解释："><a href="#具体函数解释：" class="headerlink" title="具体函数解释："></a>具体函数解释：</h4><ol>
+<li><code>trim</code>函数用于移除字符串两端的空白字符（如空格、制表符、换行符等）。</li>
+<li><code>mysqli_connect</code>函数用于打开新的数据库连接。（如：<code>$link = mysqli_connect(&quot;127.0.0.1&quot;, &quot;root&quot;, &quot;root&quot;, &quot;security&quot;);</code> 连接到位于<code>127.0.0.1</code>的MySQL服务器，用户名和密码均为<code>root</code>，数据库名为<code>security</code>。）</li>
+<li><code>mysqli_query</code>函数用于执行SQL查询。</li>
+<li><code>mysqli_prepare</code>函数用于准备一个SQL语句以绑定参数并执行。</li>
+<li><code>mysqli_stmt_bind_param</code>函数用于绑定变量到一个预处理语句作为参数。</li>
+<li><code>mysqli_stmt_execute</code>函数用于执行预处理的语句。</li>
+<li><code>mysqli_fetch_array</code>函数用于从结果集中取得一行作为关联数组，或数字数组，或两者兼有。</li>
 </ol>
 
             
@@ -441,10 +477,10 @@
             
                 <div>
                     <span class="icon-brush"></span>
-                    13.6k
+                    14.3k
                     &nbsp;|&nbsp;
                     <span class="icon-coffee"></span>
-                    00:54
+                    00:58
                 </div>
             
             
