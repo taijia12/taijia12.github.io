@@ -12,7 +12,7 @@
 
     
     <title>
-        钓鱼 |
+        打靶笔记 |
         
         Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,32 +23,29 @@
     
 <link rel="stylesheet" href="/css/loader.css">
 
-    <meta name="description" content="#钓鱼环境：linux系统实验步骤：  Linux中右键打开终端，ctrl+shift+＋放大 输入命令行，回车执行按键i插入，Esc退出插入，改成有代理的IP地址和对应端口，ctrl+c终止   ：wq!强制保存退出 走代理执行复制https:&#x2F;&#x2F;github.com&#x2F;makdosx&#x2F;mip22![Alt text](https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;taiji">
+    <meta name="description" content="联合查询打靶流程1.找闭合 2.判断字段数 order by 2往上一个一个试，报错就说明字段数没那么多 3.确定回显位  4.爆数据库  5.爆表  6.爆字段  7.爆内容  报错注入1.判断有没有回显，如果没有回显就可以尝试报错注入  2.用报错语句进行注入  3.把select user()换成我们要查询的语句即可，先爆数据库  4.再爆表  5.爆字段  6.爆内容">
 <meta property="og:type" content="article">
-<meta property="og:title" content="钓鱼">
-<meta property="og:url" content="http://example.com/2023/11/30/%E9%92%93%E9%B1%BC/index.html">
+<meta property="og:title" content="打靶笔记">
+<meta property="og:url" content="http://example.com/2023/12/24/%E6%89%93%E9%9D%B6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#钓鱼环境：linux系统实验步骤：  Linux中右键打开终端，ctrl+shift+＋放大 输入命令行，回车执行按键i插入，Esc退出插入，改成有代理的IP地址和对应端口，ctrl+c终止   ：wq!强制保存退出 走代理执行复制https:&#x2F;&#x2F;github.com&#x2F;makdosx&#x2F;mip22![Alt text](https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;taiji">
+<meta property="og:description" content="联合查询打靶流程1.找闭合 2.判断字段数 order by 2往上一个一个试，报错就说明字段数没那么多 3.确定回显位  4.爆数据库  5.爆表  6.爆字段  7.爆内容  报错注入1.判断有没有回显，如果没有回显就可以尝试报错注入  2.用报错语句进行注入  3.把select user()换成我们要查询的语句即可，先爆数据库  4.再爆表  5.爆字段  6.爆内容">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-2.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-3.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-5.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-6.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-7.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-8.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-9.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701574004366-879c104a-e17d-4c13-94ef-aeb60306c330.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701573914645-8145a9dd-54c3-43e6-8748-2d55ed89ee5b.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701574281668-aab3c8ea-1f36-45f7-be46-4f4593dc544f.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701574327112-4c71a2bc-cdd6-4d30-90a5-a6824007d541.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701259137623-e4c81b6e-e142-465d-9e7a-5e1564ed7945-170142114962819.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701259215472-8f840d20-022d-4c3b-8e47-eacaec52121c-170142114962821.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701580966367-9409d3dd-588d-4057-b19f-1426ee598c95.png">
-<meta property="article:published_time" content="2023-11-30T12:08:13.000Z">
-<meta property="article:modified_time" content="2023-12-03T05:28:38.696Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159357114-f576216f-7b3b-4f6f-b01a-57f02c6cd189.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159507541-4c8a9605-a5f3-4cf4-9e12-70485d796635.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159659710-be9ffdda-65e0-41e4-b797-d2d962fbb12f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159856897-baff7acf-9e8d-45ef-bd87-c0cbaaa3c7d5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159939607-21d8cd54-b098-4df2-b6ed-50a6529f6fee.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161464807-d9c34474-d55a-4d67-bc40-4fcdb09d83b4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161549710-d7465b45-09fc-43e1-91bd-4cbc718315d2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161660757-49066994-7a40-429a-bfc1-a31ef5bbb0df.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161739314-8cdd4a19-f9d9-4658-b7e5-f0a907e0a44b.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161858517-8096128b-91ee-4e07-bf1b-777e181df609.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161925344-c4e55f0c-2120-421f-8ca3-c54b61fea0ef.png">
+<meta property="article:published_time" content="2023-12-24T01:02:01.000Z">
+<meta property="article:modified_time" content="2023-12-24T01:32:42.678Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-2.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159357114-f576216f-7b3b-4f6f-b01a-57f02c6cd189.png">
     
         <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
     
@@ -119,7 +116,7 @@
         <div id="wrap">
             <header id="header">
     
-        <img data-src="/images/banner.jpg" data-sizes="auto" alt="钓鱼" class="lazyload">
+        <img data-src="/images/banner.jpg" data-sizes="auto" alt="打靶笔记" class="lazyload">
     
     <div id="header-outer" class="outer">
         <div id="header-title" class="inner">
@@ -127,7 +124,7 @@
                 
                     
                     
-                        <a href="/" id="logo"><h1>钓鱼</h1></a>
+                        <a href="/" id="logo"><h1>打靶笔记</h1></a>
                     
                 
             </div>
@@ -176,14 +173,14 @@
 </header>
 
             <div id="content" class="outer">
-                <section id="main"><article id="post-钓鱼" class="h-entry article article-type-post"
+                <section id="main"><article id="post-打靶笔记" class="h-entry article article-type-post"
          itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
     <div class="article-inner">
         <div class="article-meta">
             <div class="article-date wow slideInLeft">
-    <a href="/2023/11/30/%E9%92%93%E9%B1%BC/" class="article-date-link">
-        <time datetime="2023-11-30T12:08:13.000Z"
-              itemprop="datePublished">2023-11-30</time>
+    <a href="/2023/12/24/%E6%89%93%E9%9D%B6%E7%AC%94%E8%AE%B0/" class="article-date-link">
+        <time datetime="2023-12-24T01:02:01.000Z"
+              itemprop="datePublished">2023-12-24</time>
     </a>
 </div>
 
@@ -195,41 +192,36 @@
 
         <div class="e-content article-entry" itemprop="articleBody">
             
-                <p>#钓鱼<br>环境：linux系统<br>实验步骤：</p>
-<ol>
-<li>Linux中右键打开终端，ctrl+shift+＋放大</li>
-<li>输入命令行，回车执行<br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-2.png" alt="Alt text"><br>按键i插入，Esc退出插入，改成有代理的IP地址和对应端口，ctrl+c终止   ：wq!强制保存退出<br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-3.png" alt="Alt text"></li>
-<li>走代理执行复制<a target="_blank" rel="noopener" href="https://github.com/makdosx/mip22">https://github.com/makdosx/mip22</a><br>![Alt text](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-4.png">https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-4.png</a><br>4.复制成功后进行如下操作<br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-5.png" alt="Alt text"><br>5.选择1，回车<br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-6.png" alt="Alt text"><br>6.选择任一钓鱼网站，回车<br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-7.png" alt="Alt text"><br>7.选择3，回车<br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-8.png" alt="Alt text"><br>8.得到网址http(s):<a target="_blank" rel="noopener" href="https://because-classified-stats-rent.trycloudflare.com/">https://because-classified-stats-rent.trycloudflare.com</a><br><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/image-9.png" alt="Alt text"></li>
-</ol>
-<h1 id="钓鱼优化"><a href="#钓鱼优化" class="headerlink" title="钓鱼优化:"></a>钓鱼优化:</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作:"></a>准备工作:</h2><p>在虚拟机中</p>
-<p>1.安装phpstudy</p>
-<p>2.安装压缩软件</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤:"></a>步骤:</h2><ol>
-<li>创建一个index.html文件并在VScode中编写基本的框架代码,如下</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701574004366-879c104a-e17d-4c13-94ef-aeb60306c330.png" alt="img"></p>
-<ol>
-<li>在虚拟机中使用phpstudy,开启Apache2.4.39,并在网站选项中找到本地域名的根目录,将index.html和flash.js<a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/js/40675511/1701258102039-30b8d0a1-fc3f-4d1f-bfb9-9875a3f0397b.js">📎flash.js</a>拖入其中.将flash.js中最后一行的ip地址改成本机的ip地址</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701573914645-8145a9dd-54c3-43e6-8748-2d55ed89ee5b.png" alt="img"></p>
-<ol>
-<li>伪装钓鱼网站, 在flash官网中下载flash安装包,使用winRAR将flash安装包与恶搞软件结合在一起,具体流程图如下</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701574281668-aab3c8ea-1f36-45f7-be46-4f4593dc544f.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701574327112-4c71a2bc-cdd6-4d30-90a5-a6824007d541.png" alt="img"></p>
-<p>随后利用ResourceHacker软件将解压出来的程序图标替换成flash安装包的并且改名如图所示</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701259137623-e4c81b6e-e142-465d-9e7a-5e1564ed7945-170142114962819.png" alt="img"></p>
-<p> 将其放入网站根目录中,并且在flash.js中将末端程序名字改成本程序的名字</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701259215472-8f840d20-022d-4c3b-8e47-eacaec52121c-170142114962821.png" alt="img"></p>
-<p> 在输入本地ip地址访问此网页后,点击下载flash,会下载到这个合体应用程序,flash安装和恶搞程序会同时触发.  </p>
-<p>更换页面:</p>
-<p>在kali获取一个钓鱼网站,保存钓鱼网站页面,放入phpstudy根目录命名index.html替换之前的主页面.</p>
-<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1701580966367-9409d3dd-588d-4057-b19f-1426ee598c95.png" alt="img"></p>
+                <h2 id="联合查询打靶流程"><a href="#联合查询打靶流程" class="headerlink" title="联合查询打靶流程"></a>联合查询打靶流程</h2><p>1.找闭合</p>
+<p>2.判断字段数</p>
+<p>order by 2往上一个一个试，报错就说明字段数没那么多</p>
+<p>3.确定回显位</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159357114-f576216f-7b3b-4f6f-b01a-57f02c6cd189.png" alt="img"></p>
+<p>4.爆数据库</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159507541-4c8a9605-a5f3-4cf4-9e12-70485d796635.png" alt="img"></p>
+<p>5.爆表</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159659710-be9ffdda-65e0-41e4-b797-d2d962fbb12f.png" alt="img"></p>
+<p>6.爆字段</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159856897-baff7acf-9e8d-45ef-bd87-c0cbaaa3c7d5.png" alt="img"></p>
+<p>7.爆内容</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159939607-21d8cd54-b098-4df2-b6ed-50a6529f6fee.png" alt="img"></p>
+<h2 id="报错注入"><a href="#报错注入" class="headerlink" title="报错注入"></a>报错注入</h2><p>1.判断有没有回显，如果没有回显就可以尝试报错注入</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161464807-d9c34474-d55a-4d67-bc40-4fcdb09d83b4.png" alt="img"></p>
+<p>2.用报错语句进行注入</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161549710-d7465b45-09fc-43e1-91bd-4cbc718315d2.png" alt="img"></p>
+<p>3.把select user()换成我们要查询的语句即可，先爆数据库</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161660757-49066994-7a40-429a-bfc1-a31ef5bbb0df.png" alt="img"></p>
+<p>4.再爆表</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161739314-8cdd4a19-f9d9-4658-b7e5-f0a907e0a44b.png" alt="img"></p>
+<p>5.爆字段</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161858517-8096128b-91ee-4e07-bf1b-777e181df609.png" alt="img"></p>
+<p>6.爆内容</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161925344-c4e55f0c-2120-421f-8ca3-c54b61fea0ef.png" alt="img"></p>
 
             
         </div>
         <footer class="article-footer">
-            <a data-url="http://example.com/2023/11/30/%E9%92%93%E9%B1%BC/" data-id="clpl614510004x8t999lc6uol" data-title="钓鱼"
+            <a data-url="http://example.com/2023/12/24/%E6%89%93%E9%9D%B6%E7%AC%94%E8%AE%B0/" data-id="clqiteyw70002jovlh2oehqs2" data-title="打靶笔记"
                class="article-share-link">Share</a>
             
             
@@ -246,15 +238,15 @@
                 
                     
                     
-                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="远控"
+                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="sql语句和sqlmap语句"
                              class="lazyload">
                     
                 
-                <a href="/2023/11/30/%E8%BF%9C%E6%8E%A7/"></a>
+                <a href="/2023/12/24/mysql%E8%AF%AD%E5%8F%A5/"></a>
                 <div class="article-nav-caption">Newer</div>
                 <h3 class="article-nav-title">
                     
-                        远控
+                        sql语句和sqlmap语句
                     
                 </h3>
             </div>
@@ -264,15 +256,15 @@
                 
                     
                     
-                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="永恒之黑"
+                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="sql注入"
                              class="lazyload">
                     
                 
-                <a href="/2023/11/30/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/"></a>
+                <a href="/2023/12/24/sql%E6%B3%A8%E5%85%A5/"></a>
                 <div class="article-nav-caption">Older</div>
                 <h3 class="article-nav-title">
                     
-                        永恒之黑
+                        sql注入
                     
                 </h3>
             </div>

