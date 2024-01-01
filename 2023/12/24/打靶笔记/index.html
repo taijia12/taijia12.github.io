@@ -23,12 +23,12 @@
     
 <link rel="stylesheet" href="/css/loader.css">
 
-    <meta name="description" content="联合查询打靶流程1.找闭合 2.判断字段数 order by 2往上一个一个试，报错就说明字段数没那么多 3.确定回显位  4.爆数据库  5.爆表  6.爆字段  7.爆内容  报错注入1.判断有没有回显，如果没有回显就可以尝试报错注入  2.用报错语句进行注入  3.把select user()换成我们要查询的语句即可，先爆数据库  4.再爆表  5.爆字段  6.爆内容  bool盲注脚本（">
+    <meta name="description" content="联合查询(1~4关)1.找闭合 2.判断字段数 order by 2往上一个一个试，报错就说明字段数没那么多 3.确定回显位  4.爆数据库  5.爆表  6.爆字段  7.爆内容  报错注入（5~6关）1.判断有没有回显，如果没有回显就可以尝试报错注入  2.用报错语句进行注入  3.把select user()换成我们要查询的语句即可，先爆数据库  4.再爆表  5.爆字段  6.爆内容  b">
 <meta property="og:type" content="article">
 <meta property="og:title" content="打靶笔记">
 <meta property="og:url" content="http://example.com/2023/12/24/%E6%89%93%E9%9D%B6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="联合查询打靶流程1.找闭合 2.判断字段数 order by 2往上一个一个试，报错就说明字段数没那么多 3.确定回显位  4.爆数据库  5.爆表  6.爆字段  7.爆内容  报错注入1.判断有没有回显，如果没有回显就可以尝试报错注入  2.用报错语句进行注入  3.把select user()换成我们要查询的语句即可，先爆数据库  4.再爆表  5.爆字段  6.爆内容  bool盲注脚本（">
+<meta property="og:description" content="联合查询(1~4关)1.找闭合 2.判断字段数 order by 2往上一个一个试，报错就说明字段数没那么多 3.确定回显位  4.爆数据库  5.爆表  6.爆字段  7.爆内容  报错注入（5~6关）1.判断有没有回显，如果没有回显就可以尝试报错注入  2.用报错语句进行注入  3.把select user()换成我们要查询的语句即可，先爆数据库  4.再爆表  5.爆字段  6.爆内容  b">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159357114-f576216f-7b3b-4f6f-b01a-57f02c6cd189.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159507541-4c8a9605-a5f3-4cf4-9e12-70485d796635.png">
@@ -55,8 +55,41 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703419818379-18f2351d-0045-4213-9293-343136d063c6.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703426211903-275633e5-b66d-4657-a40f-0f13f1c4ad72.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703471288527-be798620-0d36-4949-987c-1bb57d29fa3f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703475589415-a719440d-11cb-4ebc-ae96-99139b381574.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703504166761-264d22fc-7a6f-40fe-80e0-81f5d733642f-170411077681250.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703485439223-4ae36bb7-bd16-466c-867a-253bd46e599c.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703494070006-0146dfa9-ce61-4a69-9789-518206233a25-170411075353846.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703493799603-026adb7a-37fc-428f-b195-3fd183db406d-170411076355748.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703504830235-4f4b3b64-7ad7-4709-a6af-e1c2764ea2b8-170411087880854.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703556600469-b4ef1b29-1b6e-4675-8eba-c3f6d672826c-170411091233156.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703561923210-80e8276b-4a59-4cff-a165-f81a4e4a5803-170411092816858.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703579912605-28e79c65-2993-4ca3-b84f-99565034791d-170411095479360.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703579802875-1674a05c-8e1c-4e52-b55c-756c73b668f9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703675153756-4b0fa255-38b6-4d04-b1a9-76a3896fe8ba.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703581691249-b6b17f9d-cf53-413c-a6a5-e833bb1583f2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703581789280-2071c36c-f9d4-41c5-9587-b98b5894ae48.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703581921872-1d9f32b5-43d3-42dc-9827-1c5940857d97.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703581979249-6687bbb9-60de-4f6b-a5c3-a6c559a1aae4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582144696-ed00ac99-99b8-4b43-85f6-7a503b65c665.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582244669-a6f8d7ed-6f3e-472f-af61-ba52e68d420f-170411109243062.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582377169-ce311f10-1499-4540-8830-0148a0f1fb35-170411119996072.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582340928-e90c66dc-b0d5-4868-9ab3-bb74cb63ef93-170411124386574.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582529251-ec9d44f4-ff5e-4f2d-b2e8-fc519eac9adc-170411128932276.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582517929-13403bdc-ef3b-44db-b15d-270b82fa6514.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582644121-f1b0d559-4344-4ce7-a2ac-42929efd960e-170411133832080.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582632063-bb624181-df73-44dd-b61b-fb15ce66f153.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703589861996-69274b1d-cb7d-4886-872b-69f6d8e2b5e6-170411137988886.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703590344089-da4f1aef-fcd3-4102-b6bd-e9471beae26d-170411138977688.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703590666266-f9901d2e-48e9-4ba4-bd04-33601097189e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703591596800-807db59c-5fba-4b24-9ebb-4f58f1f63fa2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703592158653-fbe7fd50-2b5d-4668-949b-f1702404f7fe.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703592506318-693d47b6-19d8-4f8d-a814-cb573ce95cb7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703592895542-a7390eba-1134-4412-8b12-49c318d681e6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703593116202-54cb3153-b6e5-4498-918f-c495e0a7526f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703593258657-47c61b74-6d36-4a95-9e4e-b1691923e897.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703593460482-89a65fab-02f5-42c6-a6cb-6b57989f3fbf.png">
 <meta property="article:published_time" content="2023-12-24T01:02:01.000Z">
-<meta property="article:modified_time" content="2023-12-25T03:00:34.036Z">
+<meta property="article:modified_time" content="2024-01-01T12:18:44.153Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159357114-f576216f-7b3b-4f6f-b01a-57f02c6cd189.png">
@@ -206,7 +239,7 @@
 
         <div class="e-content article-entry" itemprop="articleBody">
             
-                <h2 id="联合查询打靶流程"><a href="#联合查询打靶流程" class="headerlink" title="联合查询打靶流程"></a>联合查询打靶流程</h2><p>1.找闭合</p>
+                <h2 id="联合查询-1-4关"><a href="#联合查询-1-4关" class="headerlink" title="联合查询(1~4关)"></a>联合查询(1~4关)</h2><p>1.找闭合</p>
 <p>2.判断字段数</p>
 <p>order by 2往上一个一个试，报错就说明字段数没那么多</p>
 <p>3.确定回显位</p>
@@ -219,7 +252,7 @@
 <p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159856897-baff7acf-9e8d-45ef-bd87-c0cbaaa3c7d5.png" alt="img"></p>
 <p>7.爆内容</p>
 <p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703159939607-21d8cd54-b098-4df2-b6ed-50a6529f6fee.png" alt="img"></p>
-<h2 id="报错注入"><a href="#报错注入" class="headerlink" title="报错注入"></a>报错注入</h2><p>1.判断有没有回显，如果没有回显就可以尝试报错注入</p>
+<h2 id="报错注入（5-6关）"><a href="#报错注入（5-6关）" class="headerlink" title="报错注入（5~6关）"></a>报错注入（5~6关）</h2><p>1.判断有没有回显，如果没有回显就可以尝试报错注入</p>
 <p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161464807-d9c34474-d55a-4d67-bc40-4fcdb09d83b4.png" alt="img"></p>
 <p>2.用报错语句进行注入</p>
 <p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703161549710-d7465b45-09fc-43e1-91bd-4cbc718315d2.png" alt="img"></p>
@@ -258,6 +291,71 @@
 <h3 id="20关"><a href="#20关" class="headerlink" title="20关"></a>20关</h3><p>这关回显的位置很多，一个一个试，试出来要在cookie注入，抓最后一个get包，其他包里没有cookie，找到cookie直接开注。</p>
 <p>‘ or (updatexml(1,concat(0x7e,(database()),0x7e),1)) or ‘</p>
 <p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703471288527-be798620-0d36-4949-987c-1bb57d29fa3f.png" alt="img"></p>
+<h3 id="21关"><a href="#21关" class="headerlink" title="21关"></a>21关</h3><p>在20关基础上，进行了base64编码，我们需要把我们的 注入语句替换掉他的并进行base64编码</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703475589415-a719440d-11cb-4ebc-ae96-99139b381574.png" alt="img"></p>
+<h3 id="22关"><a href="#22关" class="headerlink" title="22关"></a>22关</h3><p>随便试试，找到闭合是”</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703504166761-264d22fc-7a6f-40fe-80e0-81f5d733642f-170411077681250.png" alt="image.png"></p>
+<p>跟21关方法一样，闭合是“，  把注入语句用base64编码放在uname后面就可以注入     ” or (updatexml(1,concat(0x7e,(database()),0x7e),1)) or “</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703485439223-4ae36bb7-bd16-466c-867a-253bd46e599c.png" alt="image.png"></p>
+<h3 id="23关"><a href="#23关" class="headerlink" title="23关"></a>23关</h3><p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703494070006-0146dfa9-ce61-4a69-9789-518206233a25-170411075353846.png" alt="image.png"></p>
+<p>这关的注释符被替换成了空格，所以需要手动闭合，消耗前后两个单引号</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703493799603-026adb7a-37fc-428f-b195-3fd183db406d-170411076355748.png" alt="image.png"></p>
+<h3 id="24关"><a href="#24关" class="headerlink" title="24关"></a>24关</h3><p>新建新用户admin’#,然后登陆，然后修改admin’#的密码</p>
+<p>再用admin账号和admin’#的密码登录，登陆成功就说明admin的密码被修改成了admin’#的密码</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703504830235-4f4b3b64-7ad7-4709-a6af-e1c2764ea2b8-170411087880854.png" alt="image.png"></p>
+<h3 id="25关"><a href="#25关" class="headerlink" title="25关"></a>25关</h3><p>本关主要为 or and 过滤，如何绕过 or 和 and 过滤。一般性提供以下几种思路： </p>
+<p>（1）大小写变形 Or,OR,oR </p>
+<p>（2）编码，hex，urlencode </p>
+<p>（3）添加注释&#x2F;<em>or</em>&#x2F; </p>
+<p>（4）利用符号 and&#x3D;&amp;&amp;  or&#x3D;||</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703556600469-b4ef1b29-1b6e-4675-8eba-c3f6d672826c-170411091233156.png" alt="image.png"></p>
+<h3 id="25a关"><a href="#25a关" class="headerlink" title="25a关"></a>25a关</h3><p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703561923210-80e8276b-4a59-4cff-a165-f81a4e4a5803-170411092816858.png" alt="image.png"></p>
+<h3 id="26关"><a href="#26关" class="headerlink" title="26关"></a>26关</h3><p>这关过滤了很多</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703579912605-28e79c65-2993-4ca3-b84f-99565034791d-170411095479360.png" alt="image.png"></p>
+<p>and or可以双写或者用&amp;&amp;和||代替，解决注释需要强行闭合逃逸，需要空格的地方可以加上括号</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703579802875-1674a05c-8e1c-4e52-b55c-756c73b668f9.png" alt="img"></p>
+<h3 id="26a关"><a href="#26a关" class="headerlink" title="26a关"></a>26a关</h3><p>%0B绕过空格，联合查询，回显为是1，2</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703675153756-4b0fa255-38b6-4d04-b1a9-76a3896fe8ba.png" alt="img"></p>
+<p>盲注，闭合是‘</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703581691249-b6b17f9d-cf53-413c-a6a5-e833bb1583f2.png" alt="img"></p>
+<h3 id="27关"><a href="#27关" class="headerlink" title="27关"></a>27关</h3><p>和上关闭合相同，盲注</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703581789280-2071c36c-f9d4-41c5-9587-b98b5894ae48.png" alt="img"></p>
+<h3 id="27a关"><a href="#27a关" class="headerlink" title="27a关"></a>27a关</h3><p>经试验，闭合为“</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703581921872-1d9f32b5-43d3-42dc-9827-1c5940857d97.png" alt="img"></p>
+<p>盲注</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703581979249-6687bbb9-60de-4f6b-a5c3-a6c559a1aae4.png" alt="img"></p>
+<h3 id="28关"><a href="#28关" class="headerlink" title="28关"></a>28关</h3><p>盲注，闭合为’</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582144696-ed00ac99-99b8-4b43-85f6-7a503b65c665.png" alt="img"></p>
+<h3 id="28a关"><a href="#28a关" class="headerlink" title="28a关"></a>28a关</h3><p>同上</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582244669-a6f8d7ed-6f3e-472f-af61-ba52e68d420f-170411109243062.png" alt="image.png"></p>
+<h3 id="29关"><a href="#29关" class="headerlink" title="29关"></a>29关</h3><p>经试验，闭合为’，直接上盲注</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582377169-ce311f10-1499-4540-8830-0148a0f1fb35-170411119996072.png" alt="image.png"></p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582340928-e90c66dc-b0d5-4868-9ab3-bb74cb63ef93-170411124386574.png" alt="image.png"></p>
+<h3 id="30关"><a href="#30关" class="headerlink" title="30关"></a>30关</h3><p>判断闭合为”，盲注成功出结果</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582529251-ec9d44f4-ff5e-4f2d-b2e8-fc519eac9adc-170411128932276.png" alt="image.png"></p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582517929-13403bdc-ef3b-44db-b15d-270b82fa6514.png" alt="image.png"></p>
+<h3 id="31关"><a href="#31关" class="headerlink" title="31关"></a>31关</h3><p>判断闭合为“，盲注成功出结果</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582644121-f1b0d559-4344-4ce7-a2ac-42929efd960e-170411133832080.png" alt="image.png"></p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703582632063-bb624181-df73-44dd-b61b-fb15ce66f153.png" alt="image.png"></p>
+<h3 id="32关"><a href="#32关" class="headerlink" title="32关"></a>32关</h3><p>宽字节注入，%df绕过\转义</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703589861996-69274b1d-cb7d-4886-872b-69f6d8e2b5e6-170411137988886.png" alt="image.png"></p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703590344089-da4f1aef-fcd3-4102-b6bd-e9471beae26d-170411138977688.png" alt="image.png"></p>
+<h3 id="33关"><a href="#33关" class="headerlink" title="33关"></a>33关</h3><p>和上关一样%df绕过\转义注入，闭合是’</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703590666266-f9901d2e-48e9-4ba4-bd04-33601097189e.png" alt="img"></p>
+<h3 id="34关"><a href="#34关" class="headerlink" title="34关"></a>34关</h3><p>绕过\转义注入，闭合是’</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703591596800-807db59c-5fba-4b24-9ebb-4f58f1f63fa2.png" alt="img"></p>
+<h3 id="35关"><a href="#35关" class="headerlink" title="35关"></a>35关</h3><p>这关也有\转义，但是闭合为空，所以可以直接联合查询</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703592158653-fbe7fd50-2b5d-4668-949b-f1702404f7fe.png" alt="img"></p>
+<h3 id="36关"><a href="#36关" class="headerlink" title="36关"></a>36关</h3><p>同样的\转义绕过，找到闭合是’，然后联合查询</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703592506318-693d47b6-19d8-4f8d-a814-cb573ce95cb7.png" alt="img"></p>
+<h3 id="37关"><a href="#37关" class="headerlink" title="37关"></a>37关</h3><p>%df绕过\转义，找到闭合’ ，报错查询</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703592895542-a7390eba-1134-4412-8b12-49c318d681e6.png" alt="img"></p>
+<h3 id="38关"><a href="#38关" class="headerlink" title="38关"></a>38关</h3><p>简单联合查询，闭合是’</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703593116202-54cb3153-b6e5-4498-918f-c495e0a7526f.png" alt="img"></p>
+<h3 id="39关"><a href="#39关" class="headerlink" title="39关"></a>39关</h3><p>简单联合查询，闭合为空</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703593258657-47c61b74-6d36-4a95-9e4e-b1691923e897.png" alt="img"></p>
+<h3 id="40关"><a href="#40关" class="headerlink" title="40关"></a>40关</h3><p>这关正确有回显，错误没有回显，找到闭合为’),然后判断字段，进行联合查询</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703593460482-89a65fab-02f5-42c6-a6cb-6b57989f3fbf.png" alt="img"></p>
 
             
         </div>
@@ -424,7 +522,7 @@
             
             <div>
                 <span class="icon-copyright"></span>
-                2020-2023
+                2020-2024
                 <span class="footer-info-sep"></span>
                 John Doe
             </div>
@@ -437,10 +535,10 @@
             
                 <div>
                     <span class="icon-brush"></span>
-                    18.6k
+                    19.3k
                     &nbsp;|&nbsp;
                     <span class="icon-coffee"></span>
-                    01:17
+                    01:19
                 </div>
             
             

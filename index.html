@@ -221,16 +221,16 @@ mysql -u root -p #-u用于指定登录MySQL服务器的用户名。-p: 用于指
             <div class="post-meta">
                 <a><span class="icon-calendar"></span>2023-12-24</a>
                 
-                    <a><span class="icon-pencil"></span>416 words</a>
+                    <a><span class="icon-pencil"></span>946 words</a>
                 
                 
-                    <a><span class="icon-clock"></span>1 min</a>
+                    <a><span class="icon-clock"></span>3 mins</a>
                 
             </div>
             <h2 class="post-title">打靶笔记</h2>
             <article class="post-article">
                 
-                    联合查询打靶流程1.找闭合
+                    联合查询(1~4关)1.找闭合
 2.判断字段数
 order by 2往上一个一个试，报错就说明字段数没那么多
 3.确定回显位
@@ -243,7 +243,7 @@ order by 2往上一个一个试，报错就说明字段数没那么多
 
 7.爆内容
 
-报错注入1.判断有没有回显，如果没有回显就可以尝试报错注入
+报错注入（5~6关）1.判断有没有回显，如果没有回显就可以尝试报错注入
 
 2.用报错语句进行注入
 
@@ -257,9 +257,7 @@ order by 2往上一个一个试，报错就说明字段数没那么多
 
 bool盲注脚本（7~8关）第八关，闭合为’))，正确时回显只有You are in…. Use outfile……，用bool盲注
 
-第九关,闭合为’，正确时回显为You are in….，注入方法和第七关一样
-
-延
+第九关,闭合为’，正确时回显为You are in….，注入方法和
                 
             </article>
         </div>
@@ -286,7 +284,7 @@ bool盲注脚本（7~8关）第八关，闭合为’))，正确时回显只有Yo
             <div class="post-meta">
                 <a><span class="icon-calendar"></span>2023-12-24</a>
                 
-                    <a><span class="icon-pencil"></span>1.8k words</a>
+                    <a><span class="icon-pencil"></span>2k words</a>
                 
                 
                     <a><span class="icon-clock"></span>9 mins</a>
@@ -317,7 +315,9 @@ bool盲注脚本（7~8关）第八关，闭合为’))，正确时回显只有Yo
 
 
 ​                                                                     
-二、sql注入相关知识w联合查询http://192.168.0.109:83/Less-1/?id=2‘ and 1&amp;#x3D;2 union select 1,group_concat(schema_na
+二、sql注入相关知识w找闭合大法第一步，输入?id&amp;#x3D;1,会显示正确的回显
+
+第二步，?id&amp;#x3D;1’,加个单引号看结果，如果报错，说明闭合和’ 有关系，如果依然是一个正确的回显，那就说明闭合
                 
             </article>
         </div>
@@ -782,7 +782,7 @@ OSI（Open Systems Interconnection）七层模型是一个将计算机网络通�
             
             <div>
                 <span class="icon-copyright"></span>
-                2020-2023
+                2020-2024
                 <span class="footer-info-sep"></span>
                 John Doe
             </div>
@@ -795,10 +795,10 @@ OSI（Open Systems Interconnection）七层模型是一个将计算机网络通�
             
                 <div>
                     <span class="icon-brush"></span>
-                    18.6k
+                    19.3k
                     &nbsp;|&nbsp;
                     <span class="icon-coffee"></span>
-                    01:17
+                    01:19
                 </div>
             
             
