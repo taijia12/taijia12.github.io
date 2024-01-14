@@ -161,17 +161,65 @@
         
     <div class="post-wrap-left wow fadeInUp">
         
-            <a class="post-link" href="/2024/01/08/box%E9%9D%B6%E6%9C%BA/"></a>
+            <a class="post-link" href="/2024/01/14/Hackademic%E9%9D%B6%E6%9C%BA/"></a>
         
         
         <div class="post-cover-left">
             
                 
                 
-                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="monney box靶机" class="lazyload">
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="Hackademic靶机" class="lazyload">
                 
             
 
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2024-01-14</a>
+                
+                    <a><span class="icon-pencil"></span>1.2k words</a>
+                
+                
+                    <a><span class="icon-clock"></span>4 mins</a>
+                
+            </div>
+            <h2 class="post-title">Hackademic靶机</h2>
+            <article class="post-article">
+                
+                    打靶准备1.安装靶机，记录靶机mac地址
+
+2.通过arp-scan -l找到靶机ip地址
+
+打靶流程端口扫描1.端口扫描，nmap 192.168.2.35,发现两个端口，22关闭，80打开
+
+2.访问80端口
+
+3.点击Hackademic.RTB1发现新目录
+
+sql注入4.发现注入点
+
+5.sqlmap注入，爆数据库sqlmap -u “http://192.168.2.35/Hackademic_RTB1/?cat=1“ –batch –dbs 
+
+ mysql和information_schema是mysql5.0之后存在的库，所以可以直接对wordpress进行操作。爆表：pyt
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-right wow fadeInUp">
+        
+            <a class="post-link" href="/2024/01/08/box%E9%9D%B6%E6%9C%BA/"></a>
+        
+        <div class="post-cover-right">
+            
+                
+                
+                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="monney box靶机" class="lazyload">
+                
+            
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -206,17 +254,19 @@ kali设置1、编辑-虚拟网络编辑器
 
     
         
-    <div class="post-wrap-right wow fadeInUp">
+    <div class="post-wrap-left wow fadeInUp">
         
             <a class="post-link" href="/2024/01/07/%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E%E4%B9%8B%E6%94%AF%E4%BB%98%E6%BC%8F%E6%B4%9E%E8%AF%A6%E8%A7%A3/"></a>
         
-        <div class="post-cover-right">
+        
+        <div class="post-cover-left">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="逻辑漏洞之支付漏洞详解" class="lazyload">
                 
             
+
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -249,19 +299,17 @@ kali设置1、编辑-虚拟网络编辑器
 
     
         
-    <div class="post-wrap-left wow fadeInUp">
+    <div class="post-wrap-right wow fadeInUp">
         
             <a class="post-link" href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"></a>
         
-        
-        <div class="post-cover-left">
+        <div class="post-cover-right">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="信息收集" class="lazyload">
                 
             
-
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -299,17 +347,19 @@ cache：搜索google里关于某些内容的缓存
 
     
         
-    <div class="post-wrap-right wow fadeInUp">
+    <div class="post-wrap-left wow fadeInUp">
         
             <a class="post-link" href="/2024/01/07/Burp%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8%EF%BC%8COracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B3%A8%E5%85%A5/"></a>
         
-        <div class="post-cover-right">
+        
+        <div class="post-cover-left">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="Burp的安装与使用，Oracle数据库注入" class="lazyload">
                 
             
+
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -340,19 +390,17 @@ cache：搜索google里关于某些内容的缓存
 
     
         
-    <div class="post-wrap-left wow fadeInUp">
+    <div class="post-wrap-right wow fadeInUp">
         
             <a class="post-link" href="/2024/01/07/%E5%AE%89%E5%85%A8%E7%8B%97-waf%E7%BB%95%E8%BF%87/"></a>
         
-        
-        <div class="post-cover-left">
+        <div class="post-cover-right">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="安全狗-waf绕过" class="lazyload">
                 
             
-
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -391,17 +439,19 @@ cache：搜索google里关于某些内容的缓存
 
     
         
-    <div class="post-wrap-right wow fadeInUp">
+    <div class="post-wrap-left wow fadeInUp">
         
             <a class="post-link" href="/2024/01/02/yakit%E5%92%8Cpostman/"></a>
         
-        <div class="post-cover-right">
+        
+        <div class="post-cover-left">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="yakit和postman" class="lazyload">
                 
             
+
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -434,19 +484,17 @@ postman Postman找到api然后把链接放到postman
 
     
         
-    <div class="post-wrap-left wow fadeInUp">
+    <div class="post-wrap-right wow fadeInUp">
         
             <a class="post-link" href="/2023/12/24/mysql%E8%AF%AD%E5%8F%A5/"></a>
         
-        
-        <div class="post-cover-left">
+        <div class="post-cover-right">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="sql语句和sqlmap语句" class="lazyload">
                 
             
-
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -480,17 +528,19 @@ mysql -u root -p #-u用于指定登录MySQL服务器的用户名。-p: 用于指
 
     
         
-    <div class="post-wrap-right wow fadeInUp">
+    <div class="post-wrap-left wow fadeInUp">
         
             <a class="post-link" href="/2023/12/24/%E6%89%93%E9%9D%B6%E7%AC%94%E8%AE%B0/"></a>
         
-        <div class="post-cover-right">
+        
+        <div class="post-cover-left">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="打靶笔记" class="lazyload">
                 
             
+
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -541,19 +591,17 @@ bool盲注脚本（7~8关）第八关，闭合为’))，正确时回显只有Yo
 
     
         
-    <div class="post-wrap-left wow fadeInUp">
+    <div class="post-wrap-right wow fadeInUp">
         
             <a class="post-link" href="/2023/12/24/sql%E6%B3%A8%E5%85%A5/"></a>
         
-        
-        <div class="post-cover-left">
+        <div class="post-cover-right">
             
                 
                 
                     <img data-src="/images/banner.jpg" data-sizes="auto" alt="sql注入" class="lazyload">
                 
             
-
         </div>
         <div class="post-info">
             <div class="post-meta">
@@ -600,43 +648,6 @@ bool盲注脚本（7~8关）第八关，闭合为’))，正确时回显只有Yo
 
 
     
-        
-    <div class="post-wrap-right wow fadeInUp">
-        
-            <a class="post-link" href="/2023/12/16/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%AE%9E%E7%8E%B0/"></a>
-        
-        <div class="post-cover-right">
-            
-                
-                
-                    <img data-src="/images/banner.jpg" data-sizes="auto" alt="图书管理系统实现" class="lazyload">
-                
-            
-        </div>
-        <div class="post-info">
-            <div class="post-meta">
-                <a><span class="icon-calendar"></span>2023-12-16</a>
-                
-                    <a><span class="icon-pencil"></span>1.6k words</a>
-                
-                
-                    <a><span class="icon-clock"></span>8 mins</a>
-                
-            </div>
-            <h2 class="post-title">图书管理系统实现</h2>
-            <article class="post-article">
-                
-                    #图书管理系统实现
-
-#登录页
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;    &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0
-                
-            </article>
-        </div>
-    </div>
-
-
-    
 
 
     <nav id="page-nav" class="wow fadeInUp">
@@ -657,7 +668,7 @@ bool盲注脚本（7~8关）第八关，闭合为’))，正确时回显只有Yo
         <div class="sidebar-state">
             <div class="sidebar-state-article">
                 <div>Posts</div>
-                <div class="sidebar-state-number">23</div>
+                <div class="sidebar-state-number">24</div>
             </div>
             <div class="sidebar-state-category">
                 <div>Categories</div>
@@ -756,10 +767,10 @@ bool盲注脚本（7~8关）第八关，闭合为’))，正确时回显只有Yo
             
                 <div>
                     <span class="icon-brush"></span>
-                    24.3k
+                    25.5k
                     &nbsp;|&nbsp;
                     <span class="icon-coffee"></span>
-                    01:36
+                    01:40
                 </div>
             
             
@@ -786,7 +797,7 @@ bool盲注脚本（7~8关）第八关，闭合为’))，正确时回显只有Yo
         <div class="sidebar-state">
             <div class="sidebar-state-article">
                 <div>Posts</div>
-                <div class="sidebar-state-number">23</div>
+                <div class="sidebar-state-number">24</div>
             </div>
             <div class="sidebar-state-category">
                 <div>Categories</div>

